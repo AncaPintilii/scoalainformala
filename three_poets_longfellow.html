@@ -1,9 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Henry Wadsworth Longfellow | Three Poets - tema</title>
+    <title>Contact | Three Poets - tema</title>
+    <style>
+    table {
+        border: o;
+        margin: 0;
+        padding: 0;
+        border-collapse: collapse;
+        text-align: left; 
+    }
+    .button { /* n-am habar cum sa pun degrade-uri ca background-color pe butoane...*/
+        background-color: #EBE9E9;
+        border: 1px solid black;
+        color:black;
+        padding: 7px 20px;
+        border-radius: 8px;
+        width: 170px;
+        text-align: center;
+        font-size: 25px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    </style>
 </head>
 <body>
-    
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" >
+        <!--cum scap naibii de spatiul liber up&down textului din celula?! am pus 0 la mai toate margins, paddings, spacings si degeaba-->
+        <tr style="padding:0px" height="20%" width="100%" cellspacing="0">
+            <td colspan="2" style="background-color:#EBE9E9;" >
+                <p style="font-size:40px; padding:0px">Three Poets</p>
+            </td> 
+        </tr>
+        <tr>
+            <td width="15%"><br>
+                <button class="button">Home</button><br>
+                <button class="button">Longfellow</button><br>
+                <button class="button">Poe</button><br>
+                <button class="button">Whitman</button> 
+            </td>
+            <td>
+                <form>
+                    <h1>Contact</h1>
+                    <br> 
+                    <label style="font-size:20px"; for="fname">Name (optional):</label> <br>   
+                        <input type="text" name="fname" id="fname" /> <br> <br> 
+                    <label style="font-size:20px"; for="email">Email (optional):</label> <br> 
+                        <input type="text" name="email" id="email" /> <br> <br> 
+            </td>
+        <tr> 
+            <td>
+                <p> </p> 
+            </td>
+            <td>
+                    <label style="font-size:20px"; for="massage">Message (required):</label> <br>
+                        <textarea name="message"> </textarea> <br><br>
+                    <input type="button" value="Send" /> <br><br>
+                </form>
+                <hr>
+                <p style="font-size:10px">&copy 2010 Nobody at all | <a href="file:///C:/scoalainformala/scoalainformala/three_poets_contact.html">Contact</a></p>
+            </td>
+        </tr>            
+    </table>
 </body>
 </html>
