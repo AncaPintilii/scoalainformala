@@ -2,50 +2,51 @@
     <head>
     <script>
   // functie care returneaza restul impartirii unui numar la un alt numar //
-   function rest(a, b) {
-   var c = a % b;
-   return c;
-   }
-   console.log(rest(7,5));
+    function rest(a, b) {
+        var c = a % b;
+            return c;
+    }
+    console.log(rest(7,5));
    // functie care inverseaza un sir de caractere //
-   function sir(a) { // un singur parametru pentru ca e tot sirul 
-   var b = ""; 
-   for (var i=a.length-1; i>=0; i--) { //lungimea sirului a scade cu 1
-   b = b + a[i]; // i-ul este pozitia 
-   }
-   return b;
-   } console.log(sir("asdf"));
+    function sir(a) {                                      // un singur parametru pentru ca e tot sirul 
+        var b = ""; 
+        for (var i=a.length-1; i>=0; i--) {               //lungimea sirului a scade cu 1
+        b = b + a[i];                                     // i-ul este pozitia 
+        }
+        return b;
+    }
+    console.log(sir("asdf"));
    // functie care inverseaza un sir de caractere care incepe de la 0 //
-   function sir2(a) { 
-   var b = ""; 
-   for (var i=0; i<a.length; i++) { 
-   b = a[i] + b;
-   }
-   return b;
-   }
-   console.log(sir2("asdg"));
+    function sir2(a) { 
+        var b = ""; 
+        for (var i=0; i<a.length; i++) { 
+        b = a[i] + b;
+        }
+        return b;
+    }
+    console.log(sir2("asdg"));
    // verificat daca un numar este palindrom abcba //
-   function p1(a) {
-   if (a == sir2(a)) {
-   return "palindrom";
-   } 
-   else {
-   return "nu Palindrom";
-   }
-   }
-   console.log(p1("abcba"));
+    function p1(a) {
+        if (a == sir2(a)) {
+        return "palindrom";
+        } 
+        else {
+        return "nu Palindrom";
+        }
+    }
+    console.log(p1("abcba"));
    // factorialul unui numar//
-   function factorial(a)  {
-   var b = 1;
-   for (var i=1; i<=a; i++) {
-   b = b * i;
-   } 
-   return b;
-   }
-   console.log(factorial(4));
-    </script>
-    </head>
-    <body>
-   </body>
-   </html>
+    function factorial(a)  {
+        var b = 1;
+        for (var i=1; i<=a; i++) {
+        b = b * i;
+        } 
+        return b;
+    }
+    console.log(factorial(4));
+</script>
+</head>
+<body>
+</body>
+</html>
   
