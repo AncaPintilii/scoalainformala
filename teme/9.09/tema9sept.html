@@ -12,16 +12,36 @@ function factorial(a)  {
 console.log(factorial(4));
 //2. Calculeaza cel mai mare divizor comun al 2 numere (CMMDC)
 function cmmdc(a, b) {
-    
+    var c = "";
+    for (var i = 2; i < a; i++) {
+        if (a % i == 0 && b % i == 0 ) {
+            
+        }
+    }
   }
 console.log(cmmdc(12, 18));
 //3. Calculeaza cel mai mic multiplu comun al 2 numere (CMMMC)
 
-//4. Returneaza un array care sa contina toti divizorii unui numar. Ex pentru 64: trebuie sa returneze [2,4,8,16,32]
+//4. Returneaza un array care sa contina toti divizorii (factors) unui numar. 
+//Ex pentru 64: trebuie sa returneze [2,4,8,16,32]
+function allFactors (a) { 
+    var b = "";                   
+    for (var i = 2; i< a; i++) {
+        if (a % i == 0) {            
+            b = b + "," + i;
+        } //Returneaza ",2,4,8,16,32" si nu reusesc sa scot prima virgula de la inceput. 
+        //Singura varianta pe care am gasit-o e sa pun var b = "2" si var i = 4 in FOR, but this is cheating... 
+    }               
+    return b;
+}
+console.log(allFactors(64));
+//5. Returneaza un array care sa contina toti divizorii primi a unui numar. 
+//Ex pentru 64: trebuie sa returneze [2,2,2,2,2,2,2,2]
 
-//5. Returneaza un array care sa contina toti divizorii primi a unui numar. Ex pentru 64: trebuie sa returneze [2,2,2,2,2,2,2,2]
 
-//6. Returneaza un array care sa contina toti divizorii unici primi a unui numar: Ex pentru 64: trebuie sa returneze [2]
+
+//6. Returneaza un array care sa contina toti divizorii unici primi a unui numar: 
+//Ex pentru 64: trebuie sa returneze [2]
 
 //7.1. Transforma din Miles in 100KM
 function miles(a) {                                 // din mile in km
