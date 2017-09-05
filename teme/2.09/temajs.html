@@ -1,0 +1,86 @@
+<html>
+<head>
+<script>
+//1. O functie care compara 2 valori si returneaza true daca sunt egale si false daca nu sunt egale//
+function compara(a,b) {
+    if (a == b) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+console.log(compara(7,5));
+//2. O functie care compara 2 valori si returneaza -1 daca primul e mai mic ca al doilea, 0 daca sunt egale si 1 daca primul e mai mare ca al doilea//
+function compara2(a, b) {
+    if (a == b) {
+        return 0;
+    }
+    else {
+        if (a < b) {
+        return -1;
+        }
+        else {
+            return 1;
+        }
+    }
+}
+console.log(compara2(7,5));
+//3. O functie care primeste 2 valori si returneaza maximul dintre cele 2//
+function max(a, b) {
+    if (a < b) {
+        return b;
+    }
+    else {
+        return a;
+    }
+}
+console.log(max(7,5));
+//4. O functie care primeste 2 valori si returneaza minimul dintre cele 2//
+function min(a, b) {
+    if (a > b) {
+        return b;
+    }
+    else {
+        return a;
+    }
+}
+console.log(min(7,5));
+//5. O functie care face suma dintre 2 valori//
+function suma(a, b) {
+    var c = a + b;
+    console.log(c);
+}
+suma(7,5);
+//6. O functie care face diferenta dintre 2 valori//
+function diferenta(a, b) {
+    var c = a - b;
+    console.log(c);
+}
+diferenta(5,7);
+//7. O functie care imparte 2 numere si returneaza rezultatul impartirii celor 2 numere (rezultatul trebuie sa fie integer --> fara zecimale)//
+function rest(a, b) {
+    var c = a % b;
+    return c;
+}
+console.log(rest(7,5));
+//8. O functie care imparte 2 numere si returneaza rezultatul impartirii celor 2 numere (rezultatul trebuie sa fie float, cu zecimale)
+function rest(a, b) {
+    var c = a % b;
+    return c;
+}
+console.log(rest(7.0,5.0));
+//9.  O functie care imparte 2 numere si returneaza restul impartirii celor 2 numere ( daca imparti 9 la 2, restul impartirii este 1, pentru 11 si 3, restul este 2, pentru 12 si 3 este 0)//
+
+//10. O functie care primeste un sir de caractere si returneaza lungimea sirului
+//11. O functie care primeste un sir de caractere si returneaza un alt sir de caractere care contine doar cifrele din sirul respectiv de caractere
+//12. O functie care primeste un sir de caractere si returneaza un alt sir de caractere care contine doar literele a-f, in aceeasi ordine ca in sirul initial//
+//13. O functie care primeste un sir de caractere si returneaza primele 5 litere din el (daca exista)//
+//14. O functie care primeste un sir de caractere si returneaza ultimele 10 litere (daca exista)
+//15. O functie care primeste un sir de caractere si un caracter. Returneaza pozitia pe care se afla respectivul caracter pentru prima oara in sir//
+//16. O functie care primeste un sir de caractere si un caracter. Returneaza pozitia pe care se afla respectivul caracter pentru ultima oara in sir//
+//17. O functie care primeste o lista de siruri de caractere si returneaza sirurile concatenate//
+//18. O functie care primeste o lista de siruri de caractere si inca un sir de caractere si returneaza sirurile concatenate despartite prin respectivul sir ( de ex ["asd", "qwe", "zxc"] si despartitorul este ": ", rezultatul este  "asd: qwe: zxc")//
+</script>
+</head>
+</html>

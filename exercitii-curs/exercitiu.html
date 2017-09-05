@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <script>
+            var a = 5;
+            var b = 6.100 + a;
+            var test = 10;
+            var anaAreMere = "Ana are mere";
+            var arr = [9, 5, 100];
+            var aRR = 100;
+            var n = null;
+            var casa = {
+                "etaje": 2,
+                "camere": 8,
+                "suprafata": 500,
+                "adresa": "strada..."
+            };
+            console.log(b);
+            console.log(anaAreMere + test);
+            console.log(arr[0]);
+            console.log(arr[3]);
+            console.log(arr.length);
+            console.log(n);
+            console.log(casa["etaje"]);
+            console.log(casa.etaje);
+    
+            function inmultire(a, b) {
+                var c = a * b;
+                console.log(c)
+            }
+            inmultire(6, 5);
+    
+    
+            function scadere(a, b) {
+                var c = a - b;
+                return c;
+            }
+            console.log(scadere(6, 5));
+    
+            arr = [9, 10, 11]
+            for (var i = 0; i < arr.length; i = i + 1)
+            { console.log(arr[i]) }
+    
+            var i = 0
+            while (i < arr.length) {
+                console.log(arr[i]);
+                i = i + 1
+            }
+    
+    
+    
+            function add() {
+                var s = 0
+                for (var i = 0; i < arguments.length; i++) {
+                    s = s + arguments[i]
+                }
+            }
+    
+            function multiply() {
+                var p = 1
+                for (var i = 0; i < arguments.length; i++) {
+                    p = p * arguments[i];
+                }
+                return p;
+            }
+    
+            function isPrime(n) {
+                for (var i = 2; i < n; i++) {
+                    if (n % i == 0) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+    
+            isPrime(37);
+    
+            function firstNrPrime(n) {
+                var nrFoundPrime = 0;
+                var currentNumber = 2;
+                while (nrFoundPrime < n) {
+                    if (isPrime(currentNumber)) {
+                        nrFoundPrime++;
+                        console.log(currentNumber);
+                    }
+                    currentNumber++;
+                }
+            }
+    
+            firstNrPrime(10);
+        </script>
+        </html>
