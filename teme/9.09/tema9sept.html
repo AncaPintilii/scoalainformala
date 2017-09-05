@@ -13,6 +13,7 @@ function factorial(a)  {
 //2. Calculeaza cel mai mare divizor comun al 2 numere (CMMDC)
 function cmmdc(a) {}
 //3. Calculeaza cel mai mic multiplu comun al 2 numere (CMMMC)
+
 //4. Returneaza un array care sa contina toti divizorii unui numar. Ex pentru 64: trebuie sa returneze [2,4,8,16,32]
 //5. Returneaza un array care sa contina toti divizorii primi a unui numar. Ex pentru 64: trebuie sa returneze [2,2,2,2,2,2,2,2]
 //6. Returneaza un array care sa contina toti divizorii unici primi a unui numar: Ex pentru 64: trebuie sa returneze [2]
@@ -23,7 +24,24 @@ function cmmdc(a) {}
 //11. Returneaza complementul unui unghi (suma unghiurilor este 90)
 //12. Care primeste 2 arrayuri ca parametriu si returneaza un singur array cu toate elementele
 //13. Care returneaza un String in ordine inversa. Ex: pentru ABC returneaza CBA
+function sir(a) {                                    
+        var b = ""; 
+        for (var i=a.length-1; i>=0; i--) {               
+        b = b + a[i];                                     
+        }
+        return b;
+    }
+    console.log(sir("asdf"));
 //14. Care verifica daca un numar este palindrom (se scrie la fel si de la sfarsit la inceput si de la inceput la sfarsit. Ex: ASDDSA)//
+function p1(a) {
+        if (a == sir2(a)) {
+        return "palindrom";
+        } 
+        else {
+        return "nu Palindrom";
+        }
+    }
+    console.log(p1("abcba"));
 </script>
 </head>
 <body>
