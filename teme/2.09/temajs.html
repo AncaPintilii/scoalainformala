@@ -1,6 +1,8 @@
 <html>
 <head>
 <script>
+//Mai trebuie aflat unde am gresit la 14 si 18.
+
 //1. O functie care compara 2 valori si returneaza true daca sunt egale si false daca nu sunt egale//
 function compara(a,b) {
     if (a == b) {
@@ -152,12 +154,36 @@ function sirCar1 (a, b) {
 console.log(sirCar1("anca", "n"));
 //16. O functie care primeste un sir de caractere si un caracter. Returneaza pozitia pe care se afla respectivul caracter 
 // pentru ultima oara in sir//
+function sirCar2 (a, b) {
+    for (var i = a.length-1; i >= 0; i++) {
+        if (b == a[i]) {
+            return i;
+        }
+    }
 
+}
+console.log(sirCar2("anca", "a"));
 //17. O functie care primeste o lista de siruri de caractere si returneaza sirurile concatenate//
-
-//18. O functie care primeste o lista de siruri de caractere si inca un sir de caractere si returneaza 
-//sirurile concatenate despartite prin respectivul sir ( de ex ["asd", "qwe", "zxc"] si despartitorul este ": ", rezultatul este  "asd: qwe: zxc")//
-
+function arrConcat (a) {
+    var b = "";
+    for (var i = 0; i < a.length; i++) {
+        b = b + a[i];
+    }
+    return b;
+}
+console.log(arrConcat(["siruri", " concatenate"]));
+//18. O functie care primeste o lista de siruri de caractere si inca un sir de caractere si returneaza sirurile concatenate
+// despartite prin respectivul sir
+// ( de ex ["asd", "qwe", "zxc"] si despartitorul este ": ", rezultatul este  "asd: qwe: zxc")//
+function lista (a, b) {
+    var  c ="";
+    for (var i = 0; i < a.length; i++) {
+        c = c + a[i] + b;
+    }
+    return c;
+}
+console.log(lista(["asd", " qwe", " sxc"], ":"));    //As vrea sa nu se termine tot cu ":"
+//FINALLY!
 </script>
 </head>
 </html>
