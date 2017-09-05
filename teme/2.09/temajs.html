@@ -80,20 +80,65 @@ function remainder(a, b) {
 }
 console.log (remainder(11, 3));
 //10. O functie care primeste un sir de caractere si returneaza lungimea sirului
-function sir1(a) {
-    
-}
-console.log(sir1(asd));
+function sir1 (a) {
+    var b = a.length;
+        return b;
+    }    
+console.log(sir1("asd"));
 //11. O functie care primeste un sir de caractere si returneaza un alt sir de caractere care contine 
 //doar cifrele din sirul respectiv de caractere
-
+function sir2 (a) {
+    var b = "";
+    for (i = 0; i <= a.length; i++) {
+        if (a[i] >= 0 && a[i] <= 9) {
+            b = b + a[i];
+        }
+    }
+    return b;
+}
+console.log(sir2("a1b2c3"));
 //12. O functie care primeste un sir de caractere si returneaza un alt sir de caractere care contine doar literele a-f, 
 //in aceeasi ordine ca in sirul initial//
-
+function sir3 (a) {
+    var b = "";
+    for (i = 0; i <= a.length; i++) {
+        if (a[i] >= "a" && a[i] <= "f") {
+            b = b + a[i];
+        }
+    }
+    return b;
+}
+console.log(sir3("a1b2c3z"));
 //13. O functie care primeste un sir de caractere si returneaza primele 5 litere din el (daca exista)//
+function sir4 (a) {
+    var b = "";
+    for (i = 0; i < a.length; i++) {
+        if (a[i] >= "a" && a[i] <= "z") {
+            b = b + a[i];
+            if (b.length == 5) {
+               break;
+            }
 
+        }
+    }
+    return b;
+}
+console.log(sir4("abc1a2b3c"));
 //14. O functie care primeste un sir de caractere si returneaza ultimele 10 litere (daca exista)
+function sir5 (a) {
+    var b = "";
+    for (var i = a.length; i >= 0; i--) {
+        if (a[i] >= "a" && a[i] <= "z") {
+            b = b + a[i];
+            if (b.length == 10) {
+               break;
+            }
 
+        }
+    }
+    return b;
+}                                           //abcdefghij
+console.log(sir5("abc1a2b3cdefghij"));
 //15. O functie care primeste un sir de caractere si un caracter. Returneaza pozitia pe care se afla respectivul caracter 
 // pentru prima oara in sir//
 
