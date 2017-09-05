@@ -127,7 +127,7 @@ console.log(sir4("abc1a2b3c"));
 //14. O functie care primeste un sir de caractere si returneaza ultimele 10 litere (daca exista)
 function sir5 (a) {
     var b = "";
-    for (var i = a.length; i >= 0; i--) {
+    for (var i = a.length-1; i >= 0; i--) {
         if (a[i] >= "a" && a[i] <= "z") {
             b = b + a[i];
             if (b.length == 10) {
@@ -137,11 +137,19 @@ function sir5 (a) {
         }
     }
     return b;
-}                                           //abcdefghij
+}                                           //!! DE CE MI-L SI INVERSEAZA?!
 console.log(sir5("abc1a2b3cdefghij"));
 //15. O functie care primeste un sir de caractere si un caracter. Returneaza pozitia pe care se afla respectivul caracter 
 // pentru prima oara in sir//
+function sirCar1 (a, b) {
+    for (var i = 0; i < a.length; i++) {
+        if (b == a[i]) {
+            return i;
+        }
+    }
 
+}
+console.log(sirCar1("anca", "n"));
 //16. O functie care primeste un sir de caractere si un caracter. Returneaza pozitia pe care se afla respectivul caracter 
 // pentru ultima oara in sir//
 
