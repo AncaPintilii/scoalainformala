@@ -1,0 +1,29 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <p onmouseover="changeColor(j);" onmouseout="changeColor2 ();" id="paragraf" > Aici era un text care o sa fie inclocuit cu JS </p>
+        <p id="altParagraf"> Aici era un text care o sa fie inclocuit cu JS </p>
+        <div class="fancy"> text1 </div>
+        <div class="fancy"> text2 </div>
+        <script>
+
+            function changeColor () {
+                document.getElementById("paragraf").style.color="red" ;
+            }
+            function changeColor2 () {
+                document.getElementById("paragraf").style.color="blue" ;
+            }
+
+            document.getElementById("paragraf").innerHTML="am inlocuit <br> in interiorul paragrafului";
+            document.getElementById("paragraf").style.color="red";
+            document.getElementById("paragraf").style.backgroundColor="#000000";
+            document.getElementById("altParagraf").innerText="am inlocuit <br> in interiorul paragrafului";
+            var divurileMeleFancy = document.getElementsByClassName("fancy");
+            for (var i=0; i < divurileMeleFancy.length; i++) {
+                divurileMeleFancy[i].innerHTML = divurileMeleFancy[i].innerHTML+ "A MERS";
+                //https://developer.mozilla.org/en-US/docs/Web/API/Element//
+            }
+        </script>
+    </body>
+</html>

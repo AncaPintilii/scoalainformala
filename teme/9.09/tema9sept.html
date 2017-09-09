@@ -42,12 +42,13 @@ function allFactors (a) {
 }
 console.log(allFactors(64));
 //5. Returneaza un array care sa contina toti divizorii primi a unui numar. 
-//Ex pentru 64: trebuie sa returneze [2,2,2,2,2,2,2,2]
+//Ex pentru 64: trebuie sa returneze [2,2,2,2,2,2]
 function primeFactors (a) {
     var c = "";
-        for (var i = 2; i < a; i++) {
-            if (a % c == 0) {
-                a = a / c;
+        for (var i = 2; i <= a; i) {
+           if (a % i === 0) {
+                primeFactors; push(i); 
+                x = x / i;
             }
         }
         return c;
