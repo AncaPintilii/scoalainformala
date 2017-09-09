@@ -2,19 +2,92 @@
     <head>
     </head>
     <body>
-        <p onmouseover="changeColor(j);" onmouseout="changeColor2 ();" id="paragraf" > Aici era un text care o sa fie inclocuit cu JS </p>
+        <form id="myform"  onkeydown="keyDown();">
+            <input name="nr1" type="text" placeholder="Nr1" oninput="suma(event, this);" /> 
+                <p>+</p>
+            <input name="nr2" type="text" placeholder="Nr2" oninput="suma(event, this);" /> 
+                <p>=</p>
+            <input name="rezultat" type="text" placeholder="rezultat" />
+            
+
+
+            <br /> <hr>
+            <input 
+            name="firstName"
+            value=""
+            type="text"
+            placeholder="first Name"
+            onkeyup="keyUp ();"
+            onkeypress="keyPress ();"
+            onchange="change ();"
+            oninput="input (event, this);"   
+            /> 
+
+            <input name="lastName" type="text" placeholder="last Name" oninput="input (event, this);" /><br />
+            <select name="age">
+                <option value="0-7">0-7</option>
+                <option value="8-14">8-14</option>
+                <option value="15-19">15-19</option>
+                <option value="20-22">19-22</option>
+                <option value="23-40">23-40</option>
+            </select> <br />
+            Check me out: <input type="checkbox" value="test" name="checkMe" /> <br />
+            Favorite band: <br /> 
+            <input type="radio" value="test" name="checkMe" /> Metallica  <br />
+            <input type="radio" value="test" name="checkMe" /> ACDC  <br />
+            <input type="radio" value="test" name="checkMe" /> Rolling Stones  <br />
+            <input type="radio" value="test" name="checkMe" /> SalamTZA: <br />
+        </form>        
+        
+        <p onmouseover="changeColor();" onmouseout="changeColor2 ();" id="paragraf" > Aici era un text care o sa fie inclocuit cu JS </p>
         <p id="altParagraf"> Aici era un text care o sa fie inclocuit cu JS </p>
         <div class="fancy"> text1 </div>
         <div class="fancy"> text2 </div>
+        
         <script>
+            var firstNameElem = document.querySelector("#myform [name=\"firstName\"]") 
+            var lastNameElem = document.querySelector("#myform [name=\"lastName\"]")
 
+
+            function suma() {
+            var nr1 = document.querySelector("#myform [name=\"nr1\"]");
+            var nr2 = document.querySelector("#myform [name=\"nr2\"]");
+            var rezultat = document.querySelector("#myform [name=\"rezultat\"]");
+            rezultat.value = parseInt(nr1.value) + parseInt(nr2.value);
+            
+        }
+           
+           
+           
+        function keyDown () {
+                //console.log("keyDown", firstNameElem.value);          
+            }
+            function keyUp () {
+                //console.log("keyUp", firstNameElem.value);  
+            }
+            function keyPress () {
+                //console.log("keyPress", firstNameElem.value);
+            }
+            function change () {
+                //console.log("change", firstNameElem.value);
+            }
+            function input (event, elem) {
+               document.getElementById("paragraf").innerHTML=firstNameElem.value + " " + lastNameElem.value;
+                console.log("input", elem.value);//
+            }
+            
+            
+            
+            
+            
+            
+            
             function changeColor () {
                 document.getElementById("paragraf").style.color="red" ;
             }
             function changeColor2 () {
                 document.getElementById("paragraf").style.color="blue" ;
             }
-
             document.getElementById("paragraf").innerHTML="am inlocuit <br> in interiorul paragrafului";
             document.getElementById("paragraf").style.color="red";
             document.getElementById("paragraf").style.backgroundColor="#000000";
