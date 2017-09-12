@@ -1,15 +1,68 @@
 <html>
 <head>
     <title>Tema pentru 16 septembrie - cerinta</title>
-<!-- Construiti in HTML si CSS un formular care sa contina 
-3 Input type text, 2 Selecturi 3 Checkboxuri, 3 Radio Buttons si un submit. 
-Folositi cele invatate astazi si in orele precedente 
-(atributul name, placeholder, class, id, etc, labeluri, color, backgroundColor, border, etc) 
-astfel incat sa arata frumos. Puteti sa va inspirati de pe internet pentru Look and Feel (cum arata) --> 
+<!-- Construiti in HTML si CSS un formular care sa contina 3 Input type text, 2 Selecturi 3 Checkboxuri, 
+3 Radio Buttons si un submit. Folositi cele invatate astazi si in orele precedente (atributul name, placeholder, 
+class, id, etc, labeluri, color, backgroundColor, border, etc) astfel incat sa arata frumos. 
+Puteti sa va inspirati de pe internet pentru Look and Feel (cum arata).
+    Plecand de la formularul mai sus construit si evenimentele invatate 
+(copiati tot HTMLul in fisier separat pentru fiecare exercitiu):
+
+1. Pastrati doar 2 inputuri si colorati ambele inputuri verzi daca valoarea din casuta 1 si din casuta 2 sunt egale (ex 1, tema 26August)
+2. Pastrati doar 2 inputuri si colorati inputul care are valoarea mai mare. Daca sunt egale, colorati-le pe ambele(ex2,  tema 26August)
+3. Pastrati doar 3 inputuri si afisati in al 3-lea input valoarea inputului mai mare dintre primul si al doilea (ex3, tema 26August)
+4. Pastrati doar 3 inputuri si afisati in al 3-lea input suma primului + celui de-al 2-lea  input (ex 5, tema 26August)
+5. Pastrati doar 1 input si afisati intr-un span/div in coltul dreapta jos, lungimea sirului de caractere tastat.(ex 10, tema 26 August, ceva de genul: https://www.webcomponents.org/element/PolymerElements/paper-input/demo/demo/index.html)
+6. Plecand de la ex 5, limitati numarul de caractere la 10. In momentul in care am ajuns la 10, inrositi counterul si folosind event.preventDefault() pe evenimentul onkeypress opriti utilizatorul sa mai introduca caractere in plus
+7. Pastrati doar 1 input si folosind event.preventDefault pe evenimentul onkeypress, opriti utilizatorul sa mai introduca orice altceva decat numere. (tip: puteti sa gasiti caracterul tastat in event.key)--> 
 </head>
-<body>
-    <form>
-        <input name ="" type="text"
+<body style="background-color:#9CAFB7">
+    <form id="myform">
+    <fieldset style="background-color: #E6B89C"> <legend style="font-size: 20px">NAME</legend>
+        <input name ="firstName" type="text" placeholder="First Name">
+        <input name ="lastName" type="text" placeholder="Last Name">
+        <input name ="nickname" type="text" placeholder="Nickname">
+        <br />
+    </fieldset> <br />
+    <fieldset style="background-color: #EAD2AC"> <legend style="font-size: 20px">ASL PLS</legend>
+        <label for="City">City:</label> 
+            <select name="city" placeholder="City">
+            <option value="Bucharest">Bucharest</option>
+            <option value="Iasi">Iasi</option>
+            <option value="Cluj-Napoca">Cluj-Napoca</option>
+            <option value="Timisoara">Timisoara</option>
+            <option value="Baicoi">Baicoi</option>
+        </select>
+        <br /> <br /> 
+        <label for="Age">Age:</label> 
+            <select name="age">
+            <option value="1-17">1-17</option>
+            <option value="18-25">18-25</option>
+            <option value="26-35">26-35</option>
+            <option value="36-45">36-45</option>
+            <option value="46-300">46-300</option>
+        </select>
+        <br /> <br /> 
+        <label for="Gender">Gender:</label> <br />
+            <input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
+        </fieldset> <br />
+        <fieldset style="background-color: #4281A4"> <legend style="font-size: 20px">STUFF ABOUT ME</legend>
+        <label for="drug">Drug:</label> <br />
+            <input type="radio" name="drug" value="cola"> Cola
+            <input type="radio" name="drug" value="pepsi"> Pepsi
+        </br> <br/>
+        <label for="smartphone">Smartphone:</label> <br />
+            <input type="radio" name="smartphone" value="samsung"> Samsung
+            <input type="radio" name="smartphone" value="iphone"> iPhone
+            <input type="radio" name="smartphone" value="nokia"> Nokia FTW
+        </br> 
+        </fieldset> <br />
+        Agree terms &amp; conditions? <input type="checkbox" value="test" name="terms" /> <br />
+        Spam with newsletters? <input type="checkbox" value="test" name="spam" /> <br />
+        Yes, spam me more, please! <input type="checkbox" value="test" name="spamMore" /> <br />
+        <hr><br />
+        <input type="submit" value="Send Form" style="font-size: 20px; border-radius: 8px; padding: 10px; background-color:#4281A4"></button>
     </form>
 </body>
 </html>
