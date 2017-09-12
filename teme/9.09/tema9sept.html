@@ -2,7 +2,7 @@
 <head>
     
     <title>tema9sept</title>
-<script> //De rezolvat punctele 4 si 6//
+<script> //De rezolvat punctul 4
 
 //1. Calculeaza factorialul unui numar
 function factorial(a)  {
@@ -52,7 +52,7 @@ console.log(allFactors(64));
 //Ex pentru 64: trebuie sa returneze [2,2,2,2,2,2]
 function primeFactors (a) {
     var c = [];
-    for (var i = 2; i <= a;) {
+    for (var i = 2; i <= a; ) {
         if (a % i == 0) {
             c.push(i); 
             a = a / i;
@@ -67,6 +67,25 @@ console.log(primeFactors(64));
 
 //6. Returneaza un array care sa contina toti divizorii unici primi a unui numar: 
 //Ex pentru 64: trebuie sa returneze [2]
+
+function divizoriUnici(a) {
+    var b = [];
+        var c = -1;
+            for (var i = 2; i <= a; ) { 
+                if (a % i == 0) {
+                    a = a/i;
+                    if (c! == i) {
+                        b.push(i);
+                        c = i;
+                    }
+                }
+                else {
+                    i++
+                }
+            }
+           return c;
+}   
+console.log(divizoriUnici(64));
 
 //7.1. Transforma din Miles in 100KM
 function miles(a) {                                 // din mile in km
