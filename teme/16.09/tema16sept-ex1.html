@@ -7,50 +7,39 @@
 <body style="background-color:#9CAFB7">
     <form id="myform">
     <fieldset style="background-color: #E6B89C"> <legend style="font-size: 20px">NAME</legend>
-        <input name ="firstName" type="text" placeholder="First Name">
-        <input name ="lastName" type="text" placeholder="Last Name">
-        <input name ="nickname" type="text" placeholder="Nickname">
+<!--//1. O functie care compara 2 valori si returneaza true daca sunt egale si false daca nu sunt egale//
+function compara(a,b) {
+    if (a == b) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+console.log(compara(7,5));-->
+<!-- function suma() {
+            var nr1 = document.querySelector("#myform [name=\"nr1\"]");
+            var nr2 = document.querySelector("#myform [name=\"nr2\"]");
+            var rezultat = document.querySelector("#myform [name=\"rezultat\"]");
+            rezultat.value = parseInt(nr1.value) + parseInt(nr2.value);   
+        }--> 
+        <input name ="firstName" id="primulInput" type="text" placeholder="First Name" oninput="input(event, this);">
+        <input name ="lastName" id="altInput" type="text" placeholder="Last Name" oninput="input(event, this);">
         <br />
     </fieldset> <br />
-    <fieldset style="background-color: #EAD2AC"> <legend style="font-size: 20px">ASL PLS</legend>
-        <label for="City">City:</label> 
-            <select name="city" placeholder="City">
-            <option value="Bucharest">Bucharest</option>
-            <option value="Iasi">Iasi</option>
-            <option value="Cluj-Napoca">Cluj-Napoca</option>
-            <option value="Timisoara">Timisoara</option>
-            <option value="Baicoi">Baicoi</option>
-        </select>
-        <br /> <br /> 
-        <label for="Age">Age:</label> 
-            <select name="age">
-            <option value="1-17">1-17</option>
-            <option value="18-25">18-25</option>
-            <option value="26-35">26-35</option>
-            <option value="36-45">36-45</option>
-            <option value="46-300">46-300</option>
-        </select>
-        <br /> <br /> 
-        <label for="Gender">Gender:</label> <br />
-            <input type="radio" name="gender" value="male"> Male
-            <input type="radio" name="gender" value="female"> Female
-        </fieldset> <br />
-        <fieldset style="background-color: #4281A4"> <legend style="font-size: 20px">STUFF ABOUT ME</legend>
-        <label for="drug">Drug:</label> <br />
-            <input type="radio" name="drug" value="cola"> Cola
-            <input type="radio" name="drug" value="pepsi"> Pepsi
-        </br> <br/>
-        <label for="smartphone">Smartphone:</label> <br />
-            <input type="radio" name="smartphone" value="samsung"> Samsung
-            <input type="radio" name="smartphone" value="iphone"> iPhone
-            <input type="radio" name="smartphone" value="nokia"> Nokia FTW
-        </br> 
-        </fieldset> <br />
-        Agree terms &amp; conditions? <input type="checkbox" value="test" name="terms" /> <br />
-        Spam with newsletters? <input type="checkbox" value="test" name="spam" /> <br />
-        Yes, spam me more, please! <input type="checkbox" value="test" name="spamMore" /> <br />
-        <hr><br />
-        <input type="submit" value="Send Form" style="font-size: 20px; border-radius: 8px; padding: 10px; background-color:#4281A4"></button>
     </form>
+
+    <script>
+        function compara () {
+            var firstName = document.querySelector("#myform [name=\"firstName\"]");
+            var lastName = document.querySelector("#myform [name=\"lastName\"]");
+            if (firstName.value == lastName.value); {
+                
+            }
+            else {
+                break;
+            }
+        }    
+    </script>
 </body>
 </html>

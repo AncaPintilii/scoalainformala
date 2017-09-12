@@ -9,8 +9,6 @@
                 <p>=</p>
             <input name="rezultat" type="text" placeholder="rezultat" />
             
-
-
             <br /> <hr>
             <input 
             name="firstName"
@@ -48,17 +46,13 @@
             var firstNameElem = document.querySelector("#myform [name=\"firstName\"]") 
             var lastNameElem = document.querySelector("#myform [name=\"lastName\"]")
 
-
             function suma() {
             var nr1 = document.querySelector("#myform [name=\"nr1\"]");
             var nr2 = document.querySelector("#myform [name=\"nr2\"]");
             var rezultat = document.querySelector("#myform [name=\"rezultat\"]");
-            rezultat.value = parseInt(nr1.value) + parseInt(nr2.value);
-            
+            rezultat.value = parseInt(nr1.value) + parseInt(nr2.value);   
         }
-           
-           
-           
+                
         function keyDown () {
                 //console.log("keyDown", firstNameElem.value);          
             }
