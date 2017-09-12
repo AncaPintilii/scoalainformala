@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>Tema pentru 16 septembrie - cerinta</title>
+<!-- 1. Pastrati doar 2 inputuri si colorati ambele inputuri verzi daca 
+    valoarea din casuta 1 si din casuta 2 sunt egale (ex 1, tema 26August)--> 
+</head>
+<body style="background-color:#9CAFB7">
+    <form id="myform">
+    <fieldset style="background-color: #E6B89C"> <legend style="font-size: 20px">NAME</legend>
+        <input name ="firstName" type="text" placeholder="First Name">
+        <input name ="lastName" type="text" placeholder="Last Name">
+        <input name ="nickname" type="text" placeholder="Nickname">
+        <br />
+    </fieldset> <br />
+    <fieldset style="background-color: #EAD2AC"> <legend style="font-size: 20px">ASL PLS</legend>
+        <label for="City">City:</label> 
+            <select name="city" placeholder="City">
+            <option value="Bucharest">Bucharest</option>
+            <option value="Iasi">Iasi</option>
+            <option value="Cluj-Napoca">Cluj-Napoca</option>
+            <option value="Timisoara">Timisoara</option>
+            <option value="Baicoi">Baicoi</option>
+        </select>
+        <br /> <br /> 
+        <label for="Age">Age:</label> 
+            <select name="age">
+            <option value="1-17">1-17</option>
+            <option value="18-25">18-25</option>
+            <option value="26-35">26-35</option>
+            <option value="36-45">36-45</option>
+            <option value="46-300">46-300</option>
+        </select>
+        <br /> <br /> 
+        <label for="Gender">Gender:</label> <br />
+            <input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
+        </fieldset> <br />
+        <fieldset style="background-color: #4281A4"> <legend style="font-size: 20px">STUFF ABOUT ME</legend>
+        <label for="drug">Drug:</label> <br />
+            <input type="radio" name="drug" value="cola"> Cola
+            <input type="radio" name="drug" value="pepsi"> Pepsi
+        </br> <br/>
+        <label for="smartphone">Smartphone:</label> <br />
+            <input type="radio" name="smartphone" value="samsung"> Samsung
+            <input type="radio" name="smartphone" value="iphone"> iPhone
+            <input type="radio" name="smartphone" value="nokia"> Nokia FTW
+        </br> 
+        </fieldset> <br />
+        Agree terms &amp; conditions? <input type="checkbox" value="test" name="terms" /> <br />
+        Spam with newsletters? <input type="checkbox" value="test" name="spam" /> <br />
+        Yes, spam me more, please! <input type="checkbox" value="test" name="spamMore" /> <br />
+        <hr><br />
+        <input type="submit" value="Send Form" style="font-size: 20px; border-radius: 8px; padding: 10px; background-color:#4281A4"></button>
+    </form>
+</body>
+</html>
