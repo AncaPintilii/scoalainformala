@@ -1,8 +1,8 @@
 <html>
 <head>
     <title>Tema pentru 16 septembrie - cerinta</title>
-<!-- 1. Pastrati doar 2 inputuri si colorati ambele inputuri verzi daca 
-    valoarea din casuta 1 si din casuta 2 sunt egale (ex 1, tema 26August)--> 
+<!-- 2. Pastrati doar 2 inputuri si colorati inputul care are valoarea mai mare. 
+    Daca sunt egale, colorati-le pe ambele(ex2,  tema 26August)--> 
 </head>
 <body style="background-color:#9CAFB7">
     <form id="myform">
@@ -16,11 +16,19 @@
     <script>
         function changeColor () {
             var firstName = document.querySelector("#myform [name=\"firstName\"]");
-            var lastName = document.querySelector("#myform [name=\"lastName\"]");                
+            var lastName = document.querySelector("#myform [name=\"lastName\"]");       
                 if (firstName.value == lastName.value) {
                     document.getElementById("primulInput").style.backgroundColor="#B4C89B" ;
                     document.getElementById("altInput").style.backgroundColor="#B4C89B" ;
                 }
+                    else {
+                        if (firstName.value < lastName.value) {
+                            document.getElementById("altInput").style.backgroundColor="#4281A4";
+                        }
+                            else {
+                                document.getElementById("primulInput").style.backgroundColor="#4281A4" ;
+                            }
+                    }      
         }    
     </script>
 </body>

@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Tema pentru 16 septembrie - cerinta</title>
+<!-- 3. Pastrati doar 3 inputuri si afisati in al 3-lea input 
+    valoarea inputului mai mare dintre primul si al doilea (ex3, tema 26August)--> 
+</head>
+<body style="background-color:#9CAFB7">
+    <form id="myform">
+    <fieldset style="background-color: #E6B89C"> <legend style="font-size: 20px">NAME</legend>
+        <input name="firstName"  value="" id="primulInput" type="text" placeholder="First Name" oninput="input(event, this)">
+        <input name="lastName" value="" id="altInput" type="text" placeholder="Last Name" oninput="input(event, this)">
+        <input name ="nickname" value="" id="altInput2" type="text" placeholder="Nickname">
+        <br />
+    </fieldset> <br />
+    </form>
+
+    <script>
+        function compara () {
+            var firstName = document.querySelector("#myform [name=\"firstName\"]");
+            var lastName = document.querySelector("#myform [name=\"lastName\"]");
+            var nickname = document.querySelector("#myform [name=\"nickname\"]");       
+                if (firstName.value < lastName.value) {
+                    document.getElementById("altInput2").innerHTML="lastName" ;
+                }
+                    else {
+                        document.getElementById("altInput2").innerHTML="firstName" ;
+                    }      
+        }    
+    </script>
+</body>
+</html>
