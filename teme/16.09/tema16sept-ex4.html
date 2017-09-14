@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Tema pentru 16 septembrie - cerinta</title>
+<!-- Pastrati doar 3 inputuri si afisati in al 3-lea input suma primului + celui de-al 2-lea  input 
+    (ex 5, tema 26August)--> 
+</head>
+<body style="background-color:#9CAFB7">
+    <form id="myform">
+    <fieldset style="background-color: #E6B89C"> <legend style="font-size: 20px">NAME</legend>
+        <input name="firstName" type="text" placeholder="First Name" oninput="suma(event, this);" />
+        <input name="lastName" type="text" placeholder="Last Name" oninput="suma(event, this);" />
+        <input name="nickname" type="text" placeholder="Nickname" /> 
+        <br />
+    </fieldset> <br />
+    </form>
+
+    <script>
+        function suma() {
+            var firstName = document.querySelector("#myform [name=\"firstName\"]");
+            var lastName = document.querySelector("#myform [name=\"lastName\"]");
+            var nickname = document.querySelector("#myform [name=\"nickname\"]");
+            nickname.value = parseInt(firstName.value) + parseInt(lastName.value);   
+        }
+    </script>
+</body>
+</html>

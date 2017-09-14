@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Tema pentru 16 septembrie - cerinta</title>
+<!-- 5. Pastrati doar 1 input si afisati intr-un span/div in coltul dreapta jos, lungimea sirului de caractere 
+    tastat. (ex 10, tema 26 August, ceva de genul: 
+https://www.webcomponents.org/element/PolymerElements/paper-input/demo/demo/index.html)--> 
+</head>
+<body style="background-color:#9CAFB7">
+    <form id="myform">
+    <fieldset style="background-color: #E6B89C"> <legend style="font-size: 20px">NAME</legend>
+        <input name="firstName" id="primulInput" type="text" placeholder="First Name" oninput="charNumber(event, this);" /> 
+        <br />
+    </fieldset> <br />
+    </form>
+
+    <div>
+        <input name="counter" id="counterBox" type="text" />
+    </div>
+    
+    <script>
+        function charNumber () {
+            document.getElementById("primulInput").value.length;
+        }
+    </script>
+</body>
+</html>
