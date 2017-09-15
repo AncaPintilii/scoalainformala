@@ -2,74 +2,138 @@
 <head>
     <title>Tema 16 septembrie - tabel imagini</title>
     <style>
-        .table, td {
-            border: 1px solid black;
+        table {
+            height: 642px;
+            width: 915px;
+            table-layout: fixed;
         }
+        td { 
+	        border: 1px solid black;
+	        border-spacing: 0;
+	        height: 214px;
+	        width: 305px;
+        }
+        
     </style>
 </head>
 <body>
-<!--
-    
--> done Construiti un tabel cu 3 randuri si 3 coloane care sa contina imagini in fiecare celula 
-(implicit sa fie imaginea asta: http://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg).
-
--> Pe mouse over pe fiecare imagine in parte trebuie sa schimbati imaginea in urmatoarea imagine: http://www.drodd.com/images14/x12.jpg
-
--> La mouseout de pe imagine, trebuie sa schimbati inapoi imaginea in prima (cea goala).
-
--> done Puneti border la tabel ca sa se vada initial ceva.
-
-Ca sa schimbati imaginea unui tag <img src="" /> se poate face cu imagine.src = "linkul catre noua imagine";
+<!-- Construiti un tabel cu 3 randuri si 3 coloane care sa contina imagini in fiecare celula (implicit sa fie imaginea asta: http://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg).
+Pe mouse over pe fiecare imagine in parte trebuie sa schimbati imaginea in urmatoarea imagine: http://www.drodd.com/images14/x12.jpg
+La mouseout de pe imagine, trebuie sa schimbati inapoi imaginea in prima (cea goala). Puneti border la tabel ca sa se vada initial ceva. 
+Ca sa schimbati imaginea unui tag <img src="" /> se poate face cu imagine.src = "linkul catre noua imagine"; 
 Se poate folosi this-ul de la eveniment: (https://ancapintilii.github.io/scoalainformala/teme/16.09/x12.jpg https://ancapintilii.github.io/scoalainformala/teme/16.09/foto.jpg)
-
 onmouseover="schimbaImaginea(event,this)"
 function schimbaImaginea(event,elem) {
     elem.scr="....."
 } -->
     <table>
         <tr>
-            <td>
-                <img src="https://ancapintilii.github.io/scoalainformala/teme/16.09/foto.jpg" onmouseover="change1(event,this);" onmouseout="change2 (event,this);" id="emptyimg" alt="EmptyPhoto" style="width: 224px; height: 216px" />
-                <img src="https://ancapintilii.github.io/scoalainformala/teme/16.09/x12.jpg" id="ximg" alt="xPhoto" style="width: 224px; height: 216px" />
+            <td> <!-- se puteau pune toate astea de mai jos in niste clase pentru a nu le repeta?-->
+                <img src="https://ancapintilii.github.io/scoalainformala/teme/16.09/foto.jpg" onmouseover="change1(event,this);" onmouseout="change2(event, this);" id="emptyimg1" alt="EmptyPhoto" />          
             </td>
             <td>
-                <img src="foto.jpg" alt="EmptyPhoto" style="width: 224px; height: 216px">
+                <img src="https://ancapintilii.github.io/scoalainformala/teme/16.09/foto.jpg" onmouseover="change3(event,this);" onmouseout="change4(event, this);" id="emptyimg2" alt="EmptyPhoto" />
             </td>
             <td>
-                <img src="foto.jpg" alt="EmptyPhoto" style="width: 224px; height: 216px">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <img src="foto.jpg" alt="EmptyPhoto" style="width: 224px; height: 216px">
-            </td>
-            <td>
-                <img src="foto.jpg" alt="EmptyPhoto" style="width: 224px; height: 216px">
-            </td>
-            <td>
-                <img src="foto.jpg" alt="EmptyPhoto" style="width: 224px; height: 216px">
+                <img src="https://ancapintilii.github.io/scoalainformala/teme/16.09/foto.jpg" onmouseover="change5(event,this);" onmouseout="change6(event, this);" id="emptyimg3" alt="EmptyPhoto" /> 
             </td>
         </tr>
         <tr>
             <td>
-                <img src="foto.jpg" alt="EmptyPhoto" style="width: 224px; height: 216px">
+                <img src="https://ancapintilii.github.io/scoalainformala/teme/16.09/foto.jpg" onmouseover="change7(event,this);" onmouseout="change8(event, this);" id="emptyimg4" alt="EmptyPhoto" />
             </td>
             <td>
-                <img src="foto.jpg" alt="EmptyPhoto" style="width: 224px; height: 216px">
+                <img src="https://ancapintilii.github.io/scoalainformala/teme/16.09/foto.jpg" onmouseover="change9(event,this);" onmouseout="change10(event, this);" id="emptyimg5" alt="EmptyPhoto" />
             </td>
             <td>
-                <img src="foto.jpg" alt="EmptyPhoto" style="width: 224px; height: 216px">
+                <img src="https://ancapintilii.github.io/scoalainformala/teme/16.09/foto.jpg" onmouseover="change11(event,this);" onmouseout="change12(event, this);" id="emptyimg6" alt="EmptyPhoto" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="https://ancapintilii.github.io/scoalainformala/teme/16.09/foto.jpg" onmouseover="change13(event,this);" onmouseout="change14(event, this);" id="emptyimg7" alt="EmptyPhoto" />
+            </td>
+            <td>
+                <img src="https://ancapintilii.github.io/scoalainformala/teme/16.09/foto.jpg" onmouseover="change15(event,this);" onmouseout="change16(event, this);" id="emptyimg8" alt="EmptyPhoto" />
+            </td>
+            <td>
+                <img src="https://ancapintilii.github.io/scoalainformala/teme/16.09/foto.jpg" onmouseover="change17(event,this);" onmouseout="change18(event, this);" id="emptyimg9" alt="EmptyPhoto" />
             </td>
         </tr>
     </table>
 
     <script>
         function change1 (event,elem) {
-        document.getElementById("emptyimg").elem.src="https://ancapintilii.github.io/scoalainformala/teme/16.09/x12.jpg" ;
+            var elem = document.getElementById("emptyimg1");
+            elem.src="https://ancapintilii.github.io/scoalainformala/teme/16.09/x12.jpg" ;
         }
-
         function change2 (event,elem) {
-        document.getElementById("ximg").elem.src="https://ancapintilii.github.io/scoalainformala/teme/16.09/foto.jpg" ;
+          var elem = document.getElementById("emptyimg1");
+            elem.src="https://ancapintilii.github.io/scoalainformala/teme/16.09/foto.jpg" ;
+        }
+        function change3 (event,elem) {
+            var elem = document.getElementById("emptyimg2");
+            elem.src="https://ancapintilii.github.io/scoalainformala/teme/16.09/x12.jpg" ;
+        }
+        function change4 (event,elem) {
+          var elem = document.getElementById("emptyimg2");
+            elem.src="https://ancapintilii.github.io/scoalainformala/teme/16.09/foto.jpg" ;
+        }
+        function change5 (event,elem) {
+            var elem = document.getElementById("emptyimg3");
+            elem.src="https://ancapintilii.github.io/scoalainformala/teme/16.09/x12.jpg" ;
+        }
+        function change6 (event,elem) {
+          var elem = document.getElementById("emptyimg3");
+            elem.src="https://ancapintilii.github.io/scoalainformala/teme/16.09/foto.jpg" ;
+        }
+        function change7 (event,elem) {
+            var elem = document.getElementById("emptyimg4");
+            elem.src="https://ancapintilii.github.io/scoalainformala/teme/16.09/x12.jpg" ;
+        }
+        function change8 (event,elem) {
+          var elem = document.getElementById("emptyimg4");
+            elem.src="https://ancapintilii.github.io/scoalainformala/teme/16.09/foto.jpg" ;
+        }
+        function change9 (event,elem) {
+            var elem = document.getElementById("emptyimg5");
+            elem.src="https://ancapintilii.github.io/scoalainformala/teme/16.09/x12.jpg" ;
+        }
+        function change10 (event,elem) {
+          var elem = document.getElementById("emptyimg5");
+            elem.src="https://ancapintilii.github.io/scoalainformala/teme/16.09/foto.jpg" ;
+        }
+        function change11 (event,elem) {
+            var elem = document.getElementById("emptyimg6");
+            elem.src="https://ancapintilii.github.io/scoalainformala/teme/16.09/x12.jpg" ;
+        }
+        function change12 (event,elem) {
+          var elem = document.getElementById("emptyimg6");
+            elem.src="https://ancapintilii.github.io/scoalainformala/teme/16.09/foto.jpg" ;
+        }
+        function change13 (event,elem) {
+            var elem = document.getElementById("emptyimg7");
+            elem.src="https://ancapintilii.github.io/scoalainformala/teme/16.09/x12.jpg" ;
+        }
+        function change14 (event,elem) {
+          var elem = document.getElementById("emptyimg7");
+            elem.src="https://ancapintilii.github.io/scoalainformala/teme/16.09/foto.jpg" ;
+        }
+        function change15 (event,elem) {
+            var elem = document.getElementById("emptyimg8");
+            elem.src="https://ancapintilii.github.io/scoalainformala/teme/16.09/x12.jpg" ;
+        }
+        function change16 (event,elem) {
+          var elem = document.getElementById("emptyimg8");
+            elem.src="https://ancapintilii.github.io/scoalainformala/teme/16.09/foto.jpg" ;
+        }
+        function change17 (event,elem) {
+            var elem = document.getElementById("emptyimg9");
+            elem.src="https://ancapintilii.github.io/scoalainformala/teme/16.09/x12.jpg" ;
+        }
+        function change18 (event,elem) {
+          var elem = document.getElementById("emptyimg9");
+            elem.src="https://ancapintilii.github.io/scoalainformala/teme/16.09/foto.jpg" ;
         }
     </script>
 </body>
