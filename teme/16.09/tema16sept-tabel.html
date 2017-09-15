@@ -20,7 +20,7 @@
 -> done Puneti border la tabel ca sa se vada initial ceva.
 
 Ca sa schimbati imaginea unui tag <img src="" /> se poate face cu imagine.src = "linkul catre noua imagine";
-Se poate folosi this-ul de la eveniment:
+Se poate folosi this-ul de la eveniment: (https://ancapintilii.github.io/scoalainformala/teme/16.09/x12.jpg https://ancapintilii.github.io/scoalainformala/teme/16.09/foto.jpg)
 
 onmouseover="schimbaImaginea(event,this)"
 function schimbaImaginea(event,elem) {
@@ -29,7 +29,8 @@ function schimbaImaginea(event,elem) {
     <table>
         <tr>
             <td>
-                <img src="foto.jpg" onmouseover="change1();" onmouseout="change2 ();" id="emptyimg" alt="EmptyPhoto" style="width: 224px; height: 216px">
+                <img src="https://ancapintilii.github.io/scoalainformala/teme/16.09/foto.jpg" onmouseover="change1(event,this);" onmouseout="change2 (event,this);" id="emptyimg" alt="EmptyPhoto" style="width: 224px; height: 216px" />
+                <img src="https://ancapintilii.github.io/scoalainformala/teme/16.09/x12.jpg" id="ximg" alt="xPhoto" style="width: 224px; height: 216px" />
             </td>
             <td>
                 <img src="foto.jpg" alt="EmptyPhoto" style="width: 224px; height: 216px">
@@ -61,5 +62,15 @@ function schimbaImaginea(event,elem) {
             </td>
         </tr>
     </table>
+
+    <script>
+        function change1 (event,elem) {
+        document.getElementById("emptyimg").elem.src="https://ancapintilii.github.io/scoalainformala/teme/16.09/x12.jpg" ;
+        }
+
+        function change2 (event,elem) {
+        document.getElementById("ximg").elem.src="https://ancapintilii.github.io/scoalainformala/teme/16.09/foto.jpg" ;
+        }
+    </script>
 </body>
 </html>
