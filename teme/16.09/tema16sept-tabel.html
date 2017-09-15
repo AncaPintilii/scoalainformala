@@ -17,7 +17,7 @@
 
 -> La mouseout de pe imagine, trebuie sa schimbati inapoi imaginea in prima (cea goala).
 
--> done Punet-ti border la tabel ca sa se vada initial ceva.
+-> done Puneti border la tabel ca sa se vada initial ceva.
 
 Ca sa schimbati imaginea unui tag <img src="" /> se poate face cu imagine.src = "linkul catre noua imagine";
 Se poate folosi this-ul de la eveniment:
@@ -29,8 +29,7 @@ function schimbaImaginea(event,elem) {
     <table>
         <tr>
             <td>
-                <img src="foto.jpg" onmouseover="change(event, this)" onmouseout="change('off')"  alt="EmptyPhoto" style="width: 224px; height: 216px">
-                <img src="foto.jpg" alt="EmptyPhoto" style="width: 224px; height: 216px">
+                <img src="foto.jpg" onmouseover="change1();" onmouseout="change2 ();" id="emptyimg" alt="EmptyPhoto" style="width: 224px; height: 216px">
             </td>
             <td>
                 <img src="foto.jpg" alt="EmptyPhoto" style="width: 224px; height: 216px">
