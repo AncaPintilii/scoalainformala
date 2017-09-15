@@ -1,33 +1,31 @@
 <html>
 <head>
-    <title>Tema pentru 16 septembrie - cerinta</title>
+    <title>Tema pentru 16 septembrie - ex 5</title>
 <!-- 5. Pastrati doar 1 input si afisati intr-un span/div in coltul dreapta jos, lungimea sirului de caractere 
     tastat. (ex 10, tema 26 August, ceva de genul: 
 https://www.webcomponents.org/element/PolymerElements/paper-input/demo/demo/index.html) 
 
-function sir1 (a) {
-    var b = a.length;
-        return b;
-    }    
-console.log(sir1("asd"));-->
+N-am eroare, dar n-am idee de ce nu-mi merge...-->
 
 </head>
 <body style="background-color:#9CAFB7">
     <form id="myform">
     <fieldset style="background-color: #E6B89C"> <legend style="font-size: 20px">NAME</legend>
-        <input name="firstName" value ="" id="primulInput" type="text" placeholder="First Name" oninput="charNb(event, this);" /> 
+        <input name="firstName" id="primulInput" type="text" placeholder="First Name" oninput="charNb(event, this);" /> 
         <br />
     </fieldset> <br />
     </form>
 
     <div>
-        <input name="counter" id="counterBox" value="0" type="text" placeholder="Character counter" style="margin-left: 70%" />
+        <input name="counter" id="counterBox" type="text" placeholder="Character counter" style="margin-left: 70%" />
     </div>
     
     <script>
-        function charNb (firstName, counter) {
+        function charNb () {
             var firstName = document.querySelector("#myform [name=\"firstName\"]");
-            var counter = document.getElementById("primulInput").value.length; 
+            var counter = document.querySelector("#myform [name=\"counter\"]");
+            
+            document.getElementById("counterBox").innerHTML = firstName.length;
         }
     </script>
 </body>
