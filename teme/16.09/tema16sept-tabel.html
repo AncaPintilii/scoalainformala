@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>Tema 16 septembrie - tabel imagini</title>
+    <style>
+        .table, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<!--
+    
+-> done Construiti un tabel cu 3 randuri si 3 coloane care sa contina imagini in fiecare celula 
+(implicit sa fie imaginea asta: http://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg).
+
+-> Pe mouse over pe fiecare imagine in parte trebuie sa schimbati imaginea in urmatoarea imagine: http://www.drodd.com/images14/x12.jpg
+
+-> La mouseout de pe imagine, trebuie sa schimbati inapoi imaginea in prima (cea goala).
+
+-> done Punet-ti border la tabel ca sa se vada initial ceva.
+
+Ca sa schimbati imaginea unui tag <img src="" /> se poate face cu imagine.src = "linkul catre noua imagine";
+Se poate folosi this-ul de la eveniment:
+
+onmouseover="schimbaImaginea(event,this)"
+function schimbaImaginea(event,elem) {
+    elem.scr="....."
+} -->
+    <table>
+        <tr>
+            <td>
+                <img src="foto.jpg" onmouseover="change(event, this)" onmouseout="change('off')"  alt="EmptyPhoto" style="width: 224px; height: 216px">
+                <img src="foto.jpg" alt="EmptyPhoto" style="width: 224px; height: 216px">
+            </td>
+            <td>
+                <img src="foto.jpg" alt="EmptyPhoto" style="width: 224px; height: 216px">
+            </td>
+            <td>
+                <img src="foto.jpg" alt="EmptyPhoto" style="width: 224px; height: 216px">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="foto.jpg" alt="EmptyPhoto" style="width: 224px; height: 216px">
+            </td>
+            <td>
+                <img src="foto.jpg" alt="EmptyPhoto" style="width: 224px; height: 216px">
+            </td>
+            <td>
+                <img src="foto.jpg" alt="EmptyPhoto" style="width: 224px; height: 216px">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="foto.jpg" alt="EmptyPhoto" style="width: 224px; height: 216px">
+            </td>
+            <td>
+                <img src="foto.jpg" alt="EmptyPhoto" style="width: 224px; height: 216px">
+            </td>
+            <td>
+                <img src="foto.jpg" alt="EmptyPhoto" style="width: 224px; height: 216px">
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
