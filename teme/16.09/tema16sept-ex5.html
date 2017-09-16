@@ -3,9 +3,7 @@
     <title>Tema pentru 16 septembrie - ex 5</title>
 <!-- 5. Pastrati doar 1 input si afisati intr-un span/div in coltul dreapta jos, lungimea sirului de caractere 
     tastat. (ex 10, tema 26 August, ceva de genul: 
-https://www.webcomponents.org/element/PolymerElements/paper-input/demo/demo/index.html) 
-
-N-am eroare, dar n-am idee de ce nu-mi merge...-->
+https://www.webcomponents.org/element/PolymerElements/paper-input/demo/demo/index.html) -->
 
 </head>
 <body style="background-color:#9CAFB7">
@@ -17,7 +15,7 @@ N-am eroare, dar n-am idee de ce nu-mi merge...-->
     </form>
 
     <div>
-        <input name="counter" id="counterBox" type="text" placeholder="Character counter" style="margin-left: 70%" />
+        <p name="counter" id="counterBox" value="0" style="margin-left: 70%"> </p>
     </div>
     
     <script>
@@ -25,7 +23,7 @@ N-am eroare, dar n-am idee de ce nu-mi merge...-->
             var firstName = document.querySelector("#myform [name=\"firstName\"]");
             var counter = document.querySelector("#myform [name=\"counter\"]");
             
-            document.getElementById("counterBox").innerHTML = firstName.length;
+            document.getElementById("counterBox").innerHTML = firstName.value.length;
         }
     </script>
 </body>
