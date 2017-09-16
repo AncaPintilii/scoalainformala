@@ -1,12 +1,19 @@
 <DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="style.css"></link>
     <script src="script.js"></script>
 </head>
 <body>
     <p>Note</p>
+    <a class="button" onclick="sortAsc(note)">Sort Asc</a>
+    <a class="button" onclick="sortDesc(note)">Sort Desc</a>
     <div id="note">
-        
+
     </div>
+    <script>
+        note = generateRandomArray();
+        displayNote(note);
+    </script>
 </body>
 </html>
