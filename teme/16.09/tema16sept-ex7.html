@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Tema pentru 16 septembrie - ex 5</title>
+<!-- 7. Pastrati doar 1 input si folosind event.preventDefault pe evenimentul onkeypress, opriti utilizatorul sa mai 
+    introduca orice altceva decat numere. (tip: puteti sa gasiti caracterul tastat in event.key)--> 
+
+</head>
+<body style="background-color:#9CAFB7">
+    <form id="myform">
+    <fieldset style="background-color: #E6B89C"> <legend style="font-size: 20px">NAME</legend>
+        <input name="firstName" id="primulInput" type="text" placeholder="First Name" 
+        onkeypress="stop(event, this);"/> 
+        <br />
+    </fieldset> <br />
+    </form>
+
+    <div>
+        <p name="counter" id="counterBox" value="0" style="margin-left: 70%"> </p>
+    </div>
+    
+    <script>
+            var firstName = document.querySelector("#myform [name=\"firstName\"]");
+                function stop () {
+                    if (event.key >= "a" && event.key <= "z") {
+                    event.preventDefault ();
+                }
+            }    
+    </script>
+</body>
+</html>

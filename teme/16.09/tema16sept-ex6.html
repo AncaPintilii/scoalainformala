@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Tema pentru 16 septembrie - ex 5</title>
+<!-- 6. Plecand de la ex 5, limitati numarul de caractere la 10. In momentul in care am ajuns la 10, inrositi counterul 
+si folosind event.preventDefault() pe evenimentul onkeypress opriti utilizatorul sa mai introduca caractere in plus -->
+
+</head>
+<body style="background-color:#9CAFB7">
+    <form id="myform">
+    <fieldset style="background-color: #E6B89C"> <legend style="font-size: 20px">NAME</legend>
+        <input name="firstName" id="primulInput" type="text" placeholder="First Name" 
+        onkeypress="stop(event, this);" oninput="charNb(event, this);" maxlength="10"/> 
+        <br />
+    </fieldset> <br />
+    </form>
+
+    <div>
+        <p name="counter" id="counterBox" value="0" style="margin-left: 70%"> </p>
+    </div>
+    
+    <script>
+        function charNb () {
+            var firstName = document.querySelector("#myform [name=\"firstName\"]");
+            document.getElementById("counterBox").innerHTML = firstName.value.length;
+                if (stop >= 10) {
+                    document.getElementById("counterBox").style.color = "pink";
+                    event.preventDefault ();
+                }
+        }
+    </script>
+</body>
+</html>
