@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css"></link>
+    <script src="script.js"></script>
+    <title>Tema pentru 23 septembrie - Catalog</title>
+</head>
+<body>
+    <div id="lista_elevi_wrapper">
+        <h1>Lista elevi</h1>
+        
+            <fieldset>
+                <label>Nume:</label>
+                <input type="text" id="nume" name="nume" onkeypress="if(event.keyCode == 13) {
+                    document.getElementById('addElevButton').click(); 
+                }" />
+                <button onclick="addElev()">Adauga elev</button>
+            </fieldset>
+        
+        <table>
+            <tr><br />
+                <a class="button1" onclick="sortAscMedie()">Sorteaza ascendent dupa medie note</a> <br /> <br />
+                <a class="button1" onclick="sortDescMedie()">Sorteaza descendent dupa medie note</a> <br /> <br />
+            </tr>
+            <tr>
+                <th>Nume</th>
+                <th>Medie note</th>
+                <th>Vezi notele</th>
+            </tr>
+            <tr>
+                <td><div id="totiElevii">Niciun elev adaugat</div></td>
+            </tr>
+        </table>
+        </div>
+    </div>
+    <div id="note_elev_wrapper">
+        <button style="margin: 5px" id="ascundeNote" onclick="ascNote">Ascunde notele</button>
+        <h1>Note elev: </h1>
+            <fieldset>
+                <label>Nota:</label>
+                <input type="text" id="nota" name="nota" onkeypress="if(event.keyCode == 13) {
+                    document.getElementById('addNotaButton').click(); 
+                }" />
+                <button id="addNotaButton" onclick="addNota">Adauga nota</button>
+            </fieldset>
+        <table>
+            <tr><br />
+                <a class="button2" onclick="sortAscNote()">Sorteaza ascendent notele</a> <br /> <br />
+                <a class="button2" onclick="sortDescNote()">Sorteaza descendent notele</a> <br /> <br />
+            </tr>
+            <tr>
+                <th>Note</th>
+            </tr>
+            <tr>
+                <td><div id="toateNotele">Nicio nota adaugata</div></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
