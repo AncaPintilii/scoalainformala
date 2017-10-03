@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css"></link>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="input_wrapper">
+    </div>
+    <input type="text" id="oras" autofocus onkeypress="if(event.keyCode==13) { document.getElementById('btnAfiseazaVremea').click();}"
+    />
+    <button id="btnAfiseazaVremea" onclick="afiseazaVremea()">Afiseaza vremea</button>
+
+
+    <div id="vremea_wrapper">
+        <img id="poza" src="" /> <br />
+        Descriere: <span id="descriere"></span> <br /> 
+        Umiditate: <span id="umiditate"></span><br /> 
+        Presiune: <span id="presiune"></span><br /> 
+        Temperatura curenta: <span id="temperatura_acum"> </span><br /> 
+        Maxima zilei: <span id="max"></span><br />
+        Minima zilei: <span id="min"></span><br />
+    </div>
+
+</body>
+
+</html>

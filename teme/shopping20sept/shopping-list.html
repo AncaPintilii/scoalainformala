@@ -1,0 +1,98 @@
+<html>
+
+<head>
+    <!-- Un formular de adaugare noi elemente in lista de cumparaturi:
+1. formularul contine un input de tip text si un buton "Add item"
+2. adaugarea elementelor noi se poate face atat la apasarea tastei enter cat si la apasarea butonului "Add item"
+
+    Un tabel unde sunt afisate elementele adaugate in lista folosind formularul:
+1. elementele vor fi afisate sub forma unui tabel cu 2 coloane: item description, action
+2. in coloana item description va fi afisat textul introdus de utilizator in lista, iar pe coloana action va fi afisat un buton 
+"Mark as buyed"
+3. butonul 'Mark as buyed" va adauga o clasa de css randului din tabel, ce va face textul sa apara taiat: "strikethrough"
+4. deasupra listei ce afiseaza elementele adaugate de utilizator, adaugati 2 butoane ce vor sorta crescator si descrescator 
+elementele listei-->
+    <title>Lista shoppinguiala</title>
+</head>
+<style>
+    .marked {
+        /*clasa de css care afiseaza textul taiat*/
+        text-decoration: line-through;
+    }
+</style>
+
+<body style="background-color: #084C8D">
+    <div style="background-color: #6DAA27; margin:10px; padding-top: 10px; text-align: center; border-radius: 20px">
+        <h1>Lista shoppinguiala</h1> <br /> <br />
+        <!-- input text:-->
+        <input style="border-radius: 10px; height:50px; width: 300px" type="text" id="nameItem" autofocus onkeypress="if(event.keyCode==13) { document.getElementById('btnAddItem').click()}"
+        />
+        <!-- button add item:-->
+        <button style="height:50px; font-size: 20px; width: 100px; border-radius: 10px; background-color: #F6AE2D" onclick="addItem(); displayItems();"
+            id="btnAddItem">Add Item</button> <br /><br />
+        <!-- buttons sort asc si desc:-->
+        <button style="height:40px; margin: 15px; font-size: 20px; width: 110px; border-radius: 10px; background-color: #F2641A"
+            onclick="sortAsc(); displayItems()">Sort asc</button>
+        <button style="height:40px; margin: 15px; font-size: 20px; width: 110px; border-radius: 10px; background-color: #F2641A"
+            onclick="sortDesc(); displayItems()">Sort desc</button>
+        <!--divul ce contine toate items added:-->
+        <div id="lista_items"></div>
+    </div>
+    <script>
+        var items = []; /* var cu itemsurile adaugate*/
+        var indexItemPeCareAmDatClick = []; /*fiecare item adaugat pentru a stii la functia cu marked si line-through*/
+        /*functia ce adauga items in lista:*/
+        function addItem() {
+            var item = document.getElementById("nameItem").value;
+            items.push(item);
+            document.getElementById("nameItem").value = "";
+        }
+        /*functia care le afiseaza*/
+        function displayItems() {
+            var htmlItems = `
+                    <table style="font-size:19px; padding-left: 30%">
+                        <tr>
+                            <th>Item description</th>
+                            <th>Action</th>
+                            <th></th>
+                        </tr>
+                `;
+            for (var i = 0; i < items.length; i++) {
+                htmlItems = htmlItems + `
+                    <tr class = ${indexItemPeCareAmDatClick[items[i]]}>
+                        <td>${items[i]}</td>
+                        <td> 
+                            <button onclick="markedItem('${items[i]}'); displayItems()" style="background-color: #CC3628; 
+                            height:30px; margin: 15px; font-size: 19px; width: 170px; border-radius: 10px;">Mark as buyed</button> 
+                        </td> 
+                    </tr>
+                `;
+            }
+            htmlItems = htmlItems + "</table>"
+            document.getElementById("lista_items").innerHTML = htmlItems;
+        }
+        /*functie sort asc*/
+        function sortAsc() {
+            items.sort(function (a, b) {
+                return a.localeCompare(b);
+            });
+        }
+
+        /*unctie sort desc*/
+        function sortDesc() {
+            items.sort(function (a, b) {
+                return b.localeCompare(a);
+
+            });
+        }
+        /*functia care le da ca marked si le taie:*/
+        function markedItem(items) {
+            /*var ele = document.getElementById("lista_items");
+    ele.style.setProperty("text-decoration", "line-through");
+            }*/
+            indexItemPeCareAmDatClick[items] = 'marked';
+        }
+    </script>
+</body>
+
+</html>

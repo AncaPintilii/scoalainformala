@@ -40,16 +40,6 @@ function calculeazaMin (a) {
     return min;
 }
 
-function findPositionInArray (a, valueToFind) {
-    var positionWhereElementIsFound = 0;
-    for (var i = 0; i < a.length; i++) {
-        if (valueToFind == a[i]) {
-                positionWhereElementIsFound = i;
-        }
-    }
-        return positionWhereElementIsFound;
-}
-
 function sortAsc(note) {
     note = note.slice ();//creeaza o copie a vectorului
     var sortedArray = []; 

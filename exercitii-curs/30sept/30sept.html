@@ -1,0 +1,63 @@
+<html>
+    <head>
+<script> 
+    //maximul a n numere//
+    function max(arr) {
+        var maxim = arr[0];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i]>maxim) {
+                max = arr[i];
+            }
+        }
+                        return maxim;
+    }
+    //media artimetica -> 7, 9 ,3
+    function ma (arr) { //fctie care primeste ca parametru 7,9,3
+        var s = 0; //incepe cu 0
+        var nr = arr.length; //parcurge nrul de elemente
+        for (var i = 0; i < nr; i++) { //parcurgem sirul
+            s = s + arr[i]; // suma devine suma anterioara + urmatorul parametru din sir
+        }
+        var medie = s / nr; //media
+        return medie; //returneaza media
+    }
+    //produsul a n numere
+    function produs(arr) {
+        var p = 1;
+        for (var i = 0; i < arr.length; i++) {
+            p = p * arr[i];
+        }
+        return p;
+    }
+    console.log(produs([7,9,3]));
+    //max primea un arr -> function max(arr)... intorcea maximul. cum facem apel 
+    //(de fiecare data cand scriu numele functiei si pun paranteze)? max();
+
+    //comparare alfabetic:
+    // "a".localcompare("b")
+function varTest() {
+    var x = 1;
+    if (true) {
+        var x = 2;
+        console.log(x);
+    }
+    console.log(x);
+}
+varTest();
+///let
+function letTest() {
+    let x = 1;
+    if (true) {
+        let x = 2;
+        console.log(x);
+    }
+    console.log(x);
+}
+letTest();
+//var unei constante nu se pot schimba prin "primeste ceva"
+    </script>
+    </head>
+    <body>
+
+    </body>
+</html>

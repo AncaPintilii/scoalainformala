@@ -1,0 +1,33 @@
+/*tema*/
+#elevi_wrapper {
+    background: #400101;
+    color: #BF789F;
+    width: 100%;
+    float: left;
+    padding-left: 5px;
+}
+#note_wrapper {
+    background: #2C4001;
+    color: #93A603;
+    display: none;
+    width: 50%;
+    float: right;
+    padding-left: 5px;
+}
+
+.button1 {
+    background: #BF789F;
+    color: white;
+    padding: 2px;
+    margin: 2px;
+    color: #400101;
+}
+.button2 {
+    background: #93A603;
+    color: white;
+    padding: 2px;
+    margin: 2px;
+    color: #2C4001;
+}
+
+

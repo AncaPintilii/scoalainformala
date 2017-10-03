@@ -1,0 +1,40 @@
+<!--tema-->
+<DOCTYPE html>
+    <html>
+
+    <head>
+        <link rel="stylesheet" href="style.css"></link>
+        <script src="script.js"></script>
+    </head>
+
+    <body>
+        <div id="elevi_wrapper">
+            <div id="adaugare_elev_wrapper" >
+                <h1>Lista elevi</h1>
+                    <a class="button1" onclick="sortAscMedie(medieNote)">Sorteaza ascendent dupa medie note</a> <br /> <br />
+                    <a class="button1" onclick="sortDescMedie(medieNote)">Sorteaza descendent dupa medie note</a> <br /> <br />
+                    <label>Nume:</label>
+                    <div id="adaugare_elev_wrapper">
+                        <input type="text" id="nume_elev" autofocus onkeypress="if(event.keyCode==13) { document.getElementById('btnAdaugareElev').click();}"
+                        />
+                        <button onclick="adaugareElev(); displayElevi();" id="btnAdaugareElev">Adaugare elev</button>
+                    </div> <br />
+            </div>
+            <div id="lista_elevi">
+            </div>
+        </div>
+        
+        </div>
+        <div id="note_wrapper"> <br />
+            <button id="btnAscundeNote" onclick="hideNote();">Ascunde notele</button> <br /> <br />
+            <a class="button2" onclick="sortAscNote(note)">Sorteaza ascendent notele</a> <br /> <br />
+            <a class="button2" onclick="sortDesNote(note)">Sorteaza descendent notele</a> <br />
+            <div><h2>Nume elev: </h2><span id="span_nume_elev"></span></h2></div>
+            <div id="adaugare_note_wrapper">
+                <input type="number" id="nota_elev" onkeypress="if(event.keyCode==13) {document.getElementById('btnAdaugaNota').click();}"/>
+                <button id="btnAdaugaNota" onclick="adaugaNota(); displayNote(); medieNote[indexElevPeCareAmDatClick]=medieNoteElev(); displayElevi();">Adauga nota</button>
+            </div>
+            <div id="lista_note"></div> <br />
+    </body>
+
+    </html>
