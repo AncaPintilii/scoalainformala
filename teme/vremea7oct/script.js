@@ -15,11 +15,9 @@ function afiseazaVremea() {
             console.log(json); 
             gJson = json;
 
-            
             var image = JSON.parse(json).weather[0].icon;
             var sufix =".png";
             document.getElementById("poza").src = URL_WEATHER_ICON_PREFIX + image + sufix; 
-
 
             var descriereAcum = JSON.parse(json).weather[0].description;
             document.getElementById("descriere").innerHTML = descriereAcum;
@@ -38,15 +36,27 @@ function afiseazaVremea() {
 
             var tempMin = JSON.parse(json).main.temp_min;
             document.getElementById("min").innerHTML = tempMin;
-
-
-            
             //<- aici se termina tratamentul raspunsului de la server
         }
     };
     xhttp.open("GET", URL_CURRENT_WEATHER + oras, true); //true - async, false - sync
     xhttp.send();
 }
+/*function afiseazaPrognoza() {
+    var oras = document.getElementById("oras").value;
+    console.log(oras);
 
+    var xhttp = new XMLHttpRequest(); //face o instanta de obiect
+    xhttp.onreadystatechange = function () { //se specifica comportamentul daca primim 200
+        if (this.readyState == 4 && this.status == 200) { //aici incepe tratamentul raspunsul de la server ->
+            var json = this.responseText;
+            console.log(json); 
+            gJson = json;
+
+            }
+    };
+    xhttp.open("GET", URL_FORECAST_WEATHER + oras, true); //true - async, false - sync
+    xhttp.send();
+}*/
 
 

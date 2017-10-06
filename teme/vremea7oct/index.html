@@ -1,27 +1,51 @@
 <!DOCTYPE html>
 <html>
+<!--1. Vremea acum:
+1.1 Creati un div pentru functionalitatea "vremea acum", ce afiseaza urmatoarele informatii:
+Descriere, Umiditate, Presiune, Temperatura curenta, Minima zilei, Maxima zilei, Prognoza meteo !! ✓ ✓ ✓ ✓ ✓ ✓ X !!
+1.2 Afisati si o imagine ce reprezinta o ilustratie grafica a descrierii din campul de mai sus !! ✓ !!
+2. Prognoza meteo:
+2.1 Creati un div pentru functionalitatea "afisaza prognoza", ce afiseaza urmatorele informatii:
+ora, temperatura si descrierea vremii. !! X X X !!
+2.2 Afisati prognoza meteo pentru urmatoarele 6 zile, pentru fiecare zi, prognoza va fi afisata din 3 in 3 ore !! X !!
+2.3 Pentru fiecare prognoza afisata, afisati si o imagine ce reprezinta interpretarea prognozei pentru fiecare interval orar !! X !!
+2.4 Pentru a prelua datele necesare pentru fiecare oras in parte, puteti folosi url-urile de mai jos:
 
-<head>
+var URL_CURRENT_WEATHER = "https://api.openweathermap.org/data/2.5/weather?appid=69518b1f8f16c35f8705550dc4161056&units=metric&q=";
+var URL_FORECAST_WEATHER = "https://api.openweathermap.org/data/2.5/forecast?appid=69518b1f8f16c35f8705550dc4161056&units=metric&q=";
+var URL_WEATHER_ICON_PREFIX = "http://openweathermap.org/img/w/"; // sufix .png
+
+pentru a putea folosi cu succes url-urile pentru api-ul de weather, adaugati la sfarsitul fiecarui url, 
+numele orasului pentru care doriti sa interogati serverul-->
+
+<head></head>
     <link rel="stylesheet" href="style.css"></link>
     <script src="script.js"></script>
 </head>
 
-<body>
-    <div id="input_wrapper">
-    </div>
-    <input type="text" id="oras" autofocus onkeypress="if(event.keyCode==13) { document.getElementById('btnAfiseazaVremea').click();}"
-    />
-    <button id="btnAfiseazaVremea" onclick="afiseazaVremea()">Afiseaza vremea</button>
+<body class="body">
+    <div id="input_wrapper" class="divLoc">
+        <h2>Baga locatia:</h2>
+        <input class="input" type="text" id="oras" autofocus onkeypress="if(event.keyCode==13) { document.getElementById('btnAfiseazaVremea').click();}"
+        />
+        <button class="button" id="btnAfiseazaVremea" onclick="afiseazaVremea()">Afiseaza vremea</button>
+        <button class="button" id="btnPrognoza" onclick="afiseazaPrognoza()">Afiseaza prognoza</button>
+    </div> <br />
 
-
-    <div id="vremea_wrapper">
-        <img id="poza" src="" /> <br />
+    <div id="vremea_wrapper" class="divNow">
+        <h2>Vremea acum:</h2>
+        <img id="poza" src="" /> <br /> 
         Descriere: <span id="descriere"></span> <br /> 
-        Umiditate: <span id="umiditate"></span><br /> 
+        Umiditate: <span id="umiditate"></span><br/> 
         Presiune: <span id="presiune"></span><br /> 
-        Temperatura curenta: <span id="temperatura_acum"> </span><br /> 
-        Maxima zilei: <span id="max"></span><br />
+        Temperatura curenta: <span id="temperatura_acum"></span><br /> 
+        Maxima zilei: <span id="max"></span><br /> 
         Minima zilei: <span id="min"></span><br />
+    </div> <br />
+
+    <div id="prognoza_wrapper" class="divForever">
+        <h2>Vremea in urmatoarele zile:</h2>
+
     </div>
 
 </body>
