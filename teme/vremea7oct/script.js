@@ -42,7 +42,7 @@ function afiseazaVremea() {
     xhttp.open("GET", URL_CURRENT_WEATHER + oras, true); //true - async, false - sync
     xhttp.send();
 }
-/*function afiseazaPrognoza() {
+function afiseazaPrognoza() {
     var oras = document.getElementById("oras").value;
     console.log(oras);
 
@@ -52,11 +52,14 @@ function afiseazaVremea() {
             var json = this.responseText;
             console.log(json); 
             gJson = json;
-
             }
     };
     xhttp.open("GET", URL_FORECAST_WEATHER + oras, true); //true - async, false - sync
     xhttp.send();
+}
+/*function myFunction() {
+    var d = new Date();
+    var n = d.getDate();
+    document.getElementById("somethingsomething").innerHTML = n;
 }*/
-
 
