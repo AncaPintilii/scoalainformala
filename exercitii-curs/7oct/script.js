@@ -119,9 +119,22 @@ function getMultipluDe17(arr) {
     } 
     return list;
 }
-
 var test2 = [6, 17, 34, 18];
+var p = 1; //produsul tuturor multiplilor 17 din vectorul test2
+var multipliiDe17 = getMultipluDe17(test2);
+for (var i = 0; i < multipliiDe17.length; i++) {//de continuat acasa
+
+    //console.log(multipliiDe17[i]); -> oentru a afisa la ex asta
+}
+//produsul tuturor multiplilor 17 din vectorul test2
+//
+var p = 1;
 var multipliiDe17 = getMultipluDe17(test2);
 for (var i = 0; i < multipliiDe17.length; i++) {
-    console.log(multipliiDe17[i]);
+    p = p * multipliiDe17[i];
 }
+var prodPeNrMultiplii = 0;
+prodPeNrMultiplii = p / multipliiDe17.length;
+console.log(prodPeNrMultiplii);
+//
+
