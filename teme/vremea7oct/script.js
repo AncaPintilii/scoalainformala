@@ -14,7 +14,7 @@ function afiseazaVremea() {
             var json = this.responseText;
             console.log(json); 
             gJson = json;
-
+            
             var image = JSON.parse(json).weather[0].icon;
             var sufix =".png";
             document.getElementById("poza").src = URL_WEATHER_ICON_PREFIX + image + sufix; 
