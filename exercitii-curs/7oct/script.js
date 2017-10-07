@@ -55,7 +55,6 @@ function isPar(nr) {
     else {
         return false;
     }
-
 }
 isPar(8);
 //0<=nr<=20 sa-mi afiseze toate numerele pare
@@ -77,5 +76,52 @@ function isPar3() {
     }
     return arr;
 }
+//functie care primeste ca parametru un numar si-mi spune daca e sau nu e multiplu de 5
+function multipluDe5(nr) {
+    if (nr % 5 == 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+//arr de numere care-mi intoarce toate numerele multiplii de 5
+function getMultipluDe5(arr) {
+    var list = [];
+    for (var i = 0; i < arr.length; i++) {
+        if (multipluDe5(arr[i])) {
+            list.push(arr[i]);
+        }
+    }
+    return list;
+}
+//facem apel de functia de mai sus, var care contine toti multiplii de test si apoi ii afiseaza la consola
+var test = [1, 5, 7];
+var multiplii = getMultipluDe5(test);  //var multiplii contine toti multiplii de 5 din variabila test
+for (var i = 0; i < multiplii.length; i++) {
+    console.log(multiplii[i]);
+}
+//la fel ca mai sus, doar ca facem cu 17
+function multipluDe17(nr) {
+    if (nr % 17 == 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+function getMultipluDe17(arr) {
+    var list = [];
+    for (var i = 0; i < arr.length; i++) {
+        if (multipluDe17(arr[i])) {
+            list.push(arr[i]);
+        }
+    } 
+    return list;
+}
 
-
+var test2 = [6, 17, 34, 18];
+var multipliiDe17 = getMultipluDe17(test2);
+for (var i = 0; i < multipliiDe17.length; i++) {
+    console.log(multipliiDe17[i]);
+}
