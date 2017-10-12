@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css"></link>
+    <script src="script.js"></script>
+    <!--Creati 3 pagini html, in care sa includeti elemente de javascript si css(fisiere separate), 
+    care sa implementeze funcionalitatile necesare unei aplicatii ce afiseaza meniul unui restaurant 
+    (folositi tehnica AJAX si mapati raspunsul primit de la server pe clase javascript):
+
+1. ecran meniu preparate
+    -> preluati lista de preparate din server, folosind ajax
+    -> afisati preparatele sub forma de tabel(imagine preparat, nume, ingrediente si buton detalii)
+    -> buton detalii, contine un link ce va directiona catre pagina details.html si va include in link id-ul preparatului:
+        ->exemplu de link pentru redirect: http://.../meniu/details.html?id=0
+    -> adaugati un filtru ce contine, un input text si un buton de cautare, ce filtreaza preparatele in pe baza ingredientelor
+1. ecran detalii preparat
+    -> ecranul de detalii preparat, contine imaginea preparatului, numele, ingredientele si reteta
+1. ecran contact
+    -> ecranul de contact contine adresa de conact
+    -> (optional) harta google map, cu locatia restaurantului
+    
+Folositi url-urile din variabilele de mai jos pentru a face requesturi catre server:
+var MENU_SERVER_URL = "https://restaurant-menu-v1.firebaseio.com/.json";
+var MENU_ITEM_SERVER_URL = "https://restaurant-menu-v1.firebaseio.com/menu/";
+Exemplu de apel pentru detalii preparat: https://restaurant-menu-v1.firebaseio.com/menu/0.json - unde 0 este id-ul preparatului-->
+<title>Anca's awesome catering - Home</title>
+</head>
+
+<body class="body">
+    <div class="search_wrapper">
+        <h1>Anca's awesome catering</h1>
+        <input class="input" type="text" id="search" autofocus onkeypress="if(event.keyCode==13) { document.getElementById('btnAfiseazaProduse').click();}"
+        />
+        <button class="button-search" id="btnAfiseazaProduse" onclick="afiseazaProduse()">Cauta in ingrediente</button>
+        <button class="button-contact" id="btnContact">Contact</button>
+    </div>
+    <div class="produse_wrapper" id="toateProdusele">
+        <table>
+            <tr>
+
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

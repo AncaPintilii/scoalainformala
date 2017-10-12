@@ -1,0 +1,37 @@
+.body {
+    background-color: #baf3ed;
+    margin: 5px;
+    padding: 10px;
+}
+.search_wrapper {
+    margin: 5px;
+    padding: 10px;
+}
+.produse_wrapper {
+    margin: 5px;
+    padding: 10px;
+}
+.input {
+    font-size: 20px;
+    height: 35px;
+    width: 250px;
+}
+.button-search {
+    background-color: #bba7db;
+    color: white;
+    font-size: 15px;
+    height:40px; 
+    width: 200px;
+    margin-left: 30px;
+    border-radius: 8px;
+}
+.button-contact {
+    background-color: #6796f9;
+    color: white;
+    font-size: 17px;
+    height:40px; 
+    width: 100px;
+    float: right;
+    margin-left: 30px;
+    border-radius: 8px;
+}

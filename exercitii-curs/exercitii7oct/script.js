@@ -96,7 +96,7 @@ function getMultipluDe5(arr) {
     return list;
 }
 //facem apel de functia de mai sus, var care contine toti multiplii de test si apoi ii afiseaza la consola
-var test = [1, 5, 7];
+var test = [1, 5, 10, 7];
 var multiplii = getMultipluDe5(test);  //var multiplii contine toti multiplii de 5 din variabila test
 for (var i = 0; i < multiplii.length; i++) {
     console.log(multiplii[i]);
@@ -116,7 +116,7 @@ function getMultipluDe17(arr) {
         if (multipluDe17(arr[i])) {
             list.push(arr[i]);
         }
-    } 
+    }
     return list;
 }
 var test2 = [6, 17, 34, 18];
