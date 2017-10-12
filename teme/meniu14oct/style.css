@@ -3,7 +3,7 @@
     margin: 5px;
     padding: 10px;
 }
-.search_wrapper {
+.search_wrapper, .detalii_wrapper, .contact_wrapper {
     margin: 5px;
     padding: 10px;
 }
@@ -27,6 +27,16 @@
 }
 .button-contact {
     background-color: #6796f9;
+    color: white;
+    font-size: 17px;
+    height:40px; 
+    width: 100px;
+    float: right;
+    margin-left: 30px;
+    border-radius: 8px;
+}
+.button-meniu {
+    background-color: #e34262;
     color: white;
     font-size: 17px;
     height:40px; 

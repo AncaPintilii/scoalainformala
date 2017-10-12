@@ -23,21 +23,24 @@ Folositi url-urile din variabilele de mai jos pentru a face requesturi catre ser
 var MENU_SERVER_URL = "https://restaurant-menu-v1.firebaseio.com/.json";
 var MENU_ITEM_SERVER_URL = "https://restaurant-menu-v1.firebaseio.com/menu/";
 Exemplu de apel pentru detalii preparat: https://restaurant-menu-v1.firebaseio.com/menu/0.json - unde 0 este id-ul preparatului-->
-<title>Anca's awesome catering - Home</title>
+<title>Mancatorie - Home</title>
 </head>
 
 <body class="body">
     <div class="search_wrapper">
-        <h1>Anca's awesome catering</h1>
+        <h1>Mancatorie</h1>
         <input class="input" type="text" id="search" autofocus onkeypress="if(event.keyCode==13) { document.getElementById('btnAfiseazaProduse').click();}"
         />
         <button class="button-search" id="btnAfiseazaProduse" onclick="afiseazaProduse()">Cauta in ingrediente</button>
-        <button class="button-contact" id="btnContact">Contact</button>
+        <a href ="https://ancapintilii.github.io/scoalainformala/teme/meniu14oct/3contact.html"><button class="button-contact" id="btnContact">Contact</button></a>
+        
     </div>
     <div class="produse_wrapper" id="toateProdusele">
-        <table>
+        <table> <!--tabel(imagine preparat, nume, ingrediente si buton detalii)-->
             <tr>
-
+                <td>
+                    <img id="poza" src="" /> <br /> 
+                </td>
             </tr>
         </table>
     </div>
