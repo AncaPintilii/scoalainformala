@@ -1,8 +1,11 @@
+/*Spoiler alert: stiu ca nu trebuie sa-mi afiseze toate produsele cand dai click pe butonul de search, dar doar asa am reusit sa
+vad in json si network. Si tot n-am gasit solutia.*/
+
 var MENU_SERVER_URL = "https://restaurant-menu-v1.firebaseio.com/.json";
 var MENU_ITEM_SERVER_URL = "https://restaurant-menu-v1.firebaseio.com/menu/";
-
+var meniu = [];
 var gJson;
-function afiseazaProduse() {
+function afiseazaProduseDupaIngredient() {
     var produs = document.getElementById("search").value;
 
     var xhttp = new XMLHttpRequest(); //face o instanta de obiect
@@ -12,20 +15,45 @@ function afiseazaProduse() {
             console.log(json);
             gJson = json;
 
-            var image = JSON.parse(json).weather[0].icon;
-            var sufix =".png";
-            document.getElementById("poza").src = URL_WEATHER_ICON_PREFIX + image + sufix; 
+            var imagine = JSON.parse(json).menu.imagine;
+            document.getElementById("imagine").innerHTML = imagine;
 
-            /*var nume = JSON.parse(json).weather[0].description;
-            document.getElementById("descriere").innerHTML = descriereAcum;
+            var nume = JSON.parse(json).menu.nume;
+            document.getElementById("nume").innerHTML = nume;
 
-            var ingrediente = JSON.parse(json).weather[0].description;
-            document.getElementById("descriere").innerHTML = descriereAcum;
-            
-            buton detalii*/
+            var ingrediente = JSON.parse(json).menu.ingrediente;
+            document.getElementById("ingrediente").innerHTML = ingrediente;
 
+            var reteta = JSON.parse(json).menu.reteta;
+            document.getElementById("reteta").innerHTML = reteta;
         }
     };
-    xhttp.open("GET", MENU_ITEM_SERVER_URL + search, true); //true - async, false - sync
+    xhttp.open("GET", MENU_SERVER_URL, true); //true - async, false - sync
     xhttp.send();
+}
+function afiseazaTotMeniul() {
+    var meniuTabel = `
+        <table>`;
+            for (var i = 0; i < meniu.length; i++) {
+                meniuTabel = meniuTabel + `
+                    <tr>
+                        <td>
+                            <div id="imagine"></div>
+                        </td>
+                        <td>
+                            <div id="nume"></div>
+                        </td>
+                        <td>
+                            <div id="ingrediente"></div>
+                        </td>
+                        <td>
+                            <div id="reteta">
+                            <a href="https://ancapintilii.github.io/scoalainformala/teme/meniu14oct/3contact.html?id=${meniu[i]}" class="button-detalii">DETALII</div>
+                        </td>
+                    </tr>
+                    `;  
+            }
+                meniuTabel = meniuTabel + `
+        </table>`;
+document.getElementById("toateProdusele").innerHTML = meniuTabel;
 }
