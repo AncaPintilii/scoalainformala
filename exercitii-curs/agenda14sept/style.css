@@ -1,0 +1,42 @@
+.body {
+    background-color:#fef8e1;
+}
+.h2 {
+    text-align: center;
+    font-size: 30px;
+}
+#input_wrapper { /* #-ul e pentru id */
+    background-color: #feca27;
+    margin: auto;
+    padding-top: 20px ;
+    padding-bottom: 20px;
+    height: 50px;
+    width: 60%;
+    text-align: center;
+}
+.div1 {
+    padding-left: 15px;
+    float: left;
+    font-size: 20px;
+}
+.div2 {
+    float: right;
+    padding-right: 15px;
+    font-size: 20px;
+}
+#lista_wrapper {
+    background-color: #feca27;
+    margin: auto;
+    padding-top: 20px ;
+    padding-bottom: 20px;;
+    width: 60%;
+    text-align: center;
+}
+.btnAdd {
+    background-color: #3f50b5;
+    color: white;
+    height: 35px;
+    font-size: 17px;
+    border-radius: 15px;
+    
+}

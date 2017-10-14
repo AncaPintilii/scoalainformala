@@ -3,22 +3,55 @@
 
 <head>
     <link rel="stylesheet" href="style.css"></link>
-    <script src="script.js"></script>
-    
+    <script src="script.js">
+        /*  O zona ce va contine 2 input text(nume si telefon) si 1 buton pentru adaugarea de contacte noi sau editare pentru cele existente
+    adaugarea noilor contacte se poate face la apasarea butonului adauga contact
+    adaugarea noilor contacte se poate face si la apasarea tastei enter, atunci cand focusul este pe input text-ul "nr telefon"
+    in cazul in care se editeaza un contact, existent, butonul "adauga contact", va inlocui informatiile existente ale 
+contactului deja salvat in agenda
+
+O zona ce va contine 1 tabel cu 4 coloane(nume, prenume, modifica si sterge)
+    vor fi afisate toate contactele adaugate in lista
+    implementati butoanele modifica si sterge
+
+    OPTIONAL: modificati aplicatia, a.i. datele sa fie salvate pe un server de Firebase folosind cereri AJAX 
+    utilizand verbele GET, POST, PUT, DELETE*/
+    </script>
+    <title>Agenda</title>
 </head>
 
-<body>
-    <!-- tranzactii: acid atomic consistenta independente durbile
+<body class="body"></body>
+<!-- tranzactii: acid atomic consistenta independente durbile
     console, button 2 stanga toggle
 operatii pe baza de date -> http verbs
-    C reate -> P ost
+C reate -> P ost
 R ead ->  G et
 U pdate -> P ut
 D elete -> D elete
--> 
-cand scriu ceva in url si dau enter, asta e GET
+-> cand scriu ceva in url si dau enter, asta e GET-->
 
--->
+<h2 class="h2">AGENDA</h2>
+<div id="input_wrapper">
+    <div>
+        <div class="div1">
+            Nume: <input type="text" class="input" id="nume_pers" autofocus></input>
+        </div>
+        <div class="div2">
+            Telefon: <input type="number" class="input" id="telefon_pers" onkeypress="if(event.keyCode==13) { document.getElementById('btnAdd').click();}"></input>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <button class="btnAdd" id="btnAdd" onclick="adaugarePersoana(); displayPersoana();">Adauga contact</button>
+
+    </div>
+
+<br />
+
+<div id="lista_wrapper" style="display: none">
+
+</div>
+
 </body>
 
 </html>
