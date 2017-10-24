@@ -21,7 +21,7 @@ O zona ce va contine 1 tabel cu 4 coloane(nume, prenume, modifica si sterge)
 </head>
 
 <body class="body"></body>
-<!-- tranzactii: acid atomic consistenta independente durbile
+<!-- tranzactii: acid: atomic consistenta independente durbile
     console, button 2 stanga toggle
 operatii pe baza de date -> http verbs
 C reate -> P ost
@@ -42,7 +42,7 @@ D elete -> D elete
         <div style="clear: both"></div>
     </div>
 
-    <button class="btnAdd" id="btnAdd" onclick="adaugarePersoana(); displayPersoana();">Adauga contact</button>
+    <button class="btnAdd" id="btnAdd" onclick="adaugarePersoana(); displayPersoana(); modifica()">Adauga contact</button>
 
     </div>
 
