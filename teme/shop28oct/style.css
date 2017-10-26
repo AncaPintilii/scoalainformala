@@ -1,0 +1,30 @@
+.body {
+    background-color: #fbf5e9;
+    color: #73472e;
+    margin: 5px;
+    padding: 10px;
+}
+.header {
+    margin: 5px;
+    padding: 10px;
+}
+.btnCos {
+    background-color: #98002d;
+    color: #fbf5e9;
+    float: right;
+    margin-top: 25px;
+    font-size: 15px;
+    height:40px; 
+    width: 200px;
+    border-radius: 8px;
+}
+.btnAdmin {
+    background-color: #98002d;
+    color: #fbf5e9;
+    float: right;
+    margin-top: 25px;
+    font-size: 15px;
+    height:40px; 
+    width: 200px;
+    border-radius: 8px;
+}
