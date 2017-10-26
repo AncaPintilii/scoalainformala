@@ -31,11 +31,34 @@ function afiseazaProduseDupaIngredient() {
     xhttp.open("GET", MENU_SERVER_URL, true); //true - async, false - sync
     xhttp.send();
 }
+/*function getMenuAsJson(callback) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var res = this.responseText;
+            var json = JSON.parse(res);
+
+            gJson = json;
+
+            var keys = Object.keys(json.menu);
+            for (var i = 0; i < keys.length; i++) {
+                var key = keys[i];
+                var item = json.menu[key];
+                meniu.push(new SimpleMenuItem(key, item.nume, item.imagine, item.ingrediente));
+            }
+            if (callback) {
+                callback();
+            }
+        }
+    };
+    xhttp.open("GET", MENU_SERVER_URL, true);
+    xhttp.send();
+}*/
 function afiseazaTotMeniul() {
     var meniuTabel = `
         <table>`;
-            for (var i = 0; i < meniu.length; i++) {
-                meniuTabel = meniuTabel + `
+    for (var i = 0; i < meniu.length; i++) {
+        meniuTabel = meniuTabel + `
                     <tr>
                         <td>
                             <div id="imagine"></div>
@@ -51,9 +74,9 @@ function afiseazaTotMeniul() {
                             <a href="https://ancapintilii.github.io/scoalainformala/teme/meniu14oct/3contact.html?id=${meniu[i]}" class="button-detalii">DETALII</div>
                         </td>
                     </tr>
-                    `;  
-            }
-                meniuTabel = meniuTabel + `
+                    `;
+    }
+    meniuTabel = meniuTabel + `
         </table>`;
-document.getElementById("toateProdusele").innerHTML = meniuTabel;
+    document.getElementById("toateProdusele").innerHTML = meniuTabel;
 }
