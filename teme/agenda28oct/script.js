@@ -31,7 +31,7 @@ function displayPersoana() {
             <td>${persoane[i].nume}</td>
             <td>${persoane[i].telefon}</td>
             <td> 
-                <button onclick="indexPersPeCareAmDaClick=${i}; modifica()">Modifica</button> 
+                <button onclick="indexPersPeCareAmDaClick=${i}; modifica(), sterge()">Modifica</button> 
             </td>
             <td>
                 <button onclick="indexPersPeCareAmDaClick=${i}; sterge(); displayPersoana();">Sterge</button> 

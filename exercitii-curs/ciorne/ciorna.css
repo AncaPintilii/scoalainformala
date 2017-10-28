@@ -1,0 +1,21 @@
+/*  div .test - copiii lui div care au clasa test
+div>.test - 
+div.test - doar pentru divurile care au clasa test, divul trebuie sa aiba test -> 
+//////////////////
+#id
+.class
+body
+* -> stilizeaza TOT
+//////////
+:hover
+:active -> dupa ce dai click pe link
+:before
+:after
+///////
+[atribut]-> selctezi toate tagurile care au atribute -> e mai incet decat varianta .class
+/////////////
+:nth-child (odd)
+:nth-child (even)
+/////////////////
+
+*/

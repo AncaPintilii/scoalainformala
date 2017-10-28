@@ -53,14 +53,14 @@ function afiseazaPrognoza() {
             console.log(json);
             gJson = json;
 
-            var imageP = JSON.parse(json).list.weather[0].icon;
+            var imageP = JSON.parse(json).list[0].weather[0].icon;
             var sufix = ".png";
             document.getElementById("poza").src = URL_WEATHER_ICON_PREFIX + imageP + sufix;
 
-            var temperaturaP = JSON.parse(json).list.main.temp;
+            var temperaturaP = JSON.parse(json).list[0].main.temp;
             document.getElementById("temperaturaP").innerHTML = temperaturaP;
 
-            var descriereP = JSON.parse(json).list.weather[0].description;
+            var descriereP = JSON.parse(json).list[0].weather[0].description;
             document.getElementById("descriereP").innerHTML = descriereP;
             //<- aici se termina tratamentul raspunsului de la server
         }
