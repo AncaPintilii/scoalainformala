@@ -27,36 +27,44 @@
         </a>
     </div>
     <h1>Shopping cart</h1>
-    <table border=1 style="width: 80%; border-collapse: collapse; text-align: center">
+    <table id="table_cart" class="cart_tabel" border=1 style="width: 80%; border-collapse: collapse; text-align: center">
         <tr>
             <th style="width: 40%">Name</th>
             <th>Price</th>
             <th>Quantity</th>
             <th>Sub-total</th>
-            
+
         </tr>
         <tr>
-            <td>Café LatteTEST</td>
+            <td>Café Latte</td>
             <td>4.5</td>
-            <td>1</td>
+            <td>- 1 +</td>
             <td>4.5</td>
             <td>Remove</td>
         </tr>
         <tr>
-            <td>Café Latte1</td>
-            <td>5</td>
-            <td>1</td>
-            <td>5</td>
-            <td>Remove</td>
-        </tr>
-        <tr>
-            <td>Café Latte2</td>
+            <td>Cappuccino</td>
             <td>4</td>
-            <td>2</td>
-            <td>8</td>
+            <td>- 1 +</td>
+            <td>4</td>
+            <td>Remove</td>
+        </tr>
+        <tr>
+            <td>Mocha</td>
+            <td>5</td>
+            <td>- 2 +</td>
+            <td>10</td>
             <td>Remove</td>
         </tr>
     </table>
+    <div class="total">
+        <p>Items: 4</p>
+        <p>VAT: 19%</p>
+        <p>Shipping fee: 10 LEI</p>
+        <hr />
+        <h2>TOTAL: 18.5 LEI</h2>
+        <button class="btnAddToCart">Buy</button>
+    </div>
 </body>
 
 </html>

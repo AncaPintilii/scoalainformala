@@ -39,4 +39,10 @@
     width: 200px;
     border-radius: 8px;
 }
+.cart_tabel {
+    float: left;
+}
+.total {
+    float: right;
+}
 
