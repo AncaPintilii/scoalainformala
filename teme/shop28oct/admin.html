@@ -26,8 +26,9 @@ va afisa pe ecran un formular de adaugare/editare a produselor
             <button class="btnCos" id="butonCos">&#9749; Your cart</button>
         </a>
     </div>
-    <h1>Manage items</h1>
-    <table border=1 style="width: 80%; border-collapse: collapse; text-align: center">
+    <h1 style="float: left">Manage items</h1>
+    <button style="float: right" class="btnAddToCart">Add new item</button>
+    <table border=1 style="width: 100%; border-collapse: collapse; text-align: center">
         <tr>
             <th>Icon</th>
             <th>Name</th>
@@ -89,6 +90,17 @@ va afisa pe ecran un formular de adaugare/editare a produselor
             <td>Remove</td>
         </tr>
     </table>
+    <hr />
+    <div>
+        <h1 style="float: left">Add new item</h1>
+        <button style="float: right" class="btnAddToCart">Add new item</button>
+        <button style="float: right" class="btnAddToCart">Cancel</button> <br /> <br /><br /><br /><br />
+        Image: <input type="text" style="width: 90%; float: right"> <br /><br />
+        Name: <input type="text" style="width: 90%; float: right"> <br /><br />
+        Description: <input type="text" style="width: 90%; float: right"><br /><br />
+        Price: <input type="text" style="width: 90%; float: right"><br /><br />
+        Quantity: <input type="number" style="width: 90%; float: right">
+    </div>
 </body>
 
 </html>

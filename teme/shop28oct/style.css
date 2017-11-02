@@ -45,4 +45,8 @@
 .total {
     float: right;
 }
+table img{
+  width:300px;
+  height: 205px;
+}
 
