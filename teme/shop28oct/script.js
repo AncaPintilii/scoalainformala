@@ -45,7 +45,7 @@ function getCoffeesAsJson(callback) {
     xhttp.open("GET", emag_api, true);
     xhttp.send();
 }
-/* carousel */
+/* start carousel */
 var slides = document.querySelectorAll('#slides .slide');
 var currentSlide = 0;
 var slideInterval = setInterval(nextSlide, 2000);
@@ -55,7 +55,7 @@ function nextSlide() {
     currentSlide = (currentSlide + 1) % slides.length;
     slides[currentSlide].className = 'slide showing';
 }
-/* carousel */
+/* stop carousel */
 
 `<td style="width: 33%">
     <p>${name}</p>
@@ -65,4 +65,4 @@ function nextSlide() {
         <a href="./details.html">
             <button>DETAILS</button>
         </a>
-                </td>`
+</td>`

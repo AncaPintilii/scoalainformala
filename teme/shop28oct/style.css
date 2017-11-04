@@ -1,4 +1,4 @@
-/*////////carousel///////////////*/
+/*////////start carousel///////////////*/
 #slides {
     position: relative;
     height: 300px;
@@ -60,7 +60,7 @@ just for appearance; change whatever you want
     background-repeat: no-repeat;
     background-position: center; 
 }
-/*////////carousel///////////////*/
+/*////////stop carousel///////////////*/
 .body {
     background-color: #fbf5e9;
     color: #73472e;

@@ -1,11 +1,44 @@
 /*Spoiler alert: stiu ca nu trebuie sa-mi afiseze toate produsele cand dai click pe butonul de search, dar doar asa am reusit sa
 vad in json si network. Si tot n-am gasit solutia.*/
 
-var MENU_SERVER_URL = "https://restaurant-menu-v1.firebaseio.com/.json";
-var MENU_ITEM_SERVER_URL = "https://restaurant-menu-v1.firebaseio.com/menu/";
-var meniu = [];
-var gJson;
-function afiseazaProduseDupaIngredient() {
+//var MENU_SERVER_URL = "https://restaurant-menu-v1.firebaseio.com/.json";
+//var MENU_ITEM_SERVER_URL = "https://restaurant-menu-v1.firebaseio.com/menu/";
+//var meniu = [];
+//var gJson;
+
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        // Typical action to be performed when the document is ready:
+        window.menu = JSON.parse(xhttp.responseText)
+        draw(menu);
+
+    }
+};
+xhttp.open("GET", "https://restaurant-menu-v1.firebaseio.com/menu/.json", true);
+xhttp.send();
+
+
+function draw(menu){
+    //var 2
+    var str = "";
+
+    var menuKeys = Object.keys(menu);
+    for(var i=0;i<menuKeys.length;i++ ){
+        var menuItem = menu[menuKeys[i]];
+
+        str+=`
+            <div>${menuItem.nume}</div>
+            <div>${menuItem.ingrediente}</div>
+            <div>${menuItem.reteta}</div>
+            <div style="border-bottom: 1px solid black;">&nbsp;</div>
+            `;
+        //code goes here
+    }
+
+    document.querySelector("body").innerHTML=str;
+}
+/*function afiseazaProduseDupaIngredient() {
     var produs = document.getElementById("search").value;
 
     var xhttp = new XMLHttpRequest(); //face o instanta de obiect
@@ -53,7 +86,7 @@ function afiseazaProduseDupaIngredient() {
     };
     xhttp.open("GET", MENU_SERVER_URL, true);
     xhttp.send();
-}*/
+}
 function afiseazaTotMeniul() {
     var meniuTabel = `
         <table>`;
@@ -80,3 +113,4 @@ function afiseazaTotMeniul() {
         </table>`;
     document.getElementById("toateProdusele").innerHTML = meniuTabel;
 }
+*/
