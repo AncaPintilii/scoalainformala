@@ -3,18 +3,10 @@
 
 <head>
     <link rel="stylesheet" href="style.css"></link>
-    <script src="script.js"></script>
-    <title>COTROCCINO - pre-order coffee</title>
+   <title>COTROCCINO - pre-order coffee</title>
 </head>
 
 <body class="body">
-    <!--Creati 4 pagini html, in care sa includeti elemente de javascript si css(fisiere separate), care sa implementeze 
-        functionalitatile necesare unei aplicatii de genul magazin electronic (folositi tehnica AJAX si mapati raspunsul primit de la 
-        server pe clase javascript):
-
-1. index.html - lista produse
--> pagina ce afiseaza lista de prodose pe care le primeste de la un server in format JSON
--> cererea catre server, se face folosind tehnica AJAX-->
     <div class="header">
         <a href="./index.html" style="text-decoration : none; color : #73472e;">
             <h1 style="display: inline-block">COTROCCINO</h1>
@@ -27,10 +19,19 @@
         </a>
     </div>
     <br />
+<!-- ////////carousel///////////////-->
+    <ul id="slides">
+        <li class="slide showing"></li>
+        <li class="slide"></li>
+        <li class="slide"></li>
+        <li class="slide"></li>
+        <li class="slide"></li>
+    </ul>
+<!-- ////////carousel///////////////-->
     <div id="coffees">
         <table style="width: 100%; text-align: center">
             <tr>
-                <td style="width: 33%">
+                <!--<td style="width: 33%">
                     <p>Café Latte</p>
                     <img src="http://www.latteartguide.com/wp-content/uploads/2016/01/cafe-latte.jpg">
                     <p>4.5 LEI</p>
@@ -41,7 +42,7 @@
                 </td>
                 <td style="width: 33%">
                     <p>Cappuccino</p>
-                    <img src=http://www.latteartguide.com/wp-content/uploads/2016/01/Cappuccino.jpg>
+                    <img src="http://www.latteartguide.com/wp-content/uploads/2016/01/Cappuccino.jpg">
                     <p>4 LEI</p>
                     <p>1 shot of espresso + steamed milk + 2-3cm of micro-foam on top of the steamed milk + sprinkle chocolate on top</p>
                     <a href="./details.html">
@@ -85,13 +86,11 @@
                     <a href="./details.html">
                         <button>DETAILS</button>
                     </a>
-                </td>
+                </td>-->
             </tr>
         </table>
     </div>
-    <script>
-
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

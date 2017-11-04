@@ -33,7 +33,7 @@ function getCoffeesAsJson(callback) {
             for (var i = 0; i < keys.length; i++) {
                 var key = keys[i];
                 var prod = json.produse[key];
-                listaProduse.unshift(new Produs(key, prod.nume, prod.descriere, prod.pret, prod.cantitate, prod.imagine));
+                listaProduse.unshift(new COFFEE(key, prod.nume, prod.descriere, prod.pret, prod.cantitate, prod.imagine));
             }
 
             if (callback) {
@@ -45,3 +45,24 @@ function getCoffeesAsJson(callback) {
     xhttp.open("GET", emag_api, true);
     xhttp.send();
 }
+/* carousel */
+var slides = document.querySelectorAll('#slides .slide');
+var currentSlide = 0;
+var slideInterval = setInterval(nextSlide, 2000);
+
+function nextSlide() {
+    slides[currentSlide].className = 'slide';
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].className = 'slide showing';
+}
+/* carousel */
+
+`<td style="width: 33%">
+    <p>${name}</p>
+    <img src="${img}">
+        <p>${price}</p>
+        <p>${description}</p>
+        <a href="./details.html">
+            <button>DETAILS</button>
+        </a>
+                </td>`
