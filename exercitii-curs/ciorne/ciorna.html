@@ -1,12 +1,168 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Ciorne</title>
     <script src="ciorna.js"></script>
     <link rel="stylesheet" href="ciorna.css"></link>
 </head>
+
 <body>
-<!-- 
+    <p>This is regular text </p>
+    <p><b>bold text </b></p>
+    <p><big>big text</big></p>
+    <p><i>italic text</i></p>
+    <p><small>small text</small></p>
+    <p><strong>strong text</strong></p>
+    <p><sub>subscripted text</sub></p>
+    <p><sup>superscripted text</sup></p>
+    <p><ins>inserted text</ins></p>
+    <p><del>deleted text</del></p>
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////// <br />
+    The <b>target</b> attribute specifies where to open the linked document. Giving a <b>_blank</b> value to your attribute will have the link open in a new window or new tab: <br />
+    Linkul <a href="http://www.google.ro" target="_blank">asta</a> duce pe Google intr-un alt tab.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////// <br />
+<!-- To change your table's position, use the "align" attribute inside your table tag:
+<table align="center">
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+To specify a background color of red for a table roq, use the "bgcolor" attribute:
+<td bgcolor="red">Red</td>
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Types of elements:
+
+-> In HTML most elements are defined as "block level" or "inline" elements. Block level elements start from a
+new line: <h1> <form> <li> <ol> <ul> <p> <pre> <table> <div>, etc
+-> Inline elements are normally displayed without line breaks: <b> <a> <strong> <img> <input> <em> <span>, etc
+
+Other elements can be used either as block level elements or inline elements. This includes the following:
+-> APPLET - embedded Java applet
+-> IFRAME - inline frame
+-> INS - inserted text
+-> MAP - image map
+-> OBJECT - embedded object
+-> script - script within an HTML document
+
+!!! You can insert inline elements insidde block elements (ex: multiple spans inside a div)
+!!! Inline elements CANNOT contain any block level elements
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+FORMS 
+->  Use the "action" attribute to point to a webpage that will load after the user submits the form:
+ <form action="http://www.google.com"> </form>
+-> The "method attribute" specifies the HTTP method (GET or POST) to be used when forms are submitted
+<form action="url" method="GET">
+           or
+<form action="url" method="POST">
+When you  use GET, the form data will be visible in the page address
+Use POST if the form is updating data, or includes sensitive information (posswords). POST offers better
+security because the submitted data is not visible in the page address.
+-> The "name attribute" specifies a name for a form.
+To take in user input, you need the corresponding form elements, such as text fields. The <input>
+element has many variations, depending on the type attribute. It can be a text, password, radio, url, submit, etc.
+-> Ex: form requesting a username and password:
+<form>
+    <input type="text" name="username" /> <br />
+    <input type="password" name="password" />
+</form>
+
+-> "Required" field:
+<form autocomplete="off">
+    <label for="e-mail">Your email address: </label>
+    <input name="Email" type="text" required />
+    <input type="submit" value="Submit" />
+</form>
+
+-> HMTL5 added several new input types:
+color
+date
+datetime
+datetime loval
+email
+month
+tel
+number
+range
+search
+time
+url
+week
+
+-> New input attributes in HTML5:
+autofocus
+form
+formaction
+formenctype
+formmethod
+formnovalidate
+formtarget
+height and width
+list
+min and max
+multiple
+pattern (regexp)
+placeholder
+required
+step
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Creating a SEARCH BOX:
+    <input id="mysearch" name="searchitem" type="search" />
+
+-> search options: the <datalist> tag can be used to define a list of pre-defined options for the search field:
+    <input id="car" type="text" list="colors" />
+    <datalist id="colors">
+        <option value="Red">
+        <option value="Green">
+        <option value="Yellow">
+    </datalist
+    !!!! The ID of the datalist must match with the list attribute of the input box.
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Creating more fields: some other new input types include "email", "url" and "tel":
+<input id="email" name="email" type="email" placceholder="example@example.com" />
+<br />
+<input id="url" name="url" type="url" placeholder="example.com" />
+<br />
+<input id="tel" name="tel" type="tel" placeholder="555.555.211" />
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+CONTENT MODELS: the same element cand belong to more than one content model
+-> Metadata - content that sets up the presentation or behaviour of the rest of the content. These elements
+are found in the <head> of the document
+    <base> <link> <meta> <noscript> <script> <style> <title>
+-> Embedded - content that imports other resources into the document.
+    <audio> <video> <canvas> <iframe> <img> <math> <object> <svg>
+-> Interactive - content specifically intended for user interaction:
+    <a> <audio> <video> <button> <details> <embed> <iframe> <img> <input> <label> <object> <select> <textarea>
+-> Heading - defines a section header:
+    <h1>.... <h6> <hgroup>
+-> Phrasing - this model has a number of inline level elements in common with HTML4:
+    <img> <span> <strong> <label> <br /> <small> <sub> and more
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+The <nav> element represents a section of the page that links to another pages or to certain sections
+    within the page. This would be a section with navigation links. Ec of a major block of navigation links:
+<nav>
+    <ul>
+        <li><a href="url">Home</a></li>
+        <li><a href="url">Services</a></li>
+        <li><a href="url">About us</a></li>
+    </ul>
+</nav>
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Criteriile de alegere a unei librarii:
+
+Sa fie destinata pentru WEB, frontend
+1. Design (cum arata, se potriveste cu proiectul, se poate modifica destul de usor astfel incat sa fie exact cum ar trebui pentru proiect)
+2. Depinde de vre-un framework (jquery, angular, react, vu, polymer, etc) Daca da, se merita sa introduc si frameworkul respectiv 
+in aplicatia mea doar pentru libraria asta?
+3. Are documentatie, exemple, demo, destule explicatii astfel incat sa pot sa o inteleg si sa o modific cum trebuie pentru proiect
+4. Cand a fost ultima actualizare a librariei (o librarie care nu a mai fost actualizata de mult nu e intretinuta, nu sunt reparate 
+bugurile, deci e posibil sa trebuiasca sa reparati voi)
+5. Are issues (open si closed), stars pe github, forks. (inseamna ca este populara, si implicit a fost testata in productie)
+6. Ce licenta are (gpl,mit etc) Trebuie sa platesc pentru ea, e gratuita, am voie sa o fol pentru proiectul meu
+7. Performance (de obicei e greu de testat sau cuantificat, dar unele librarii se lauda cu asta)
+8. Browser compatibility (publicul meu tina o sa poata sa foloseasca libraria asta?)(daca publicul meu tinta este mobile, si 
+libraria nu e mobile friendly...) (caniuse.com pentru a verifica ce browsere suporta anumite api-uri, css, sau alte chestii care sunt 
+folosite de librarie)
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+    <!-- 
 "./cart.html"
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 <table border=1 style="width: 100%; border-collapse: collapse; text-align: center">
@@ -17,9 +173,8 @@
     ".write": "true" 
   }
 }
-ce trebuie sa faci ca sa schimbi baza de date
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-three leget authentification (you google user) 
+three leget authentification (you + google + user) 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Librarii:
 1. Javascript
@@ -41,15 +196,8 @@ Librarii:
 8. Pricing
 9. Performanta
 10. Browser compatibility -> caniuse.com
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
--->
 </body>
+
 </html>

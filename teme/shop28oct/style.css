@@ -33,7 +33,7 @@ just for appearance; change whatever you want
     padding: 40px;
     box-sizing: border-box;
     background: #333;
-    color: #fff;
+    color: #fbf5e9;
 }
 .slide:nth-of-type(1) {
     background-image: url("http://www.latteartguide.com/wp-content/uploads/2016/01/cafe-latte.jpg");
@@ -47,16 +47,6 @@ just for appearance; change whatever you want
 }
 .slide:nth-of-type(3) {
     background-image: url("http://www.latteartguide.com/wp-content/uploads/2016/01/mocha-coffee.jpg");
-    background-repeat: no-repeat;
-    background-position: center; 
-}
-.slide:nth-of-type(4) {
-    background-image: url("http://www.latteartguide.com/wp-content/uploads/2016/01/432856237_da68d53578_z.jpg");
-    background-repeat: no-repeat;
-    background-position: center; 
-}
-.slide:nth-of-type(5) {
-    background-image: url("http://www.latteartguide.com/wp-content/uploads/2016/01/double-espresso.jpg");
     background-repeat: no-repeat;
     background-position: center; 
 }

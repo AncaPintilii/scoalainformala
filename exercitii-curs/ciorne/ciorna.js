@@ -207,7 +207,7 @@ R ead ->  G et
 U pdate -> P ut
 D elete -> D elete
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-pentru meniu:*/
+pentru meniu:
 
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
