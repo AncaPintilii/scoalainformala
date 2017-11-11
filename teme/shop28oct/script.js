@@ -8,7 +8,7 @@ class COFFEE {
         this.quantity = quantity;
     }
 }
-/* start carousel */
+/*///////////////// start carousel ////////////*/
 var slides = document.querySelectorAll('#slides .slide');
 var currentSlide = 0;
 var slideInterval = setInterval(nextSlide, 2000);
@@ -18,7 +18,9 @@ function nextSlide() {
     currentSlide = (currentSlide + 1) % slides.length;
     slides[currentSlide].className = 'slide showing';
 }
-/* stop carousel */
+/*///////////// stop carousel ///////////*/
+
+/*/////////////start preluare json ///////////*/
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -28,7 +30,9 @@ xhttp.onreadystatechange = function () {
 };
 xhttp.open("GET", "https://cotroccino.firebaseio.com/produse/.json", true);
 xhttp.send();
+/*/////////////stop preluare json ///////////*/
 
+/*/////////////start creare tabel ///////////*/
 function draw(coffees) {
 
     var str = "<tr>";
@@ -45,7 +49,7 @@ function draw(coffees) {
 				<button>DETAILS</button>
 			</a>
     </td>`
-        if (i %3 == 2) {
+        if (i%3 == 2) {
             str += ` </tr>
             <tr>`
         }
@@ -53,3 +57,4 @@ function draw(coffees) {
     str += "</tr>";
     document.querySelector("#coffees table").innerHTML = str;
 }
+/*/////////////stop creare tabel ///////////*/
