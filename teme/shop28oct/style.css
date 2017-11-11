@@ -57,11 +57,11 @@ just for appearance; change whatever you want
     margin: 5px;
     padding: 10px;
 }
-.header {
+.header { /*divul cu home + buton Admin + buton Cart*/
     margin: 5px;
     padding: 10px;
 }
-.btnCos {
+.btnCos { /*buton cos sus*/
     background-color: #98002d;
     color: #fbf5e9;
     float: right;
@@ -72,7 +72,7 @@ just for appearance; change whatever you want
     width: 200px;
     border-radius: 8px;
 }
-.btnAddToCart {
+.btnAddToCart { /*butonul din details de adaugat in cos*/
     background-color: #98002d;
     color: #fbf5e9;
     margin-top: 25px;
@@ -82,7 +82,7 @@ just for appearance; change whatever you want
     width: 200px;
     border-radius: 8px;
 }
-.btnAdmin {
+.btnAdmin { /*buton admin sus*/
     background-color: #98002d;
     color: #fbf5e9;
     float: right;
@@ -92,14 +92,30 @@ just for appearance; change whatever you want
     width: 200px;
     border-radius: 8px;
 }
-.cart_tabel {
+.cart_tabel { /*tabelul cu toate produsele din cos*/
     float: left;
 }
-.total {
+.total { /*totalul produselor din cos*/
     float: right;
 }
-table img{
+table img{ /*imaginile din homepage*/
   width:300px;
   height: 205px;
+}
+.addToCart_div{ /*divul cu pop-up condirmare adaugare in cart*/
+    background-color: #98002d;
+    color: #fbf5e9;
+    font-size: 15px;
+    height:40px; 
+    width: 220px;
+    border-radius: 8px;
+    display: none;
+    position: absolute;
+    text-align: center;
+    left: 50%; /*muta cu 50% mai in dreapta*/
+    margin: 0 0 0 -110px; /*scad juma din width-ul divului pentru a-l muta mai la stanga, dar nu merge cum trebuie pe alte  dimensiuni*/
+}
+.addToCart_div > p { /*alinierea paragrafului din divul cu pop-up condirmare adaugare in cart*/
+    margin: 10px 0;
 }
 

@@ -6,7 +6,9 @@
 </head>
 
 <body class="body">
-
+    <div class="addToCart_div" id="idAddToCart_div">
+        <p>The item was added to your cart &#10004;</p>
+    </div>
     <div class="header">
         <a href="./index.html" style="text-decoration : none; color : #73472e;">
             <h1 style="display: inline-block">COTROCCINO</h1>
@@ -20,20 +22,20 @@
     </div>
     <br />
     <div id="cof_det" style="text-align: center">
-        <!--<div style="width: 310px; display: inline-block">
-            <img src="http://www.latteartguide.com/wp-content/uploads/2016/01/cafe-latte.jpg" />
+        <div style="width: 310px; display: inline-block">
+            <img id="img" src="http://www.latteartguide.com/wp-content/uploads/2016/01/cafe-latte.jpg" />
         </div>
         <div style="width: 350px; display: inline-block">
-            <p>Café Latte</p>
-            <p>1 shot of espresso + steamed milk + 1cm of micro-foam on top of the steamed milk</p>
-            <p>4.5 LEI</p>
+            <p id="name"></p>
+            <p id="description"></p>
+            <p id="price"></p>
             <hr />
-            <p>300 in stock</p>
+            <p id="stock"></p>
             <p>Quantity:</p>
             <input type="number" value="0" id="coffee_quantity" min="0" />
             <br />
-            <button class="btnAddToCart">Add to my cart</button>
-        </div>-->
+            <button class="btnAddToCart" onclick="addToCart()">Add to my cart</button>
+        </div>
     </div>
     <script src="details.js"></script>
 </body>

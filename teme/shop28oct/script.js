@@ -20,7 +20,7 @@ function nextSlide() {
 }
 /*///////////// stop carousel ///////////*/
 
-/*/////////////start preluare json ///////////*/
+/*///////////// start preluare json ///////////*/
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -30,9 +30,9 @@ xhttp.onreadystatechange = function () {
 };
 xhttp.open("GET", "https://cotroccino.firebaseio.com/produse/.json", true);
 xhttp.send();
-/*/////////////stop preluare json ///////////*/
+/*///////////// stop preluare json ///////////*/
 
-/*/////////////start creare tabel ///////////*/
+/*///////////// start creare tabel ///////////*/
 function draw(coffees) {
 
     var str = "<tr>";
@@ -45,7 +45,7 @@ function draw(coffees) {
 		<img src="${coffee.img}" />
 			<p>${coffee.price}</p>
 			<p>${coffee.description}</p>
-			<a href="./details.html">
+			<a href="./details.html?idProdus=${i}">
 				<button>DETAILS</button>
 			</a>
     </td>`
@@ -57,4 +57,4 @@ function draw(coffees) {
     str += "</tr>";
     document.querySelector("#coffees table").innerHTML = str;
 }
-/*/////////////stop creare tabel ///////////*/
+/*///////////// stop creare tabel ///////////*/
