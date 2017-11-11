@@ -7,17 +7,6 @@
 </head>
 
 <body class="body">
-    <!--Creati 4 pagini html, in care sa includeti elemente de javascript si css(fisiere separate), care sa implementeze 
-        functionalitatile necesare unei aplicatii de genul magazin electronic (folositi tehnica AJAX si mapati raspunsul primit de la 
-        server pe clase javascript):
-4. admin.html
--> din pagina de admin, se pot gestiona produsele afisate in paginile index.html si details.html
--> acesata pagina este doar o interfata grafica, ce comunica prin cereri AJAX cu un server, folosind verbele 
-GET, POST, PUT, DELETE pentru a adauga si a actualiza lista de produse disponibile
--> tabelul de produse, contine pe coloana de nume produs, un link care atunci cand va fi actionat de catre utilizator, 
-va afisa pe ecran un formular de adaugare/editare a produselor
--> fiecare produs va contine urmatorele informatii: imagine, nume, descriere, pret, cantitate stoc
--> elementele din lista pot fi sterse din lista de pe server, folosind un buton "Remove"-->
     <div class="header">
         <a href="./index.html" style="text-decoration : none; color : #73472e;">
             <h1 style="display: inline-block">COTROCCINO</h1>
@@ -94,12 +83,25 @@ va afisa pe ecran un formular de adaugare/editare a produselor
     <div>
         <h1 style="float: left">Add new item</h1>
         <button style="float: right" class="btnAddToCart">Add new item</button>
-        <button style="float: right" class="btnAddToCart">Cancel</button> <br /> <br /><br /><br /><br />
-        Image: <input type="text" style="width: 90%; float: right"> <br /><br />
-        Name: <input type="text" style="width: 90%; float: right"> <br /><br />
-        Description: <input type="text" style="width: 90%; float: right"><br /><br />
-        Price: <input type="text" style="width: 90%; float: right"><br /><br />
-        Quantity: <input type="number" style="width: 90%; float: right">
+        <button style="float: right" class="btnAddToCart">Cancel</button>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br /> Image:
+        <input type="text" style="width: 90%; float: right">
+        <br />
+        <br /> Name:
+        <input type="text" style="width: 90%; float: right">
+        <br />
+        <br /> Description:
+        <input type="text" style="width: 90%; float: right">
+        <br />
+        <br /> Price:
+        <input type="text" style="width: 90%; float: right">
+        <br />
+        <br /> Quantity:
+        <input type="number" style="width: 90%; float: right">
     </div>
 </body>
 
