@@ -1,42 +1,44 @@
-/*Spoiler alert: stiu ca nu trebuie sa-mi afiseze toate produsele cand dai click pe butonul de search, dar doar asa am reusit sa
-vad in json si network. Si tot n-am gasit solutia.*/
-
 //var MENU_SERVER_URL = "https://restaurant-menu-v1.firebaseio.com/.json";
 //var MENU_ITEM_SERVER_URL = "https://restaurant-menu-v1.firebaseio.com/menu/";
-//var meniu = [];
-//var gJson;
+
 
 var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
+xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-        // Typical action to be performed when the document is ready:
         window.menu = JSON.parse(xhttp.responseText)
         draw(menu);
-
     }
 };
 xhttp.open("GET", "https://restaurant-menu-v1.firebaseio.com/menu/.json", true);
 xhttp.send();
 
 
-function draw(menu){
+function draw(menu) {
     //var 2
-    var str = "";
+    var str = "<tr>";
 
     var menuKeys = Object.keys(menu);
-    for(var i=0;i<menuKeys.length;i++ ){
+    for (var i = 0; i < menuKeys.length; i++) {
         var menuItem = menu[menuKeys[i]];
 
-        str+=`
-            <div>${menuItem.nume}</div>
-            <div>${menuItem.ingrediente}</div>
-            <div>${menuItem.reteta}</div>
-            <div style="border-bottom: 1px solid black;">&nbsp;</div>
-            `;
+        str += `<td>
+            <img src="${menuItem.imagine}" id="imagine" style="width: 20%" />
+            <p id="nume" style="font-size:20px">${menuItem.nume}</p>
+            <p id="ingrediente" style="font-size:20px">${menuItem.ingrediente}</p>
+        
+            <a href="./2detalii.html?id=${i}">
+                <button class="button-detalii">DETALII</button>
+            </a>
+        </td>`;
         //code goes here
+        if (i % 2 == 0) {
+            str += ` </tr>
+            <tr>`
+        }
     }
+    str += "</tr>"
 
-    document.querySelector("body").innerHTML=str;
+    document.querySelector("#toateProdusele").innerHTML = str;
 }
 /*function afiseazaProduseDupaIngredient() {
     var produs = document.getElementById("search").value;

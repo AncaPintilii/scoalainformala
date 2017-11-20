@@ -49,7 +49,7 @@ function draw(coffees) {
 				<button>DETAILS</button>
 			</a>
     </td>`
-        if (i%3 == 2) {
+        if (i % 3 == 2) {
             str += ` </tr>
             <tr>`
         }
