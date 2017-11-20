@@ -42,101 +42,51 @@ function afiseazaVremea() {
     xhttp.open("GET", URL_CURRENT_WEATHER + oras, true); //true - async, false - sync
     xhttp.send();
 }
-function afiseazaPrognoza() {
+function getPrognozaFromServer() {
     var oras = document.getElementById("oras").value;
-    console.log(oras);
-
-    var xhttp = new XMLHttpRequest(); //face o instanta de obiect
-    xhttp.onreadystatechange = function () { //se specifica comportamentul daca primim 200
-        if (this.readyState == 4 && this.status == 200) { //aici incepe tratamentul raspunsul de la server ->
-            var json = this.responseText;
-            console.log(json);
-            gJson = json;
-
-            var imageP = JSON.parse(json).list[0].weather[0].icon;
-            var sufix = ".png";
-            document.getElementById("poza").src = URL_WEATHER_ICON_PREFIX + imageP + sufix;
-
-            var temperaturaP = JSON.parse(json).list[0].main.temp;
-            document.getElementById("temperaturaP").innerHTML = temperaturaP;
-
-            var descriereP = JSON.parse(json).list[0].weather[0].description;
-            document.getElementById("descriereP").innerHTML = descriereP;
-            //<- aici se termina tratamentul raspunsului de la server
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            window.prognoza = JSON.parse(xhttp.responseText)
+            afiseazaPrognoza(prognoza);
         }
     };
-    xhttp.open("GET", URL_FORECAST_WEATHER + oras, true); //true - async, false - sync
+    xhttp.open("GET", URL_FORECAST_WEATHER + oras, true);
     xhttp.send();
 }
-/*
-var an = "";
-var luna = "";
-var zi = "";
-function getAn(a) {
-for (var i = 0; i < a.length; i++) {
-    if (a[i] >= 0 && a[i] <= "9") {
-        an = an + a[i];
-        if (an.length == 4) {
-            break;
-        }
-    }
-}
-return an;
-}
-function getLuna(a) {
-    for (var i = 0; i < a.length; i++) {
-        if (a[i] >= 0 && a[i] <= "9") {
-            luna = luna + a[i];
-            if (luna.length == 2) {
-                break;
-            }
-        }
-    }
-    return luna;
-    }
 
-    function getZi(a) {
-        for (var i = 0; i < a.length; i++) {
-            if (a[i] >= 0 && a[i] <= "9") {
-                zi = zi + a[i];
-                if (zi.length == 2) {
-                    break;
-                }
-            }
-        }
-        return zi;
-        }
+function afiseazaPrognoza(prognoza) {
+    var str = "<tr>";
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//13. Care returneaza un String in ordine inversa. Ex: pentru ABC returneaza CBA
-/*function getData(a) {
-    var b = "";
-    for (var i = a.length - 1; i >= 0; i--) {
-        b = b + a[i];
-    }
-    return b;
-}
-console.log(getData("2017-10-11")); -> evient ca-l reurneaza invers de tot...*/
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/*//13. O functie care primeste un sir de caractere si returneaza primele 5 litere din el (daca exista)//
-function sir4 (a) {
-    var b = "";
-    for (i = 0; i < a.length; i++) {
-        if (a[i] >= "a" && a[i] <= "z") {
-            b = b + a[i];
-            if (b.length == 5) {
-               break;
-            }
-
+    var list = Object.keys(prognoza.list);
+    for (var i = 0; i < list.length; i++) {
+        var prognoze = prognoza.list[list[i]];
+        var dataFromServer = prognoze.dt_txt;
+        str += `<td style="width: 10%">
+            <p>${getRomanianDate(dataFromServer)}</p>
+            <img src="${URL_WEATHER_ICON_PREFIX}${prognoze.weather[0].icon}.png" />
+                <p>${prognoze.main.temp} grade </p>
+                <p>${prognoze.weather[0].description}</p>
+                
+        </td>`
+        if (i % 8 == 7) {
+            str += ` </tr>
+                <tr>`
         }
     }
-    return b;
+    str += "</tr>";
+
+
+    document.querySelector("#prognoza").innerHTML = str;
 }
-console.log(sir4("abc1a2b3c"));*/
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/*function myFunction() {
-    var d = new Date();
-    var n = d.getDate();
-    document.getElementById("somethingsomething").innerHTML = n;
-}*/
+
+function getRomanianDate(datestr) {
+    var an = datestr.substr(0, 4);
+    var luna = datestr.substr(5, 2);
+    var zi = datestr.substr(8, 2);
+    var ora = datestr.substr(11, 2);
+    var minute = datestr.substr(14, 2);
+    return zi + "/" + luna + "/" + an + " " + ora + ":" + minute;
+
+}
 
