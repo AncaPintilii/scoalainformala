@@ -67,7 +67,6 @@ function afiseazaPrognoza(prognoza) {
             <img src="${URL_WEATHER_ICON_PREFIX}${prognoze.weather[0].icon}.png" />
                 <p>${prognoze.main.temp} grade </p>
                 <p>${prognoze.weather[0].description}</p>
-                
         </td>`
         if (i % 8 == 7) {
             str += ` </tr>
@@ -75,8 +74,6 @@ function afiseazaPrognoza(prognoza) {
         }
     }
     str += "</tr>";
-
-
     document.querySelector("#prognoza").innerHTML = str;
 }
 

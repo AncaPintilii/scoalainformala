@@ -2,13 +2,7 @@
 
 <head>
     <link rel="stylesheet" href="style.css"></link>
-    <!--1. ecran meniu preparate
-    -> preluati lista de preparate din server, folosind ajax
-    -> afisati preparatele sub forma de tabel(imagine preparat, nume, ingrediente si buton detalii)
-    -> buton detalii, contine un link ce va directiona catre pagina details.html si va include in link id-ul preparatului:
-        ->exemplu de link pentru redirect: http://.../meniu/details.html?id=0
-    -> adaugati un filtru ce contine, un input text si un buton de cautare, ce filtreaza preparatele in pe baza ingredientelor
-
+    <!--
     
 Folositi url-urile din variabilele de mai jos pentru a face requesturi catre server:
 var MENU_SERVER_URL = "https://restaurant-menu-v1.firebaseio.com/.json";
@@ -30,7 +24,7 @@ Exemplu de apel pentru detalii preparat: https://restaurant-menu-v1.firebaseio.c
     </div>
     <div class="produse_wrapper" id="toateProdusele">
         <table>
-            <tr>
+            <tr style="display: inline-block">
                 
                 <!-- <td style="width: 20%">
                     <img id="imagine" src="http://www.latteartguide.com/wp-content/uploads/2016/01/cafe-latte.jpg" />

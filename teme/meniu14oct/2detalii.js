@@ -7,12 +7,12 @@ xhttp.onreadystatechange = function () {
         draw(menu);
     }
 };
-xhttp.open("GET", "https://restaurant-menu-v1.firebaseio.com/menu/"+id+".json", true);
+xhttp.open("GET", "https://restaurant-menu-v1.firebaseio.com/menu/"+ id +".json", true);
 xhttp.send();
 
 function draw (menu) {
-    document.getElementById("imagine").src=menu.imagine;
-    document.getElementById("nume").innerHTML=menu.nume;
-    document.getElementById("ingrediente").innerHTML=menu.ingrediente;
-    document.getElementById("reteta").innerHTML=menu.reteta;
+    document.getElementById("imagine").src=menu[0].imagine;
+    document.getElementById("nume").innerHTML=menu[0].nume;
+    document.getElementById("ingrediente").innerHTML=menu[0].ingrediente;
+    document.getElementById("reteta").innerHTML=menu[0].reteta;
 }
