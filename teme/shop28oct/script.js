@@ -41,12 +41,12 @@ function draw(coffees) {
     for (var i = 0; i < list.length; i++) {
         var coffee = coffees[list[i]];
         str += `<td style="width: 33%">
-		<p>${coffee.name}</p>
+		<p><strong><big>${coffee.name}</big></strong></p>
 		<img src="${coffee.img}" />
 			<p>${coffee.price}</p>
 			<p>${coffee.description}</p>
 			<a href="./details.html?idProdus=${i}">
-				<button>DETAILS</button>
+				<button style="background-color: #98002d; color: #fbf5e9; width: 120px; height: 30px; border-radius: 8px;">DETAILS</button>
 			</a>
     </td>`
         if (i % 3 == 2) {
