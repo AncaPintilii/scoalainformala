@@ -35,7 +35,25 @@ xhttp.send();
 /*///////////// start creare tabel ///////////*/
 function draw(coffees) {
 
-    var str = "<tr>";
+    var str = "";
+
+    var list = Object.keys(coffees);
+    for (var i = 0; i < list.length; i++) {
+        var coffee = coffees[list[i]];
+        str += `<div style="float: left; height: 450px" class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <p><strong><big>${coffee.name}</big></strong></p>
+            <img src="${coffee.img}" style="height: 225px; width: 300px" />
+                <p>${coffee.price}</p>
+                <p style="height: 60px">${coffee.description}</p>
+                <a href="./details.html?idProdus=${i}">
+                    <button style="bottom: 10px; background-color: #98002d; color: #fbf5e9; width: 120px; height: 30px; border-radius: 8px;">DETAILS</button>
+                </a>
+        </div>`
+        
+    }
+    document.querySelector("#coffees").innerHTML = str;
+}
+    /*var str = "<tr>";
 
     var list = Object.keys(coffees);
     for (var i = 0; i < list.length; i++) {
@@ -56,5 +74,5 @@ function draw(coffees) {
     }
     str += "</tr>";
     document.querySelector("#coffees table").innerHTML = str;
-}
+}*/
 /*///////////// stop creare tabel ///////////*/
