@@ -29,7 +29,7 @@ function draw(coffees) {
             <td> <a href="">${coffee.name}</p></td>
             <td><p>${coffee.price}</p></td>
             <td><p>${coffee.stock}</p> </td>
-            <td><button onclick="indexItemPeCareAmDatClick=${i}; deleteItem(); draw();">Delete</button></td>`
+            <td style="width: 35px"><button onclick="indexItemPeCareAmDatClick=${i}; deleteItem(); draw();">Delete</button></td>`
         if (i % 1 == 0) {
             str += ` </tr>
             <tr>`
@@ -43,7 +43,7 @@ function draw(coffees) {
 var indexItemPeCareAmDatClick = "";
 
 function deleteItem() {
-    document.getElementById("coffees").style.display = "hidden";
+    document.getElementById("coffees").style.display = null ;
 }
 function change () {
     document.getElementById("img").value = coffee[indexItemPeCareAmDatClick].img;
