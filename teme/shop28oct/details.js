@@ -5,6 +5,7 @@ function addToCart() {
         document.getElementById("idAddToCart_div").style.display = "none";
     }, 2000)
 }
+
 var idprodus = window.location.search.substring(10); /* doar 1, nu ?idProdus=1 */
 
 var xhttp = new XMLHttpRequest();
