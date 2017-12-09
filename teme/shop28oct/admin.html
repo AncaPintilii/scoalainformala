@@ -22,7 +22,7 @@
     <div id="coffees">
         <table border=1 style="width: 100%; border-collapse: collapse; text-align: center">
             <tr>
-                <!--<th>Icon</th>
+                <!--    <th>Icon</th>
             <th>Name</th>
             <th>Price</th>
             <th>Quantiy</th>
@@ -89,26 +89,27 @@
     <hr />
     <div>
         <h1 style="float: left">Add new item</h1>
-        <button style="float: right" class="btnAddToCart">Add new item</button>
+        <button id="saveBtn" style="float: right" class="btnAddToCart" onclick="saveChanges()">Save changes</button>
         <button style="float: right" class="btnAddToCart">Cancel</button>
         <br />
         <br />
         <br />
         <br />
         <br /> Image:
-        <input type="text" style="width: 90%; float: right">
+        <input id="img" type="text" style="width: 90%; float: right">
         <br />
         <br /> Name:
-        <input type="text" style="width: 90%; float: right">
+        <input id="name" type="text" style="width: 90%; float: right">
         <br />
         <br /> Description:
-        <input type="text" style="width: 90%; float: right">
+        <input id="description" type="text" style="width: 90%; float: right">
         <br />
         <br /> Price:
-        <input type="text" style="width: 90%; float: right">
+        <input id="price" type="text" style="width: 90%; float: right">
         <br />
-        <br /> Quantity:
-        <input type="number" style="width: 90%; float: right">
+        <br /> Stock:
+        <input id="stock" type="number" min="0" style="width: 90%; float: right">
+        <input type="hidden" id="idProdus">
     </div>
 
     <script src="admin.js"></script>

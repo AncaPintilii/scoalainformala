@@ -13,42 +13,67 @@ xhttp.send();
 /*///////////// start creare tabel ///////////*/
 function draw(coffees) {
 
-    var str = `<tr>
+    var str = `<thead><tr>
         <th>Icon</th>
         <th>Name</th>
+        <th>Description</th>
         <th>Price</th>
         <th>Stock</th>
         <th>Remove</th>
-    </tr>
-    <tr>`;
+    </tr></thead>
+    <tbody><tr>`;
+
+    var str2 = JSON.stringify(coffees);
 
     var list = Object.keys(coffees);
     for (var i = 0; i < list.length; i++) {
         var coffee = coffees[list[i]];
         str += `<td><img src="${coffee.img}" style="width: 40px; height: 40px"/></td>
-            <td> <a href="">${coffee.name}</p></td>
+            <td style="width: 150px"><button onclick='change(${JSON.stringify(coffee)})'>${coffee.name}</button></td>
+            <td><p>${coffee.description}</p></td>
             <td><p>${coffee.price}</p></td>
-            <td><p>${coffee.stock}</p> </td>
-            <td style="width: 35px"><button onclick="indexItemPeCareAmDatClick=${i}; deleteItem(); draw();">Delete</button></td>`
+            <td><p>${coffee.stock}</p></td>
+            <td style="width: 35px"><button onclick='deleteItem(${i});'>Delete</button></td>`
         if (i % 1 == 0) {
             str += ` </tr>
             <tr>`
         }
     }
-    str += "</tr>";
+    str += "</tr></tbody>";
     document.querySelector("#coffees table").innerHTML = str;
 }
 /*///////////// stop creare tabel ///////////*/
 
-var indexItemPeCareAmDatClick = "";
+/*var indexItemPeCareAmDatClick = "";*/
 
-function deleteItem() {
-    document.getElementById("coffees").style.display = null ;
+function deleteItem(i) {
+    document.querySelector(`#coffees table tbody tr:nth-of-type(${i + 1})`).style.display = "none";
 }
-function change () {
-    document.getElementById("img").value = coffee[indexItemPeCareAmDatClick].img;
-    document.getElementById("name").value = coffee[indexItemPeCareAmDatClick].name;
-    document.getElementById("description").value = coffee[indexItemPeCareAmDatClick].description;
-    document.getElementById("price").value = coffee[indexItemPeCareAmDatClick].price;
-    document.getElementById("stock").value = coffee[indexItemPeCareAmDatClick].stock;
+/*/////////////pentru a prelua datele din tabel///////////*/
+function change(coffee) {
+    document.getElementById("img").value = coffee.img;
+    document.getElementById("name").value = coffee.name;
+    document.getElementById("description").value = coffee.description;
+    document.getElementById("price").value = coffee.price;
+    document.getElementById("stock").value = coffee.stock;
+    document.getElementById("idProdus").value = coffee.idProdus;
+}
+/*/////////////pentru a salva modificarile in baza de date + a afisa in tabel///////////*/
+function saveChanges() {
+    var coffee = {};
+    coffee.img = document.getElementById("img").value;
+    coffee.name = document.getElementById("name").value;
+    coffee.description = document.getElementById("description").value;
+    coffee.price = document.getElementById("price").value;
+    coffee.stock = document.getElementById("stock").value;
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            window.coffees = JSON.parse(xhttp.responseText)
+            change(coffee);
+        }
+    };
+    xhttp.open("PUT", "https://cotroccino.firebaseio.com/produse/"+idProdus+".json", true);
+    xhttp.send(JSON.stringify(coffee));
 }
