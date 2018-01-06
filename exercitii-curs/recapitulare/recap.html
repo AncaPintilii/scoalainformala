@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
-<!--HTML & CSS
+HTML & CSS
 *******************************************************************************************************************************
 1. Dat fiind codul HTML de mai jos, faceti modificarile necesare pentru ca toate tag-urile <p> sa fie afisate in 
 browser cu culoarea rosie:
@@ -137,13 +137,13 @@ afisate cu culoarea rosie:
 </body>
 *******************************************************************************************************************************
 10. Creati un formular de contact, ca in exemplul de mai jos:
-*******************************************************************************************************************************
-
-<head>
+******************************************************************************************************************************-->
+<!--<head>
     <style>
         #form {
-            width: 60%;
+            width: 50%;
             text-align: center;
+            margin: auto;
         }
         #div1 {
             float: left;
@@ -188,14 +188,13 @@ afisate cu culoarea rosie:
         <br/><br/><br/><br/><br/><br/>
         <input id="submit" type="submit" value="Send Form" />
     </form>
-</body>
-*******************************************************************************************************************************-->
+</body><!
 
 <head>
     <script>
         /*////////////////////////////////////////////////////////////////////////////////////////////////////////////
         1. Implementati o functie JavaScript care primeste ca si parametru un numar si returneaza true daca numarul 
-        este par si fals daca este impar.///////////////////////////////////////////////*/
+        este par si fals daca este impar.///////////////////////////////////////////////
         function parSauImpar(a) {
             if (a % 2 == 0) {
                 return true;
@@ -207,7 +206,7 @@ afisate cu culoarea rosie:
         console.log(parSauImpar(3));
         console.log(parSauImpar(6));
         /*//////////////////////////////////////////////////////////////////////////////////////
-        2. Implementati o functie JavaScript care primeste 2 parametri(a,b) si returneaza maximul dintre cei 2./////////////////*/
+        /*2. Implementati o functie JavaScript care primeste 2 parametri(a,b) si returneaza maximul dintre cei 2./////////////////
         function careiMaximul(a, b) {
             if (a < b) {
                 return b;
@@ -224,7 +223,7 @@ afisate cu culoarea rosie:
         console.log(careiMaximul(3, 3));
         console.log(careiMaximul(3, 7));
         console.log(careiMaximul(5, 3));
-        /*//////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////
         3. Implementati o functie JavaScript care primeste ca si parametru un array(sir de numere) si returneaza 
         maximul din acel array.///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
         /*function maximulDinArray () {
@@ -232,101 +231,179 @@ afisate cu culoarea rosie:
         }*/
 
         /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        4. Implementati o functie JavaScript care primeste 2 parametri(a,b) si returneaza suma lor./////////////////*/
+        4. Implementati o functie JavaScript care primeste 2 parametri(a,b) si returneaza suma lor./////////////////
         function careiMaximul(a, b) {
             if (c = a + b) {
                 return c;
             }
         }
 console.log(careiMaximul(0,5));
-/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 5. Implementati o functie JavaScript care primeste ca si parametru un array(sir de numere) si returneaza 
-suma tuturor numerelor din acel array.///////////////////////////////////////////////////////////*/
+suma tuturor numerelor din acel array.///////////////////////////////////////////////////////////
 /*function sumaNumerelorDinSir (a) {
 
 }*/
 
-/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-6. Implementati o functie JavaScript care primeste 2 parametri(a,b) si returneaza produsul lor./////////////////*/
-function faProdusul (a,b) {
-    if (c=a*b) {
-        return c;
-    }
-}
-console.log(faProdusul(2, 4));
-/*//////////////////////////////////////////////////////////////////////////////////
-7. Implementati o functie JavaScript care primeste ca si parametru un array(sir de numere) si returneaza 
-produsul tuturor numerelor din acel array./////////////////*/
-/*//////////////////////////////////////////////////////////////////////////////////
+        /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        6. Implementati o functie JavaScript care primeste 2 parametri(a,b) si returneaza produsul lor./////////////////
+        function faProdusul (a,b) {
+            if (c=a*b) {
+                return c;
+            }
+        }
+        console.log(faProdusul(2, 4));*/
+        /*//////////////////////////////////////////////////////////////////////////////////
+        7. Implementati o functie JavaScript care primeste ca si parametru un array(sir de numere) si returneaza 
+        produsul tuturor numerelor din acel array./////////////////*/
+        /*//////////////////////////////////////////////////////////////////////////////////
+        
+        
+        8. Implementati o functie JavaScript care primeste ca si parametru un array(sir de numere) si returneaza 
+        media aritmetica a lor(suma numerelor / nr elementelor)./////////////////*/
+        /*//////////////////////////////////////////////////////////////////////////////////
+        
+        
+        9. Implementati o functie JavaScript care primeste ca si parametru un string si returneaza numarul de caractere 
+        din acel string./////////////////*/
+        /*function cateNumeresAcolo (a) {
+            var b = a.length;
+            return b;
+        }
+        console.log(cateNumeresAcolo("abc"));
+        /*//////////////////////////////////////////////////////////////////////////////////
+        /*10. Implementati o functie JavaScript care primeste ca si parametru un string si returneaza un nou string in 
+        care ordinea literelor este inversata(ex: revert("abc") va returna "cba")/////////////////
+        function returnInversul (a) {
+            var b = "";
+            for (var i= a.length-1; i >= 0; i--) {
+                b= b + a[i];
+            }
+            return b;
+        }
+        console.log(returnInversul("embargo"));*/
+        /*//////////////////////////////////////////////////////////////////////////////////
+        11. Implementati o functie JavaScript care primeste ca si parametru un numar si returneaza inversul sau.
+        (ex: revert(123) va returna 321)/////////////////*/
+        /*//////////////////////////////////////////////////////////////////////////////////
+        12. Implementati o functie JavaScript care primeste ca si parametru un numar si returneaza true sau false daca 
+        numarul este palindrom.(palindron este un numar care este egal cu inversul sau. ex: 121, 12321, 1122332211)/////////////////*/
+        /*//////////////////////////////////////////////////////////////////////////////////
+        13. Implementati o functie JavaScript care primeste ca si parametru un array(sir de string-uri) si returneaza un 
+        alt array ce are toate string-urile scrise cu litere mari.(ex: capitalize(['a','abc','dEF']) va returna 
+        ['A', 'ABC', 'DEF'])/////////////////*/
+        /*//////////////////////////////////////////////////////////////////////////////////
+        14. Implementati o functie JavaScript care primeste ca si parametru un array(sir de numere) si returneaza un 
+        alt array ce contine doar numerele pare./////////////////*/
+        /*function doarNumerelePareDinArray (a) {
+            var b = "";
+            if (a%2=0) {
+                for (i=0; i)
+            }
+        }*/
+        /*//////////////////////////////////////////////////////////////////////////////////
+        15. Implementati o functie JavaScript care primete ca si parametru un array(sir de string-uri) si returneaza 
+        un alt array ce contine doar string-urile care incep cu litera 'a'. (ex filter(['aBc', 'ADF', 'ana are mere', 'gigel',
+         'BCD', 'abcd'] va returna ['aBc', 'ADF', 'ana are mere', 'abcd'])/////////////////*/
+        /*//////////////////////////////////////////////////////////////////////////////////
+        16. Scrietei o functie JavaScript care primeste ca si parametru un array(sir de numere) si returneaza un alt array
+         ce contine doar numerele care sunt palindrom. (ex: filter([1, 12, 121, 123, 12321]) va returna [1, 121, 12321])/////////////////*/
+        /*//////////////////////////////////////////////////////////////////////////////////
+        17. Implementati o functie JavaScript care primeste ca si parametru un array(sir de numere) si returneaza un nou
+         array ce va contine numerele ordonate crescator(ex: sort([3,4,2,1]) va returna [1,2,3,4])/////////////////*/
+        /*//////////////////////////////////////////////////////////////////////////////////
+        18. Implementati o functie de JavaScript care face o cerere AJAX catre url-ul:
+         https://jsonplaceholder.typicode.com/posts/1/comments si afiseaza la consola email-urile primite./////////////////*/
+        /*//////////////////////////////////////////////////////////////////////////////////
+        19. Implementati o functie de JavaScript care face o cerere AJAX catre url-ul:
+         https://jsonplaceholder.typicode.com/posts/1/comments si afiseaza adresele de email in browser intr-un tabel./////////////////*/
+        /*//////////////////////////////////////////////////////////////////////////////////
+        20. Pentru formularul de contact de la exercitiul de HTML si CSS implementati o functie ce va fi apelata la 
+        click pe butonul Submit si care va face o cerere AJAX catre un server de Firebase(va fi nevoie sa creati un 
+            proiect nou in firebase)/////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+        chart.js -> librarii pentru grafice
+        -> clean code: robert c martin
+        -> javascript the good parts
+        -> you don't know javascript
+        -> safaribooksonline
+        function suma (a, b, fafisare     ){ /////////////////afisare pe ecran
+            var s = a + b;
+            fafisare (s);
+            return s;
+        }
+        suma (a, 2, function (s) {
+            console.log (s);
+        }
+        );
+        suma (1, 2, function (5) {
+            doc.getelembyid ("id")
+            .innerhtml=s;
+        }
+        );
+        /////////////////
+        hoisting!
+        var globale
+            var1
+            var2
+        
+        
+        functii 
+            f1 declar o variabila v3, exista doar in functia f1; dar am doar a=3 (fara var), devine variabila globala (sus)
+            f2
+            f3
+            ----------------------------------------------
+        const e vizibila doar in interiorul acoladelor (la fel ca let), dar nu mai poate fi initilizata inca o data
+        const a = 3;
+        a = 4 -> eroare
+        var a = 1;
+        a =2;
 
 
-8. Implementati o functie JavaScript care primeste ca si parametru un array(sir de numere) si returneaza 
-media aritmetica a lor(suma numerelor / nr elementelor)./////////////////*/
-/*//////////////////////////////////////////////////////////////////////////////////
 
 
-9. Implementati o functie JavaScript care primeste ca si parametru un string si returneaza numarul de caractere 
-din acel string./////////////////*/
-function cateNumeresAcolo (a) {
-    var b = a.length;
-    return b;
-}
-console.log(cateNumeresAcolo("abc"));
-/*//////////////////////////////////////////////////////////////////////////////////
-10. Implementati o functie JavaScript care primeste ca si parametru un string si returneaza un nou string in 
-care ordinea literelor este inversata(ex: revert("abc") va returna "cba")/////////////////*/
-function returnInversul (a) {
-    var b = "";
-    for (var i= a.length-1; i >= 0; i--) {
-        b= b + a[i];
-    }
-    return b;
-}
-console.log(returnInversul("embargo"));
-/*//////////////////////////////////////////////////////////////////////////////////
-11. Implementati o functie JavaScript care primeste ca si parametru un numar si returneaza inversul sau.
-(ex: revert(123) va returna 321)/////////////////*/
-/*//////////////////////////////////////////////////////////////////////////////////
-12. Implementati o functie JavaScript care primeste ca si parametru un numar si returneaza true sau false daca 
-numarul este palindrom.(palindron este un numar care este egal cu inversul sau. ex: 121, 12321, 1122332211)/////////////////*/
-/*//////////////////////////////////////////////////////////////////////////////////
-13. Implementati o functie JavaScript care primeste ca si parametru un array(sir de string-uri) si returneaza un 
-alt array ce are toate string-urile scrise cu litere mari.(ex: capitalize(['a','abc','dEF']) va returna 
-['A', 'ABC', 'DEF'])/////////////////*/
-/*//////////////////////////////////////////////////////////////////////////////////
-14. Implementati o functie JavaScript care primeste ca si parametru un array(sir de numere) si returneaza un 
-alt array ce contine doar numerele pare./////////////////*/
-/*function doarNumerelePareDinArray (a) {
-    var b = "";
-    if (a%2=0) {
-        for (i=0; i)
-    }
-}*/
-/*//////////////////////////////////////////////////////////////////////////////////
-15. Implementati o functie JavaScript care primete ca si parametru un array(sir de string-uri) si returneaza 
-un alt array ce contine doar string-urile care incep cu litera 'a'. (ex filter(['aBc', 'ADF', 'ana are mere', 'gigel',
- 'BCD', 'abcd'] va returna ['aBc', 'ADF', 'ana are mere', 'abcd'])/////////////////*/
-/*//////////////////////////////////////////////////////////////////////////////////
-16. Scrietei o functie JavaScript care primeste ca si parametru un array(sir de numere) si returneaza un alt array
- ce contine doar numerele care sunt palindrom. (ex: filter([1, 12, 121, 123, 12321]) va returna [1, 121, 12321])/////////////////*/
-/*//////////////////////////////////////////////////////////////////////////////////
-17. Implementati o functie JavaScript care primeste ca si parametru un array(sir de numere) si returneaza un nou
- array ce va contine numerele ordonate crescator(ex: sort([3,4,2,1]) va returna [1,2,3,4])/////////////////*/
-/*//////////////////////////////////////////////////////////////////////////////////
-18. Implementati o functie de JavaScript care face o cerere AJAX catre url-ul:
- https://jsonplaceholder.typicode.com/posts/1/comments si afiseaza la consola email-urile primite./////////////////*/
-/*//////////////////////////////////////////////////////////////////////////////////
-19. Implementati o functie de JavaScript care face o cerere AJAX catre url-ul:
- https://jsonplaceholder.typicode.com/posts/1/comments si afiseaza adresele de email in browser intr-un tabel./////////////////*/
-/*//////////////////////////////////////////////////////////////////////////////////
-20. Pentru formularul de contact de la exercitiul de HTML si CSS implementati o functie ce va fi apelata la 
-click pe butonul Submit si care va face o cerere AJAX catre un server de Firebase(va fi nevoie sa creati un 
-    proiect nou in firebase)/////////////////*/
+
+
+
+
+/*/////////////////////RECAPITULARE 2
+/*//////////////1. Scrie un program JavaScript care sa calculeze inmultirea si 
+impartirea a doua numere preluate din nou inputuri.//////////////////////////////////////////
+
+            function multiply() {
+            var number1 = document.querySelector("#body [name=\"number1\"]");
+            var number2 = document.querySelector("#body [name=\"number2\"]");
+            var result = document.querySelector("#body [name=\"result\"]");
+            result.value = parseInt(number1.value) * parseInt(number2.value);   
+        }
+        
+        function divide() {
+            var number1 = document.querySelector("#body [name=\"number1\"]");
+            var number2 = document.querySelector("#body [name=\"number2\"]");
+            var result = document.querySelector("#body [name=\"result\"]");
+            result.value = parseInt(number1.value) / parseInt(number2.value);
+        }
     </script>
 </head>
 
-<body>
+<body id="body">
+    <p>1st Number: </p>
+    <input type="number" name="number1" id="number1" value="" />
+    <p>2nd Number: </p>
+    <input type="number" name="number2" id="number2" value="" />
+    <br />
+    <br />
+    <br />
+    <button onclick="multiply()">Multiply</button>
+    <button onclick="divide()">Divide</button>
+    <p>The result is:</p>
+    <input id="result" name="result"/>
 
+    </span>
 </body>
 
 </html>
+/*//////////////2. Scrie un program JavaScript pentru a elimina un caracter dintr-un sir dat si apoi returneaza noul sir.
+ Exemplu: JavaScript, eliminam s si va rezulta Javacript.//////////////////////////////////////////*/
+<!DOCTYPE html>
+<

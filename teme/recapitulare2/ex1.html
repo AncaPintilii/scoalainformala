@@ -1,0 +1,40 @@
+<!--1. Scrie un program JavaScript care sa calculeze inmultirea si 
+impartirea a doua numere preluate din nou inputuri.-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function multiply() {
+            var number1 = document.querySelector("#body [name=\"number1\"]");
+            var number2 = document.querySelector("#body [name=\"number2\"]");
+            var result = document.querySelector("#body [name=\"result\"]");
+            result.value = parseInt(number1.value) * parseInt(number2.value);
+        }
+
+        function divide() {
+            var number1 = document.querySelector("#body [name=\"number1\"]");
+            var number2 = document.querySelector("#body [name=\"number2\"]");
+            var result = document.querySelector("#body [name=\"result\"]");
+            result.value = parseInt(number1.value) / parseInt(number2.value);
+        }
+    </script>
+</head>
+
+<body id="body">
+    <p>1st Number: </p>
+    <input type="number" name="number1" id="number1" value="" />
+    <p>2nd Number: </p>
+    <input type="number" name="number2" id="number2" value="" />
+    <br />
+    <br />
+    <br />
+    <button onclick="multiply()">Multiply</button>
+    <button onclick="divide()">Divide</button>
+    <p>The result is:</p>
+    <input id="result" name="result" />
+
+    </span>
+</body>
+
+</html>

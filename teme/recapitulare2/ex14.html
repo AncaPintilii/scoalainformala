@@ -1,0 +1,46 @@
+<!--Fibonacci-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        /*var 1 recursiva
+        function f(n) { 
+            if (n==0) {
+                return 0;
+            }
+            else {
+                if (n==1) {
+                    return 1;
+                }
+                else {
+                    return f (n-1) + f (n-2);
+                }
+            }*/
+        //var 2 memoizare
+        var cache = [];
+        function f(n) {
+            if (cache[n]) {
+                return cache[n];
+            }
+            if (n == 0) {
+                cache[0]=0;
+                return 0;
+            }
+            if (n == 1) {
+                cache[1]=1;
+                return 1;
+            }
+            if (n > 1) {
+                var r = f(n - 1) + f(n - 2);
+                cache[n] = r;
+                return r;
+            }
+        }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
