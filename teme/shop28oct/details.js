@@ -31,28 +31,44 @@ function draw(cafea) {
 ///////////// stop creare "tabel" detalii ///////////*/
 ///////////// start add to cart ///////////*/
 class userChoice {
-    constructor(id, nameItem, priceItem, quantityItem, subtotalItem) {
-        this.id = id;
+    constructor(idProdusItem, nameItem, priceItem, quantityItem, subtotalItem) {
+        this.idProdus = idProdusItem;
         this.name = nameItem;
         this.price = priceItem;
         this.quantity = quantityItem;
         this.subtotal = subtotalItem;
+        
     }
 }
 function addToCart() {
+    var idProdus = window.location.search.substring(10);
     var addToCartName = document.getElementById("name").innerHTML;
     var addToCartPrice = parseInt(document.getElementById("price").innerHTML);
     var addtoCartQuantity = parseInt(document.getElementById("coffee_quantity").value);
     var subTotal = addtoCartQuantity * addToCartPrice;
-    var itemId = document.getElementById("id").value; //eroare aici, value of null
+
+    var itemId = document.getElementById("idProdus").innerHTML; //eroare aici, value of null
+
     var userItem = new userChoice(addToCartName, addToCartPrice, addtoCartQuantity, subTotal, itemId);
-    
+
 
     if (addtoCartQuantity > 0 && addtoCartQuantity <= parseInt(document.getElementById("stock").innerHTML)) {
-        updateFirebaseUser ("https://cotroccino.firebaseio.com/produse.json, userItem");
-   }
-   else {
-       alert("Too much items for our stock!");
-   }
+        updateFirebaseUser("https://cotroccino.firebaseio.com/produse.json, userItem");
+    }
+    else {
+        alert("Too much items for our stock!");
+    }
+}
+
+function updateFirebaseUser(cafea, userChoice) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var userItem = JSON.parse(xhttp.responseText);
+            addCart("https://cotroccino.firebaseio.com/produse/", updateCart());
+        }
+    };
+    xhttp.open("POST", "https://cotroccino.firebaseio.com/produse.json", true);
+    xhttp.send(JSON.stringify(coffee));
 }
 ///////////// stop add to cart ///////////*/

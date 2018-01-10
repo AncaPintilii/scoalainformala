@@ -10,8 +10,8 @@ function addCart() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            window.cart = JSON.parse(xhttp.responseText)
-            draw(cart);
+            var userItem = JSON.parse(xhttp.responseText);
+            table_cart(cart);
         }
     };
     xhttp.open("GET", "https://cotroccino.firebaseio.com/produse/.json", true);
@@ -20,9 +20,9 @@ function addCart() {
 /*///////////// stop preluare json ///////////*/
 
 /*///////////// start creare tabel ///////////*/
-var createCart=[];
+var table_cart = [];
 
-function createCart(cart) {
+function table_cart(cart) { /////cum pana mea "table_cart" is not a function?!
 
     var str = `<tr>
                     <th style="width: 40%">Name</th>
@@ -34,34 +34,37 @@ function createCart(cart) {
             `;
 
     var str2 = JSON.stringify(cart);
-//////////////de modificat de aici incolo
-    /*var list = Object.keys(cart);
+
+    var list = Object.keys(cart);
     for (var i = 0; i < list.length; i++) {
         var coffee = cart[list[i]];
-        str += `<td><button onclick='change(${JSON.stringify(coffee)},${i})'>${coffee.name}</button></td>
+        str += `<td><p>${coffee.name}</p></td>
             <td><p>${coffee.price}</p></td>
-            <td><p>${coffee.stock}</p></td>
-            <td style="width: 35px"><button onclick='deleteItem(${i});'>Delete</button></td>`
+            <td><p>${coffee.quantityItem}</p></td>
+            <td><button onclick='deleteItem(${i});'>Delete</button></td>`
         if (i % 1 == 0) {
             str += ` </tr>
             <tr>`
         }
     }
-    str += "</tr></tbody>";
+    str += "</tr>";
     document.querySelector("#cart table").innerHTML = str;
-}*/
-
-
-
+}
 
 
 
 /*///////////// stop creare tabel ///////////*/
 
 /*///////////// start update cart ///////////*/
+/*function updateCart () {
+
+}*/
 /*///////////// stop update cart ///////////*/
 
 /*///////////// start delete item de tot ///////////*/
+/*function deleteItem() {
+
+}
 /*///////////// stop delete item de tot ///////////*/
 
 /*///////////// start add quantity ///////////*/
