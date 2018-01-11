@@ -1,9 +1,9 @@
 /* Am nevoie de o functie care sa:
-1. deseneze tabelul
-2. urce comanda fiecaruia
-3. sa poata sterge produse din cart
-4. sa poate adauga/scoate din cantitatea fiecarui produs in parte
-5. delete all cart?
+1. deseneze tabelul -> table_cart ()
+2. urce comanda fiecaruia -> updateCart ()
+3. sa poata sterge produse din cart -> deleteItemInCart ()
+4. sa poate adauga/scoate din cantitatea fiecarui produs in parte ->addQuantity ()/substractQuantity()
+5. delete all cart?-> deleteAllUserCart()
 
 ///////////// start preluare json ///////////*/
 function addCart() {
@@ -20,8 +20,6 @@ function addCart() {
 /*///////////// stop preluare json ///////////*/
 
 /*///////////// start creare tabel ///////////*/
-var table_cart = [];
-
 function table_cart(cart) { /////cum pana mea "table_cart" is not a function?!
 
     var str = `<tr>
@@ -37,11 +35,21 @@ function table_cart(cart) { /////cum pana mea "table_cart" is not a function?!
 
     var list = Object.keys(cart);
     for (var i = 0; i < list.length; i++) {
-        var coffee = cart[list[i]];
-        str += `<td><p>${coffee.name}</p></td>
-            <td><p>${coffee.price}</p></td>
-            <td><p>${coffee.quantityItem}</p></td>
-            <td><button onclick='deleteItem(${i});'>Delete</button></td>`
+        var coffee = cart[list[i]];//cum pun + si - la quantity? sunt a href-uri? sigur nu e bine ce-am scris 
+        str += `<td>
+                    <p>${coffee.name}</p>
+                </td>
+                <td>
+                    <p>${coffee.price}</p>
+                </td>
+                <td>  
+                    <a href="" onclick="substractQuantity()"> - </a>  
+                    <p>${coffee.quantityItem}</p>  
+                    <a href="" onclick="addQuantity()"> + </a> 
+                </td> 
+                <td>
+                    <button onclick='deleteItemInCart(${i});'>Delete</button>
+                </td>`
         if (i % 1 == 0) {
             str += ` </tr>
             <tr>`
@@ -62,16 +70,25 @@ function table_cart(cart) { /////cum pana mea "table_cart" is not a function?!
 /*///////////// stop update cart ///////////*/
 
 /*///////////// start delete item de tot ///////////*/
-/*function deleteItem() {
+/*function deleteItemInCart() {
 
 }
 /*///////////// stop delete item de tot ///////////*/
 
 /*///////////// start add quantity ///////////*/
+/*function addQuantity () {
+
+}*/
 /*///////////// stop add quantity ///////////*/
 
 /*///////////// start substract quantity ///////////*/
+/*function substractQuantity () {
+
+}*/
 /*///////////// stop substract quantity ///////////*/
 
 /*///////////// start delete all cart ///////////*/
+/* function deleteAllUserCart () {
+
+}*/
 /*///////////// stop delete all cart ///////////*/
