@@ -81,6 +81,6 @@ function updateFirebaseUser(cafea, userChoice) {
         }
     };
     xhttp.open("POST", "https://cotroccino.firebaseio.com/produse.json", true);
-    xhttp.send(JSON.stringify(coffee));
+    xhttp.send(JSON.stringify(userChoice));
 }
 ///////////// stop add to cart ///////////*/
