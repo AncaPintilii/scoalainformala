@@ -44,14 +44,12 @@ class userChoice {
     }
 }
 
-
 function addToCart() {
     var idProdus = window.location.search.substring(10);
     var addToCartName = document.getElementById("name").innerHTML;
     var addToCartPrice = parseInt(document.getElementById("price").innerHTML);
     var addtoCartQuantity = parseInt(document.getElementById("coffee_quantity").value);
     var subTotal = addtoCartQuantity * addToCartPrice;
-
     /*var itemId = document.getElementById("idProdus").innerHTML; //eroare aici, value of null */
 
     var userItem = new userChoice(addToCartName, addToCartPrice, addtoCartQuantity, subTotal, idProdus);
@@ -60,9 +58,7 @@ function addToCart() {
         updateFirebaseUser("https://cotroccino.firebaseio.com/produse.json", userItem);
 
         /* alert notification */
-
         /********document.getElementById("idAddToCart_div").style.display = "block";
-
         setTimeout(function () {
             document.getElementById("idAddToCart_div").style.display = "none";
         }, 2000);*/////
@@ -72,7 +68,7 @@ function addToCart() {
     }
 }
 
-function updateFirebaseUser(cafea, userChoice) {
+function updateFirebaseUser(cafea, userItem) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -81,6 +77,6 @@ function updateFirebaseUser(cafea, userChoice) {
         }
     };
     xhttp.open("POST", "https://cotroccino.firebaseio.com/produse.json", true);
-    xhttp.send(JSON.stringify(userChoice));
+    xhttp.send(JSON.stringify(userItem));
 }
 ///////////// stop add to cart ///////////*/
