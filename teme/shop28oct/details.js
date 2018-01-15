@@ -1,4 +1,7 @@
 /*///////////// start confirmare buton Add To Cart ///////////*/
+
+/*
+
 function addToCartConfirmarion() {
     document.getElementById("idAddToCart_div").style.display = "block";
 
@@ -6,9 +9,14 @@ function addToCartConfirmarion() {
         document.getElementById("idAddToCart_div").style.display = "none";
     }, 2000)
 }
+
+*/
+
+
 /*///////////// stop confirmare buton Add To Cart ///////////*/
 ///////////// start preluare json ///////////*/
-var idprodus = window.location.search.substring(10); /* doar 1, nu ?idProdus=1 */
+var idProdus = window.location.search.substring(10); /* doar 1, nu ?idProdus=1 */
+console.log(idProdus);
 
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
@@ -17,7 +25,7 @@ xhttp.onreadystatechange = function () {
         draw(coffee);
     }
 };
-xhttp.open("GET", "https://cotroccino.firebaseio.com/produse/" + idprodus + ".json", true);
+xhttp.open("GET", "https://cotroccino.firebaseio.com/produse/" + idProdus + ".json", true);
 xhttp.send();
 /*///////////// stop preluare json ///////////*/
 ///////////// start creare "tabel" detalii ///////////*/
@@ -30,6 +38,7 @@ function draw(cafea) {
 }
 ///////////// stop creare "tabel" detalii ///////////*/
 ///////////// start add to cart ///////////*/
+
 class userChoice {
     constructor(idProdusItem, nameItem, priceItem, quantityItem, subtotalItem) {
         this.idProdus = idProdusItem;
@@ -37,9 +46,9 @@ class userChoice {
         this.price = priceItem;
         this.quantity = quantityItem;
         this.subtotal = subtotalItem;
-        
     }
 }
+
 function addToCart() {
     var idProdus = window.location.search.substring(10);
     var addToCartName = document.getElementById("name").innerHTML;
@@ -54,6 +63,14 @@ function addToCart() {
 
     if (addtoCartQuantity > 0 && addtoCartQuantity <= parseInt(document.getElementById("stock").innerHTML)) {
         updateFirebaseUser("https://cotroccino.firebaseio.com/produse.json, userItem");
+
+        /* alert notification */
+
+        document.getElementById("idAddToCart_div").style.display = "block";
+
+        setTimeout(function () {
+            document.getElementById("idAddToCart_div").style.display = "none";
+        }, 2000);
     }
     else {
         alert("Too much items for our stock!");

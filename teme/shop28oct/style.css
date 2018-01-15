@@ -65,7 +65,6 @@ just for appearance; change whatever you want
 .btnCos { /*buton cos sus*/
     background-color: #98002d;
     color: #fbf5e9;
-    float: right;
     margin-top: 25px;
     margin-left: 10px;
     font-size: 15px;
@@ -84,9 +83,9 @@ just for appearance; change whatever you want
     border-radius: 8px;
 }
 .btnAdmin { /*buton admin sus*/
+    margin-left: 10px;
     background-color: #98002d;
     color: #fbf5e9;
-    float: right;
     margin-top: 25px;
     font-size: 15px;
     height:40px; 
@@ -119,4 +118,45 @@ table img{ /*imaginile din homepage*/
 .addToCart_div > p { /*alinierea paragrafului din divul cu pop-up condirmare adaugare in cart*/
     margin: 10px 0;
 }
+.socialLinks{
+    text-align: center;
+}
 
+.headerNav{
+    float: right;
+}
+.btn {
+    text-align: center;
+    float: left;
+    line-height: 40px; /* aliniere pe verticala */
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+}
+hr {
+    height: 1px;
+    display: inline-block;
+    width: 100%;
+    background: #ccc;
+    border: 0;
+}
+
+@media(max-width: 768px){
+    .headerNav, .logo, .logo h1{
+        width: 100%;
+        text-align: center;
+    }
+    .btn{
+        float: none;
+        display: inline-block;
+    }
+}
+
+@media(max-width: 700px){
+    #cof_det, .indexHeading{
+        margin-top: 25px;
+
+    }
+    .headerNav{
+        float: none;
+    }
+}
