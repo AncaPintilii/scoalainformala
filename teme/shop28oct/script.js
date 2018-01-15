@@ -1,4 +1,4 @@
-/*
+
 class COFFEE {
     constructor(id, description, img, name, price, quantity) {
         this.id = id;
@@ -9,7 +9,7 @@ class COFFEE {
         this.quantity = quantity;
     }
 }
-*/
+
 /*///////////////// start carousel ////////////*/
 var slides = document.querySelectorAll('#slides .slide');
 var currentSlide = 0;
