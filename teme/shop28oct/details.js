@@ -44,19 +44,6 @@ class userChoice {
     }
 }
 
-/*///// functia mea dinainte//////
-
-function addToCart() {
-    var idProdus = window.location.search.substring(10);
-    var addToCartName = document.getElementById("name").innerHTML;
-    var addToCartPrice = parseInt(document.getElementById("price").innerHTML);
-    var addtoCartQuantity = parseInt(document.getElementById("coffee_quantity").value);
-    var subTotal = addtoCartQuantity * addToCartPrice;
-
-    var itemId = document.getElementById("idProdus").innerHTML; //eroare aici, value of null
-
-    var userItem = new userChoice(addToCartName, addToCartPrice, addtoCartQuantity, subTotal, itemId);
-*/
 
 function addToCart() {
     var idProdus = window.location.search.substring(10);

@@ -64,9 +64,9 @@ function table_cart(cart) { /////cum pana mea "table_cart" is not a function?!
 /*///////////// stop creare tabel ///////////*/
 
 /*///////////// start update cart ///////////*/
-/*function updateCart () {
+function updateCart () {
 
-}*/
+}
 /*///////////// stop update cart ///////////*/
 
 /*///////////// start delete item de tot ///////////*/
