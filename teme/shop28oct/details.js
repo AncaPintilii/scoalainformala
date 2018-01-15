@@ -1,18 +1,13 @@
 /*///////////// start confirmare buton Add To Cart ///////////*/
 
-/*
 
-function addToCartConfirmarion() {
+function addToCartConfirmation() {
     document.getElementById("idAddToCart_div").style.display = "block";
 
     setTimeout(function () {
         document.getElementById("idAddToCart_div").style.display = "none";
     }, 2000)
 }
-
-*/
-
-
 /*///////////// stop confirmare buton Add To Cart ///////////*/
 ///////////// start preluare json ///////////*/
 var idProdus = window.location.search.substring(10); /* doar 1, nu ?idProdus=1 */
@@ -66,11 +61,11 @@ function addToCart() {
 
         /* alert notification */
 
-        document.getElementById("idAddToCart_div").style.display = "block";
+        /********document.getElementById("idAddToCart_div").style.display = "block";
 
         setTimeout(function () {
             document.getElementById("idAddToCart_div").style.display = "none";
-        }, 2000);
+        }, 2000);*/////
     }
     else {
         alert("Too much items for our stock!");
