@@ -65,7 +65,7 @@ function addToCart() {
     var addtoCartQuantity = parseInt(document.getElementById("coffee_quantity").value);
     var subTotal = addtoCartQuantity * addToCartPrice;
 
-    var itemId = document.getElementById("idProdus").innerHTML; //eroare aici, value of null
+    /*var itemId = document.getElementById("idProdus").innerHTML; //eroare aici, value of null */
 
     var userItem = new userChoice(addToCartName, addToCartPrice, addtoCartQuantity, subTotal, idProdus);
 
