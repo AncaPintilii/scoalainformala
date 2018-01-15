@@ -57,7 +57,7 @@ function addToCart() {
     var userItem = new userChoice(addToCartName, addToCartPrice, addtoCartQuantity, subTotal, idProdus);
 
     if (addtoCartQuantity > 0 && addtoCartQuantity <= parseInt(document.getElementById("stock").innerHTML)) {
-        updateFirebaseUser("https://cotroccino.firebaseio.com/produse.json, userItem");
+        updateFirebaseUser("https://cotroccino.firebaseio.com/produse.json", userItem);
 
         /* alert notification */
 
