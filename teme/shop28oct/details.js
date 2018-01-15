@@ -72,8 +72,8 @@ function updateFirebaseUser(cafea, userItem) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var userItem = JSON.parse(xhttp.responseText);
-            addToCart("https://cotroccino.firebaseio.com/produse/", updateCart());
+            var userItem2 = JSON.parse(xhttp.responseText);
+            addCart("https://cotroccino.firebaseio.com/produse/", updateCart());
         }
     };
     xhttp.open("POST", "https://cotroccino.firebaseio.com/produse.json", true);
