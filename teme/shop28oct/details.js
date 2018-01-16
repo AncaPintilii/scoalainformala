@@ -1,6 +1,4 @@
 /*///////////// start confirmare buton Add To Cart ///////////*/
-
-
 function addToCartConfirmation() {
     document.getElementById("idAddToCart_div").style.display = "block";
 

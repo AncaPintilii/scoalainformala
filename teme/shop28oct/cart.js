@@ -6,13 +6,14 @@
 5. delete all cart?-> deleteAllUserCart()
 6. sub butonul de buy, un calendar, cu tot cu ora, pentru a selecta cand anume poate veni omu' sa-si ridice cafelele
 7. calculeze totalul (subtotal + TVA)
+
 ///////////// start preluare json ///////////*/
 function addCart() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var userItem = JSON.parse(xhttp.responseText);
-            table_cart(cart);
+            window.my_cart = JSON.parse(xhttp.responseText);
+            draw_cart(my_cart);
         }
     };
     xhttp.open("GET", "https://cotroccino.firebaseio.com/produse/.json", true);
@@ -20,8 +21,9 @@ function addCart() {
 }
 /*///////////// stop preluare json ///////////*/
 /*///////////// start creare tabel ///////////*/
-function table_cart(cart) { /////cum pana mea "table_cart" is not a function?!
-
+function draw_cart(my_cart) { /////
+    //var str2 = JSON.stringify(cart); 
+    var str2 = "";
     var str = `<tr>
                     <th style="width: 40%">Name</th>
                     <th>Price</th>
@@ -31,11 +33,10 @@ function table_cart(cart) { /////cum pana mea "table_cart" is not a function?!
                 </tr>
             `;
 
-    var str2 = JSON.stringify(cart);
 
-    var list = Object.keys(cart);
+    var list = Object.keys(my_cart);
     for (var i = 0; i < list.length; i++) {
-        var coffee = cart[list[i]];//cum pun + si - la quantity? sunt a href-uri? sigur nu e bine ce-am scris 
+        var coffee = my_cart[list[i]];//cum pun + si - la quantity? sunt a href-uri? sigur nu e bine ce-am scris 
         str += `<td>
                     <p>${coffee.name}</p>
                 </td>
@@ -56,7 +57,7 @@ function table_cart(cart) { /////cum pana mea "table_cart" is not a function?!
         }
     }
     str += "</tr>";
-    document.querySelector("#cart table").innerHTML = str;
+    document.querySelector("#table_cart").innerHTML = str;
 }
 
 
@@ -64,7 +65,7 @@ function table_cart(cart) { /////cum pana mea "table_cart" is not a function?!
 /*///////////// stop creare tabel ///////////*/
 
 /*///////////// start update cart ///////////*/
-function updateCart () {
+function updateCart() {
 
 }
 /*///////////// stop update cart ///////////*/
