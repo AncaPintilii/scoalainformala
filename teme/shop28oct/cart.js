@@ -13,7 +13,7 @@ function addCart() {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             window.my_cart = JSON.parse(xhttp.responseText);
-            draw_cart(my_cart);
+            addToCartConfirmation();
         }
     };
     //xhttp.open("GET", "https://cotroccino.firebaseio.com/produse/.json", true); -> urlul vechi cand aveam un singur nod
