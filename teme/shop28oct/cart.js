@@ -2,8 +2,9 @@
 1. deseneze tabelul -> table_cart ()
 2. urce comanda fiecaruia -> updateCart ()
 3. sa poata sterge produse din cart -> deleteItemInCart ()
-4. sa poate adauga/scoate din cantitatea fiecarui produs in parte ->addQuantity ()/substractQuantity()
+4. sa poate adauga/scoate din cantitatea fiecarui produs in parte -> addQuantity()/substractQuantity()
 5. delete all cart?-> deleteAllUserCart()
+6. sub butonul de buy, un calendar, cu tot cu ora, pentru a selecta cand anume poate veni omu' sa-si ridice cafelele
 
 ///////////// start preluare json ///////////*/
 function addCart() {
@@ -18,7 +19,6 @@ function addCart() {
     xhttp.send();
 }
 /*///////////// stop preluare json ///////////*/
-
 /*///////////// start creare tabel ///////////*/
 function table_cart(cart) { /////cum pana mea "table_cart" is not a function?!
 
