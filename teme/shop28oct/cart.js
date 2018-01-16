@@ -37,27 +37,21 @@ function draw_cart(my_cart) { /////
     var list = Object.keys(my_cart);
     for (var i = 0; i < list.length; i++) {
         var coffee = my_cart[list[i]];//cum pun + si - la quantity? sunt a href-uri? sigur nu e bine ce-am scris 
-        str += `<td>
-                    <p>${coffee.name}</p>
-                </td>
-                <td>
-                    <p>${coffee.price}</p>
-                </td>
+        str += `<td><p>${coffee.name}</p></td>
+                <td><p>${coffee.price}</p></td>
                 <td>  
                     <a href="" onclick="substractQuantity()"> - </a>  
                     <p>${coffee.quantityItem}</p>  
                     <a href="" onclick="addQuantity()"> + </a> 
                 </td> 
-                <td>
-                    <button onclick='deleteItemInCart(${i});'>Delete</button>
-                </td>`
+                <td><button onclick='deleteItemInCart(${i});'>Delete</button></td>`
         if (i % 1 == 0) {
             str += ` </tr>
             <tr>`
         }
     }
     str += "</tr>";
-    document.querySelector("#table_cart").innerHTML = str;
+    document.querySelector("#my_cart").innerHTML = str;
 }
 
 
