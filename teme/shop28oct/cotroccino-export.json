@@ -1,44 +1,46 @@
-[
-  {
+{
+  "produse": {
+    "0": {
       "description": "1 shot of espresso + steamed milk + 1cm of micro-foam on top of the steamed milk",
       "img": "http://www.latteartguide.com/wp-content/uploads/2016/01/cafe-latte.jpg",
       "name": "Café Latte",
       "price": "4.5 LEI",
-      "stock": 300
-  },
-  {
+      "stock": "300"
+    },
+    "1": {
       "description": "1 shot of espresso + steamed milk + 2-3cm of micro-foam on top of the steamed milk + sprinkle chocolate on top",
       "img": "http://www.latteartguide.com/wp-content/uploads/2016/01/Cappuccino.jpg",
       "name": "Cappuccino",
       "price": "4 LEI",
       "stock": 250
-  },
-  {
+    },
+    "2": {
       "description": "1 shot of espresso into a cup + one spoon of chocolate powder + steamed milk + 2-3cm of micro-foam + sprinkle chocolate powder",
       "img": "http://www.latteartguide.com/wp-content/uploads/2016/01/mocha-coffee.jpg",
       "name": "Mocha",
       "price": "5 LEI",
       "stock": 170
-  },
-  {
+    },
+    "3": {
       "description": "1 shot of espresso",
       "img": "http://www.latteartguide.com/wp-content/uploads/2016/01/432856237_da68d53578_z.jpg",
       "name": "Espresso",
       "price": "7 LEI",
-      "stock": 5
-  },
-  {
+      "stock": "5"
+    },
+    "4": {
       "description": "2 shots of espresso",
       "img": "http://www.latteartguide.com/wp-content/uploads/2016/01/double-espresso.jpg",
       "name": "Double Espresso",
       "price": "6 LEI",
       "stock": 23
-  },
-  {
+    },
+    "5": {
       "description": "1 shot of espresso with half the amount of water",
       "img": "http://www.latteartguide.com/wp-content/uploads/2016/01/ristretto.jpg",
       "name": "Ristretto",
       "price": "5.5 LEI",
-      "stock": 54
+      "stock": "54"
+    }
   }
-]
+}
