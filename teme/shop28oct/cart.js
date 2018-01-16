@@ -13,52 +13,15 @@ function addCart() {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             window.my_cart = JSON.parse(xhttp.responseText);
-            addToCartConfirmation();
+            addToCartConfirmation(); //eroare aici: Uncaught ReferenceError: addToCartConfirmation is not defined at XMLHttpRequest.xhttp.onreadystatechange (cart.js:16)
         }
     };
-    //xhttp.open("GET", "https://cotroccino.firebaseio.com/produse/.json", true); -> urlul vechi cand aveam un singur nod
     xhttp.open("GET", "https://cotroccino.firebaseio.com/cart/.json", true);
     xhttp.send();
 }
 /*///////////// stop preluare json ///////////*/
 /*///////////// start creare tabel ///////////*/
 
-/*/////start ce era inainte
-
-function draw_cart(my_cart) { 
-    var str2 = "";
-    var str = `<tr>
-                    <th style="width: 40%">Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Sub-total</th>
-                    <th>Delete item</th>
-                </tr>
-            `;
-
-
-    var list = Object.keys(my_cart);
-    for (var i = 0; i < list.length; i++) {
-        var coffee = my_cart[list[i]];//cum pun + si - la quantity? sunt a href-uri? sigur nu e bine ce-am scris 
-        str += `<td><p>${coffee.name}</p></td>
-                <td><p>${coffee.price}</p></td>
-                <td>  
-                    <a href="" onclick="substractQuantity()"> - </a>  
-                    <p>${coffee.quantityItem}</p>  
-                    <a href="" onclick="addQuantity()"> + </a> 
-                </td> 
-                <td><button onclick='deleteItemInCart(${i});'>Delete</button></td>`
-        if (i % 1 == 0) {
-            str += ` </tr>
-            <tr>`
-        }
-    }
-    str += "</tr>";
-    document.querySelector("#my_cart").innerHTML = str;
-}
-
-/////stop ce era inainte/////
-/*/////start ce am adaugat acum*/
 function draw_cart(my_cart) {    
 
 var str = "";
@@ -93,7 +56,27 @@ var str = "";
         document.querySelector("#my_cart").innerHTML = str;
     }
 
+    function showItemsInCart() {
+        var coffee = {};
 
+        coffee.name = document.getElementById("name").value;
+        coffee.price = document.getElementById("price").value;
+        coffee.quantityItem = document.getElementById("quantityItem").value;
+        //coffee.idProdus = document.getElementById("idProdus").value; nu-mi dau seama daca trebuie si idProdus..
+    
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                window.my_cart = JSON.parse(xhttp.responseText)
+                //getAllFromFirebaseCart();
+                addCart ()
+            }
+        };
+        xhttp.open("PUT", "https://cotroccino.firebaseio.com/cart/" + coffee.idProdus + ".json", true);
+        xhttp.send(JSON.stringify(coffee));
+    }
+    addCart ()
+    //getAllFromFirebaseCart ()
 
 
     /*///////////// stop creare tabel ///////////*/

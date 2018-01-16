@@ -65,12 +65,10 @@ function updateFirebaseUser(cafea, userItem) {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var userItem2 = JSON.parse(xhttp.responseText);
-            //addCart("https://cotroccino.firebaseio.com/produse/", updateCart()); ->urlul vechi cand aveam un singur nod
             addCart("https://cotroccino.firebaseio.com/cart/", updateCart());
         }
     };
 
-    //xhttp.open("POST", "https://cotroccino.firebaseio.com/produse.json", true); ->urlul vechi cand aveam un singur nod
     xhttp.open("POST", "https://cotroccino.firebaseio.com/cart.json", true);
     xhttp.send(JSON.stringify(userItem));
 }
