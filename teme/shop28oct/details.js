@@ -48,9 +48,7 @@ function addToCart() {
     var addToCartPrice = parseFloat(document.getElementById("price").innerHTML);
     var addtoCartQuantity = parseInt(document.getElementById("coffee_quantity").value);
     var subTotal = addtoCartQuantity * addToCartPrice;
-    /*var itemId = document.getElementById("idProdus").innerHTML; //eroare aici, value of null */
-    
-    //var userItem = new userChoice(addToCartName, addToCartPrice, addtoCartQuantity, subTotal, idProdus);
+
     var userItem = new userChoice(idProdus, addToCartName, addToCartPrice, addtoCartQuantity, subTotal);
 
 
@@ -67,10 +65,13 @@ function updateFirebaseUser(cafea, userItem) {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var userItem2 = JSON.parse(xhttp.responseText);
-            addCart("https://cotroccino.firebaseio.com/produse/", updateCart());
+            //addCart("https://cotroccino.firebaseio.com/produse/", updateCart()); ->urlul vechi cand aveam un singur nod
+            addCart("https://cotroccino.firebaseio.com/cart/", updateCart());
         }
     };
-    xhttp.open("POST", "https://cotroccino.firebaseio.com/produse.json", true);
+
+    //xhttp.open("POST", "https://cotroccino.firebaseio.com/produse.json", true); ->urlul vechi cand aveam un singur nod
+    xhttp.open("POST", "https://cotroccino.firebaseio.com/cart.json", true);
     xhttp.send(JSON.stringify(userItem));
 }
 ///////////// stop add to cart ///////////*/

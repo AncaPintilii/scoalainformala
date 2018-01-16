@@ -16,7 +16,8 @@ function addCart() {
             draw_cart(my_cart);
         }
     };
-    xhttp.open("GET", "https://cotroccino.firebaseio.com/produse/.json", true);
+    //xhttp.open("GET", "https://cotroccino.firebaseio.com/produse/.json", true); -> urlul vechi cand aveam un singur nod
+    xhttp.open("GET", "https://cotroccino.firebaseio.com/cart/.json", true);
     xhttp.send();
 }
 /*///////////// stop preluare json ///////////*/
