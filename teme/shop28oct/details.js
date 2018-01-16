@@ -45,7 +45,7 @@ class userChoice {
 function addToCart() {
     var idProdus = window.location.search.substring(10);
     var addToCartName = document.getElementById("name").innerHTML;
-    var addToCartPrice = parseInt(document.getElementById("price").innerHTML);
+    var addToCartPrice = parseFloat(document.getElementById("price").innerHTML);
     var addtoCartQuantity = parseInt(document.getElementById("coffee_quantity").value);
     var subTotal = addtoCartQuantity * addToCartPrice;
     /*var itemId = document.getElementById("idProdus").innerHTML; //eroare aici, value of null */
@@ -53,7 +53,7 @@ function addToCart() {
     //var userItem = new userChoice(addToCartName, addToCartPrice, addtoCartQuantity, subTotal, idProdus);
     var userItem = new userChoice(idProdus, addToCartName, addToCartPrice, addtoCartQuantity, subTotal);
 
-    
+
     if (addtoCartQuantity > 0 && addtoCartQuantity <= parseInt(document.getElementById("stock").innerHTML)) {
         updateFirebaseUser("https://cotroccino.firebaseio.com/produse.json", userItem);
     }
