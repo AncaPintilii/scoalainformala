@@ -36,8 +36,7 @@ xhttp.send();
 
 /*///////////// start creare tabel ///////////*/
 function draw(coffees) {
-
-    var str = "";
+    var str2 = JSON.stringify(coffees);
 
     var list = Object.keys(coffees);
     for (var i = 0; i < list.length; i++) {
