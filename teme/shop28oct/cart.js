@@ -5,7 +5,7 @@
 4. sa poate adauga/scoate din cantitatea fiecarui produs in parte -> addQuantity()/substractQuantity()
 5. delete all cart?-> deleteAllUserCart()
 6. sub butonul de buy, un calendar, cu tot cu ora, pentru a selecta cand anume poate veni omu' sa-si ridice cafelele
-
+7. calculeze totalul (subtotal + TVA)
 ///////////// start preluare json ///////////*/
 function addCart() {
     var xhttp = new XMLHttpRequest();
@@ -92,3 +92,10 @@ function updateCart () {
 
 }*/
 /*///////////// stop delete all cart ///////////*/
+
+/*///////////// start calendar+ora pentru ridicat comanda ///////////*/
+
+/*///////////// stop calendar+ora pentru ridicat comanda ///////////*/
+/*///////////// start calculat totalul (subtotal + tva) ///////////*/
+
+/*///////////// stop calculat totalul (subtotal + tva) ///////////*/

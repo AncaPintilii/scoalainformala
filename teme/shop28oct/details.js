@@ -56,12 +56,6 @@ function addToCart() {
 
     if (addtoCartQuantity > 0 && addtoCartQuantity <= parseInt(document.getElementById("stock").innerHTML)) {
         updateFirebaseUser("https://cotroccino.firebaseio.com/produse.json", userItem);
-
-        /* alert notification */
-        /********document.getElementById("idAddToCart_div").style.display = "block";
-        setTimeout(function () {
-            document.getElementById("idAddToCart_div").style.display = "none";
-        }, 2000);*/////
     }
     else {
         alert("Too much items for our stock!");
