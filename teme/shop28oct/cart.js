@@ -1,5 +1,5 @@
 /* Am nevoie de o functie care sa:
-1. deseneze tabelul -> table_cart ()
+1. deseneze tabelul -> draw_cart ()
 2. urce comanda fiecaruia -> updateCart ()
 3. sa poata sterge produse din cart -> deleteItemInCart ()
 4. sa poate adauga/scoate din cantitatea fiecarui produs in parte -> addQuantity()/substractQuantity()
