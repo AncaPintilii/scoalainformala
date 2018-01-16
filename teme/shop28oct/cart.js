@@ -22,8 +22,10 @@ function addCart() {
 }
 /*///////////// stop preluare json ///////////*/
 /*///////////// start creare tabel ///////////*/
-function draw_cart(my_cart) { /////
-    //var str2 = JSON.stringify(cart); 
+
+/*/////start ce era inainte
+
+function draw_cart(my_cart) { 
     var str2 = "";
     var str = `<tr>
                     <th style="width: 40%">Name</th>
@@ -55,14 +57,51 @@ function draw_cart(my_cart) { /////
     document.querySelector("#my_cart").innerHTML = str;
 }
 
+/////stop ce era inainte/////
+/*/////start ce am adaugat acum*/
+function draw_cart(my_cart) {    
+
+var str = "";
+
+    var list = Object.keys(my_cart);
+    for (var i = 0; i < list.length; i++) {
+        var coffee = my_cart[list[i]];
+
+        var str = `<tr>
+                    <th style="width: 40%">Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Sub-total</th>
+                    <th>Delete item</th>
+                </tr>
+            `;
+//cum pun + si - la quantity? sunt a href-uri? sigur nu e bine ce-am scris 
+            str += `<td><p>${coffee.name}</p></td>
+                <td><p>${coffee.price}</p></td>
+                <td>  
+                    <a href="" onclick="substractQuantity()"> - </a>  
+                    <p>${coffee.quantityItem}</p>  
+                    <a href="" onclick="addQuantity()"> + </a> 
+                </td> 
+                <td><button onclick='deleteItemInCart(${i});'>Delete</button></td>`
+            if (i % 1 == 0) {
+                str += ` </tr>
+            <tr>`
+            }
+        }
+        str += "</tr>";
+        document.querySelector("#my_cart").innerHTML = str;
+    }
 
 
-/*///////////// stop creare tabel ///////////*/
 
-/*///////////// start update cart ///////////*/
-function updateCart() {
 
-}
+    /*///////////// stop creare tabel ///////////*/
+
+    /*///////////// start update cart ///////////*/
+    function updateCart() {
+
+    }
 /*///////////// stop update cart ///////////*/
 
 /*///////////// start delete item de tot ///////////*/
