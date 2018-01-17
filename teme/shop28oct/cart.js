@@ -13,7 +13,6 @@ function addCart() {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             window.my_cart = JSON.parse(xhttp.responseText);
-            addToCartConfirmation(); //eroare aici: Uncaught ReferenceError: addToCartConfirmation is not defined at XMLHttpRequest.xhttp.onreadystatechange (cart.js:16)
         }
     };
     xhttp.open("GET", "https://cotroccino.firebaseio.com/cart/.json", true);

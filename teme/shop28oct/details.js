@@ -54,10 +54,12 @@ function addToCart() {
 
     if (addtoCartQuantity > 0 && addtoCartQuantity <= parseInt(document.getElementById("stock").innerHTML)) {
         updateFirebaseUser("https://cotroccino.firebaseio.com/produse.json", userItem);
+        addToCartConfirmation(); //adaugat acum
     }
     else {
         alert("Too much items for our stock!");
     }
+    
 }
 
 function updateFirebaseUser(cafea, userItem) {

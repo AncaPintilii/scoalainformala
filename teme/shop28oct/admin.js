@@ -82,6 +82,36 @@ function saveChangesInTable() {
 }
 update()
 /*/////////////functie pentru a adauga produse noi/////////////*/
-function addNewItem () {
-    
-}
+function addNewItem() {
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            window.alert("Congrats! This new item was added to the database!")
+            update();
+        }
+        };
+        xhttp.open("PUT", "https://cotroccino.firebaseio.com/produse.json", true);
+
+        /*var addNewItemInDatabase = {
+        img = document.getElementById("img").value;
+        name = document.getElementById("name").value;
+        description = document.getElementById("description").value;
+        price = document.getElementById("price").value;
+        stock = document.getElementById("stock").value;
+        idProdus = document.getElementById("idProdus").value;
+    };
+        xhttp.send(JSON.stringify(coffee));
+    }*/
+
+
+        var coffee = "";
+        coffee.img = document.getElementById("img").value;
+        coffee.name = document.getElementById("name").value;
+        coffee.description = document.getElementById("description").value;
+        coffee.price = document.getElementById("price").value;
+        coffee.stock = document.getElementById("stock").value;
+        coffee.idProdus = document.getElementById("idProdus").value;
+   
+        xhttp.send(JSON.stringify(coffee));
+    }
