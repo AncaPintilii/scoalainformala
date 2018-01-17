@@ -46,7 +46,17 @@ function draw(coffees) {
 }
 /*///////////// stop creare tabel ///////////*/
 
-/*var indexItemPeCareAmDatClick = "";*/
+/*////////////// start buton cancel ce sterge totul scris in cele 5 inputuri de change/add//////////*/
+function ClearFields() {
+
+    document.getElementById("img").value = "";
+    document.getElementById("name").value = "";
+    document.getElementById("description").value = "";
+    document.getElementById("price").value = "";
+    document.getElementById("stock").value = "";
+    document.getElementById("idProdus").value = "";
+}
+/*////////////// stop buton cancel ce sterge totul scris in cele 5 inputuri de change/add//////////*/
 
 function deleteItem(i) {
     document.querySelector(`#coffees table tbody tr:nth-of-type(${i + 1})`).style.display = "none";
@@ -84,24 +94,13 @@ update()
 /*/////////////functie pentru a adauga produse noi/////////////*/
 function addNewItem(coffee, idProdus) {
 
+    var idProdus = window.location.search.substring(10);
+    var description2 = document.querySelector("description").innerHTML;
+    var img2 = document.querySelector("img").innerHTML;
+    var name2 = document.querySelector("name").innerHTML;
+    var price2 = parseFloat(document.querySelector("price").value);
+    var stock2 = parseFloat(document.querySelector("stock").value);
 
-    /*var addNewItemInDatabase = {
-    img = document.getElementById("img").value;
-    name = document.getElementById("name").value;
-    description = document.getElementById("description").value;
-    price = document.getElementById("price").value;
-    stock = document.getElementById("stock").value;
-    idProdus = document.getElementById("idProdus").value;
-};
-    xhttp.send(JSON.stringify(coffee));
-}*/
-
-    var idProdus = document.getElementById("idProdus").value;
-    var description = document.getElementById("description").value;
-    var img = document.getElementById("img").value;
-    var name = document.getElementById("name").value;
-    var price = document.getElementById("price").value;
-    var stock = document.getElementById("stock").value;
     var xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function () {

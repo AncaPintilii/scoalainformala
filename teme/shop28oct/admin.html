@@ -20,7 +20,6 @@
         </nav>
     </div>
     <h1 style="float: left">Manage items</h1>
-    <a><button style="float: right" class="btnAddToCart" onclick="addNewItem()">Add new item</button></a>
     <div id="coffees">
         <table border=1 style="width: 100%; border-collapse: collapse; text-align: center">
             <tr>
@@ -34,8 +33,9 @@
     <hr />
     <div>
         <h1 id="new" style="float: left">Add new item/Change items</h1>
+       <button style="float: right" class="btnAddToCart" onclick="addNewItem()">Add new item</button>
         <button id="saveBtn" style="float: right" class="btnAddToCart" onclick="saveChangesInTable()">Save changes</button>
-        <button style="float: right" class="btnAddToCart">Cancel</button>
+        <button style="float: right" class="btnAddToCart" onclick="ClearFields();">Cancel</button>
         <br />
         <br />
         <br />
