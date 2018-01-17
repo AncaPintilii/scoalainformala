@@ -5,7 +5,7 @@
   "produse" : [ {
     "description" : "1 shot of espresso + steamed milk + 1cm of micro-foam on top of the steamed milk",
     "img" : "https://ancapintilii.github.io/scoalainformala/teme/shop28oct/cafe-latte.jpg",
-    "name" : "Café Latte",
+    "name" : "Café Latte - test change item din admin.html",
     "price" : "4.5 LEI",
     "stock" : "300"
   }, {

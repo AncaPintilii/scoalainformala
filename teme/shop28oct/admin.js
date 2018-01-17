@@ -82,36 +82,35 @@ function saveChangesInTable() {
 }
 update()
 /*/////////////functie pentru a adauga produse noi/////////////*/
-function addNewItem() {
+function addNewItem(coffee, idProdus) {
 
+
+    /*var addNewItemInDatabase = {
+    img = document.getElementById("img").value;
+    name = document.getElementById("name").value;
+    description = document.getElementById("description").value;
+    price = document.getElementById("price").value;
+    stock = document.getElementById("stock").value;
+    idProdus = document.getElementById("idProdus").value;
+};
+    xhttp.send(JSON.stringify(coffee));
+}*/
+
+    var idProdus = document.getElementById("idProdus").value;
+    var description = document.getElementById("description").value;
+    var img = document.getElementById("img").value;
+    var name = document.getElementById("name").value;
+    var price = document.getElementById("price").value;
+    var stock = document.getElementById("stock").value;
     var xhttp = new XMLHttpRequest();
+
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            window.alert("Congrats! This new item was added to the database!")
-            update();
+            var cafeluta = JSON.parse(xhttp.responseText);
+            saveChangesInTable("https://cotroccino.firebaseio.com/produse/", update());
         }
-        };
-        xhttp.open("PUT", "https://cotroccino.firebaseio.com/produse.json", true);
-
-        /*var addNewItemInDatabase = {
-        img = document.getElementById("img").value;
-        name = document.getElementById("name").value;
-        description = document.getElementById("description").value;
-        price = document.getElementById("price").value;
-        stock = document.getElementById("stock").value;
-        idProdus = document.getElementById("idProdus").value;
     };
-        xhttp.send(JSON.stringify(coffee));
-    }*/
+    xhttp.open("POST", "https://cotroccino.firebaseio.com/produse.json", true);
 
-
-        var coffee = "";
-        coffee.img = document.getElementById("img").value;
-        coffee.name = document.getElementById("name").value;
-        coffee.description = document.getElementById("description").value;
-        coffee.price = document.getElementById("price").value;
-        coffee.stock = document.getElementById("stock").value;
-        coffee.idProdus = document.getElementById("idProdus").value;
-   
-        xhttp.send(JSON.stringify(coffee));
-    }
+    xhttp.send(JSON.stringify(idProdus));
+}
