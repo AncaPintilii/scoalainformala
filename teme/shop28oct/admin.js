@@ -92,7 +92,7 @@ function saveChangesInTable() {
 }
 update()
 /*/////////////functie pentru a adauga produse noi/////////////*/
-function addNewItem(coffee, idProdus) {
+function addNewItem() {
 
     var idProdus = window.location.search.substring(10);
     var description2 = document.querySelector("description").innerHTML;
@@ -115,7 +115,7 @@ function addNewItem(coffee, idProdus) {
         update();
     }
 };
-xhttp.open("PUT", "https://cotroccino.firebaseio.com/produse.json", true);
+xhttp.open("POST", "https://cotroccino.firebaseio.com/produse.json", true);
 xhttp.send(JSON.stringify(coffee));
 }
 update()
