@@ -21,24 +21,25 @@ function addCart() {
 /*///////////// stop preluare json ///////////*/
 /*///////////// start creare tabel ///////////*/
 
-function draw_cart(my_cart) {    
+function draw_cart(my_cart) {
 
-var str = "";
+    var str = "";
 
     var list = Object.keys(my_cart);
     for (var i = 0; i < list.length; i++) {
         var coffee = my_cart[list[i]];
 
-        var str = `<tr>
-                    <th style="width: 40%">Name</th>
+        var str = `<thead><tr>
+        <th style="width: 40%">Name</th>
                     <th>Price</th>
                     <th>Quantity</th>
                     <th>Sub-total</th>
                     <th>Delete item</th>
-                </tr>
+                </tr></thead>
+                <tbody><tr>
             `;
-//cum pun + si - la quantity? sunt a href-uri? sigur nu e bine ce-am scris 
-            str += `<td><p>${coffee.name}</p></td>
+        //cum pun + si - la quantity? sunt a href-uri? sigur nu e bine ce-am scris 
+        str += `<td><p>${coffee.name}</p></td>
                 <td><p>${coffee.price}</p></td>
                 <td>  
                     <a href="" onclick="substractQuantity()"> - </a>  
@@ -46,44 +47,44 @@ var str = "";
                     <a href="" onclick="addQuantity()"> + </a> 
                 </td> 
                 <td><button onclick='deleteItemInCart(${i});'>Delete</button></td>`
-            if (i % 1 == 0) {
-                str += ` </tr>
+        if (i % 1 == 0) {
+            str += ` </tr>
             <tr>`
-            }
         }
-        str += "</tr>";
-        document.querySelector("#my_cart").innerHTML = str;
     }
+    str += "</tr></tbody>";
+    document.querySelector("#my_cart").innerHTML = str;
+}
 
-    function showItemsInCart() {
-        var coffee = {};
+function showItemsInCart() {
+    var coffee = {};
 
-        coffee.name = document.getElementById("name").value;
-        coffee.price = document.getElementById("price").value;
-        coffee.quantityItem = document.getElementById("quantityItem").value;
-        //coffee.idProdus = document.getElementById("idProdus").value; nu-mi dau seama daca trebuie si idProdus..
-    
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                window.my_cart = JSON.parse(xhttp.responseText)
-                //getAllFromFirebaseCart();
-                addCart ()
-            }
-        };
-        xhttp.open("PUT", "https://cotroccino.firebaseio.com/cart/" + coffee.idProdus + ".json", true);
-        xhttp.send(JSON.stringify(coffee));
-    }
-    addCart ()
-    //getAllFromFirebaseCart ()
+    coffee.name = document.getElementById("name").value;
+    coffee.price = document.getElementById("price").value;
+    coffee.quantityItem = document.getElementById("quantityItem").value;
+    //coffee.idProdus = document.getElementById("idProdus").value; nu-mi dau seama daca trebuie si idProdus..
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            window.my_cart = JSON.parse(xhttp.responseText)
+            //getAllFromFirebaseCart();
+            addCart()
+        }
+    };
+    xhttp.open("PUT", "https://cotroccino.firebaseio.com/cart/" + coffee.idProdus + ".json", true);
+    xhttp.send(JSON.stringify(coffee));
+}
+addCart()
+//getAllFromFirebaseCart ()
 
 
-    /*///////////// stop creare tabel ///////////*/
+/*///////////// stop creare tabel ///////////*/
 
-    /*///////////// start update cart ///////////*/
-    function updateCart() {
+/*///////////// start update cart ///////////*/
+function updateCart() {
 
-    }
+}
 /*///////////// stop update cart ///////////*/
 
 /*///////////// start delete item de tot ///////////*/
