@@ -15,7 +15,7 @@
         </a>
         <nav class="headerNav">
             <a href="./cart.html" class="btn btnCos" id="butonCos">
-               &#9749; Your cart
+                &#9749; Your cart
             </a>
         </nav>
     </div>
@@ -23,7 +23,7 @@
     <div id="coffees">
         <table border=1 style="width: 100%; border-collapse: collapse; text-align: center">
             <tr>
-                
+
             </tr>
             <tr>
 
@@ -33,12 +33,19 @@
     <hr />
     <div>
         <h1 id="new" style="float: left">Add new item/Change items</h1>
-       <button style="float: right" class="btnAddToCart" onclick="addNewItem()">Add new item</button>
+        <div id="addNewItem">
+            <button style="float: right" class="btnAddToCart" onclick="addNewItem()">Add new item</button>
+        </div>
         <button id="saveBtn" style="float: right" class="btnAddToCart" onclick="saveChangesInTable()">Save changes</button>
         <button style="float: right" class="btnAddToCart" onclick="ClearFields();">Cancel</button>
         <br />
         <br />
         <br />
+        <br />
+        <br />
+        <input type="hidden" id="idProdus" />
+        <br /> Description:
+        <input id="description" type="text" style="width: 90%; float: right" />
         <br />
         <br /> Image:
         <input id="img" type="text" style="width: 90%; float: right" />
@@ -46,15 +53,12 @@
         <br /> Name:
         <input id="name" type="text" style="width: 90%; float: right" />
         <br />
-        <br /> Description:
-        <input id="description" type="text" style="width: 90%; float: right" />
-        <br />
         <br /> Price:
-        <input id="price" type="text" style="width: 90%; float: right"/>
+        <input id="price" type="text" style="width: 90%; float: right" />
         <br />
         <br /> Stock:
         <input id="stock" type="number" min="0" style="width: 90%; float: right" />
-        <input type="hidden" id="idProdus" />
+
     </div>
 
     <script src="admin.js"></script>

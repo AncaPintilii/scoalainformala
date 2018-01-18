@@ -102,14 +102,20 @@ function addNewItem(coffee, idProdus) {
     var stock2 = parseFloat(document.querySelector("stock").value);
 
     var xhttp = new XMLHttpRequest();
-
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var cafeluta = JSON.parse(xhttp.responseText);
-            saveChangesInTable("https://cotroccino.firebaseio.com/produse/", update());
+            window.coffees = JSON.parse(xhttp.responseText);
+            /*addNewItem("https://cotroccino.firebaseio.com/produse/", update());
         }
     };
     xhttp.open("POST", "https://cotroccino.firebaseio.com/produse.json", true);
 
     xhttp.send(JSON.stringify(idProdus));
+}*/
+        update();
+    }
+};
+xhttp.open("PUT", "https://cotroccino.firebaseio.com/produse.json", true);
+xhttp.send(JSON.stringify(coffee));
 }
+update()
