@@ -59,7 +59,7 @@ function ClearFields() {
 /*////////////// stop buton cancel ce sterge totul scris in cele 5 inputuri de change/add//////////*/
 
 /* //////////////start buton care sterge din baza de date produsul initial dupa ce-l modifici//////////*/
-function deleteItem(i) {
+/*function deleteItem(i) {
     document.querySelector(`#coffees table tbody tr:nth-of-type(${i + 1})`).style.display = "none";
     var idProdus = window.location.search.substring(10);
 
@@ -70,6 +70,19 @@ function deleteItem(i) {
         }
     };
     xhttp.open("DELETE", "https://cotroccino.firebaseio.com/produse/" + i + ".json", true);
+    xhttp.send();
+}*/
+function deleteItem(id, i) {
+    document.querySelector(`#coffees table tbody tr:nth-of-type(${i + 1})`).style.display = "none";
+    var idProdus = window.location.search.substring(10);
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+           var coffee = JSON.parse(xhttp.responseText);
+        }
+    };
+    xhttp.open("DELETE", "https://cotroccino.firebaseio.com/produse/" + id + ".json", true);
     xhttp.send();
 }
 
