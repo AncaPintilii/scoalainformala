@@ -8,7 +8,8 @@
 7. calculeze totalul (subtotal + TVA)
 
 ///////////// start preluare json ///////////*/
-window.onload = function(){addCart();};
+window.onload = function () { addCart(); };
+//window.onload = function addCart() { };
 
 function addCart() {
     var xhttp = new XMLHttpRequest();
@@ -45,7 +46,7 @@ function draw_cart(table_cart) {
         str += `<td><p>${coffee.name}</p></td>
                 <td><p>${coffee.price}</p></td>
                 <td> <a href="#"> - </a>  
-                    <p>${coffee.quantityItem}</p>  
+                    <p>${coffee.quantity}</p>  
                     <a href="#"> + </a> 
                 </td> 
                 <td>${coffee.subtotal}</td>
@@ -96,19 +97,19 @@ function deleteItemInCart() {
 }
 /*///////////// stop delete item de tot ///////////*/
 
-function addQuantity () {
+function addQuantity() {
 
 }
 /*///////////// stop add quantity ///////////*/
 
 /*///////////// start substract quantity ///////////*/
-function substractQuantity () {
+function substractQuantity() {
 
 }
 /*///////////// stop substract quantity ///////////*/
 
 /*///////////// start delete all cart ///////////*/
- function deleteAllUserCart () {
+function deleteAllUserCart() {
 
 }
 /*///////////// stop delete all cart ///////////*/
