@@ -8,7 +8,7 @@
 7. calculeze totalul (subtotal + TVA)
 
 ///////////// start preluare json ///////////*/
-window.onload = function () { addCart(); };
+//window.onload = function () { addCart(); };
 //window.onload = function addCart() { };
 
 function addCart() {
