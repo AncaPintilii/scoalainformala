@@ -35,7 +35,7 @@ function draw(coffees) {
             <td><p>${coffee.description}</p></td>
             <td><p>${coffee.price}</p></td>
             <td><p>${coffee.stock}</p></td>
-            <td style="width: 35px"><button onclick='deleteItem(${coffee.idProdus});'>Delete</button></td>`
+            <td style="width: 35px"><button onclick='deleteItem(${coffee.idProdus}, ${i});'>Delete</button></td>`
         if (i % 1 == 0) {
             str += ` </tr>
             <tr>`
