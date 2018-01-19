@@ -72,7 +72,7 @@ function showItemsInCart() {
             addCart()
         }
     };
-    xhttp.open("PUT", "https://cotroccino.firebaseio.com/cart/" + coffee.idProdus + ".json", true);
+    xhttp.open("PUT", "https://cotroccino.firebaseio.com/cart.json", true);
     xhttp.send(JSON.stringify(coffee));
 }
 addCart()
@@ -88,27 +88,26 @@ function updateCart() {
 /*///////////// stop update cart ///////////*/
 
 /*///////////// start delete item de tot ///////////*/
-/*function deleteItemInCart() {
+function deleteItemInCart() {
 
 }
 /*///////////// stop delete item de tot ///////////*/
 
-/*///////////// start add quantity ///////////*/
-/*function addQuantity () {
+function addQuantity () {
 
-}*/
+}
 /*///////////// stop add quantity ///////////*/
 
 /*///////////// start substract quantity ///////////*/
-/*function substractQuantity () {
+function substractQuantity () {
 
-}*/
+}
 /*///////////// stop substract quantity ///////////*/
 
 /*///////////// start delete all cart ///////////*/
-/* function deleteAllUserCart () {
+ function deleteAllUserCart () {
 
-}*/
+}
 /*///////////// stop delete all cart ///////////*/
 
 /*///////////// start calendar+ora pentru ridicat comanda ///////////*/
