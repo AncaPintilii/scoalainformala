@@ -46,6 +46,7 @@ function draw_cart(table_cart) {
                     <p>${coffee.quantityItem}</p>  
                     <a href="#"> + </a> 
                 </td> 
+                <td>${coffee.subtotal}</td>
                 <td><button onclick='deleteItemInCart(${i});'>Delete</button></td>`
         if (i % 1 == 0) {
             str += ` </tr>
@@ -59,9 +60,11 @@ function draw_cart(table_cart) {
 function showItemsInCart() {
     var coffee = {};
 
-    coffee.name = document.getElementById("name").value;
-    coffee.price = document.getElementById("price").value;
-    coffee.quantityItem = document.getElementById("quantityItem").value;
+    var name = document.getElementById("name").value;
+    var price = document.getElementById("price").value;
+    var quantityItem = document.getElementById("quantityItem").value;
+    var subtotal = coffee.quantityItem * coffee.price;
+    var idProdus = window.location.search.substring(10);
     //coffee.idProdus = document.getElementById("idProdus").value; nu-mi dau seama daca trebuie si idProdus..
 
     var xhttp = new XMLHttpRequest();

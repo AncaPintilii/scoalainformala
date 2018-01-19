@@ -94,28 +94,22 @@ update()
 /*/////////////functie pentru a adauga produse noi/////////////*/
 function addNewItem() {
 
-    var idProdus = window.location.search.substring(10);
-    var description2 = document.getElementById("description").value;
-    var img2 = document.getElementById("img").value;
-    var name2 = document.getElementById("name").value;
-    var price2 = parseFloat(document.getElementById("price").value);
-    var stock2 = parseFloat(document.getElementById("stock").value);
+    var coffee = {};
+    coffee.description = document.getElementById("description").value;
+    coffee.img = document.getElementById("img").value;
+    coffee.name = document.getElementById("name").value;
+    coffee.price = document.getElementById("price").value;
+    coffee.stock = document.getElementById("stock").value;
+    coffee.idProdus = document.getElementById("idProdus").value;
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             window.coffees = JSON.parse(xhttp.responseText);
-            /*addNewItem("https://cotroccino.firebaseio.com/produse/", update());
-        }
-    };
-    xhttp.open("POST", "https://cotroccino.firebaseio.com/produse.json", true);
-
-    xhttp.send(JSON.stringify(idProdus));
-}*/
         update();
     }
 };
-xhttp.open("POST", "https://cotroccino.firebaseio.com/produse.json", true);
+xhttp.open("POST", "https://cotroccino.firebaseio.com/produse/" + coffee.idProdus + ".json", true);
 xhttp.send(JSON.stringify(coffee));
 }
 update()

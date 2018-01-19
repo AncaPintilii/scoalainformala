@@ -37,18 +37,18 @@
         </tr>
     </table>
 
-    <!--<div class="total">
-        <p>Items: 4</p>
+    <div class="total" id="divTotalCart">
+        <p>Items:<span id="totalPriceItems"></span></p>
         <p>VAT: 19%</p>
         <p>Shipping fee: 10 LEI</p>
         <hr />
-        <h2>TOTAL: 18.5 LEI</h2>
-        <button class="btnAddToCart">Buy</button>
-    </div>-->
+        <h2>TOTAL:<span id="totalPriceUser"</span></h2>
+        <button class="btnAddToCart" id="finallyBuyTheDamnThing">Buy</button>
+    </div>
 
     <script src="cart.js">
-        //getAllFromFirebaseCart ()
-        addCart()
+        getAllFromFirebaseCart ()
+        //addCart()
     </script>
 </body>
 
