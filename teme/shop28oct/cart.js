@@ -25,28 +25,29 @@ function addCart() {
 /*///////////// stop preluare json ///////////*/
 /*///////////// start creare tabel ///////////*/
 
-
 function draw_cart(table_cart) {
 
     var str = "";
+    str = `<thead><tr>
+    <th style="width: 40%">Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Sub-total</th>
+                <th>Delete item</th>
+            </tr></thead>
+            <tbody><tr>
+        `;
     var list = Object.keys(table_cart);
     for (var i = 0; i < list.length; i++) {
         var coffee = table_cart[list[i]];
 
-        str = `<thead><tr>
-        <th style="width: 40%">Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Sub-total</th>
-                    <th>Delete item</th>
-                </tr></thead>
-                <tbody><tr>
-            `;
+  
         //cum pun + si - la quantity? sunt a href-uri? sigur nu e bine ce-am scris 
         str += `<td><p>${coffee.name}</p></td>
                 <td><p>${coffee.price}</p></td>
-                <td> <a href="#"> - </a>  
-                    <p>${coffee.quantity}</p>  
+                <td>  
+                    <a href="#"> - </a>  
+                    <p>${coffee.quantityItem}</p>  
                     <a href="#"> + </a> 
                 </td> 
                 <td>${coffee.subtotal}</td>
