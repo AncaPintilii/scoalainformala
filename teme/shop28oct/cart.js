@@ -21,10 +21,10 @@ function addCart() {
 /*///////////// stop preluare json ///////////*/
 /*///////////// start creare tabel ///////////*/
 
+
 function draw_cart(table_cart) {
 
     var str = "";
-
     var list = Object.keys(table_cart);
     for (var i = 0; i < list.length; i++) {
         var coffee = table_cart[list[i]];
@@ -71,13 +71,12 @@ function showItemsInCart() {
         if (this.readyState == 4 && this.status == 200) {
             window.table_cart = JSON.parse(xhttp.responseText)
             //getAllFromFirebaseCart();
-            addCart()
+            draw_cart()
         }
     };
     xhttp.open("POST", "https://cotroccino.firebaseio.com/cart.json", true);
     xhttp.send(JSON.stringify(coffee));
 }
-addCart()
 //getAllFromFirebaseCart ()
 
 
