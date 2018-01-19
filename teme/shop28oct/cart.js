@@ -12,7 +12,7 @@ function addCart() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            window.my_cart = JSON.parse(xhttp.responseText);
+            window.table_cart = JSON.parse(xhttp.responseText);
         }
     };
     xhttp.open("GET", "https://cotroccino.firebaseio.com/cart/.json", true);
@@ -21,15 +21,15 @@ function addCart() {
 /*///////////// stop preluare json ///////////*/
 /*///////////// start creare tabel ///////////*/
 
-function draw_cart(my_cart) {
+function draw_cart(table_cart) {
 
     var str = "";
 
-    var list = Object.keys(my_cart);
+    var list = Object.keys(table_cart);
     for (var i = 0; i < list.length; i++) {
-        var coffee = my_cart[list[i]];
+        var coffee = table_cart[list[i]];
 
-        var str = `<thead><tr>
+        str = `<thead><tr>
         <th style="width: 40%">Name</th>
                     <th>Price</th>
                     <th>Quantity</th>
@@ -53,7 +53,7 @@ function draw_cart(my_cart) {
         }
     }
     str += "</tr></tbody>";
-    document.querySelector("#my_cart").innerHTML = str;
+    document.querySelector("#table_cart").innerHTML = str;
 }
 
 function showItemsInCart() {
@@ -67,7 +67,7 @@ function showItemsInCart() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            window.my_cart = JSON.parse(xhttp.responseText)
+            window.table_cart = JSON.parse(xhttp.responseText)
             //getAllFromFirebaseCart();
             addCart()
         }
