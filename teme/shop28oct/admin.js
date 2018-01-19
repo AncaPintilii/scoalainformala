@@ -95,11 +95,11 @@ update()
 function addNewItem() {
 
     var idProdus = window.location.search.substring(10);
-    var description2 = document.querySelector("description").innerHTML;
-    var img2 = document.querySelector("img").innerHTML;
-    var name2 = document.querySelector("name").innerHTML;
-    var price2 = parseFloat(document.querySelector("price").value);
-    var stock2 = parseFloat(document.querySelector("stock").value);
+    var description2 = document.getElementById("description").value;
+    var img2 = document.getElementById("img").value;
+    var name2 = document.getElementById("name").value;
+    var price2 = parseFloat(document.getElementById("price").value);
+    var stock2 = parseFloat(document.getElementById("stock").value);
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
