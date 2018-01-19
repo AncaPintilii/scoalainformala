@@ -44,8 +44,7 @@ function draw_cart(table_cart) {
         //cum pun + si - la quantity? sunt a href-uri? sigur nu e bine ce-am scris 
         str += `<td><p>${coffee.name}</p></td>
                 <td><p>${coffee.price}</p></td>
-                <td>  
-                    <a href="#"> - </a>  
+                <td> <a href="#"> - </a>  
                     <p>${coffee.quantityItem}</p>  
                     <a href="#"> + </a> 
                 </td> 
