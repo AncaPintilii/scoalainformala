@@ -61,7 +61,7 @@ function ClearFields() {
 
 /* //////////////start buton care sterge din baza de date produsul initial dupa ce-l modifici//////////*/
 
-function deleteItem(idP, i) {
+function deleteItem(id, i) {
     document.querySelector(`#coffees table tbody tr:nth-of-type(${i + 1})`).style.display = "none";
     var idProdus = window.location.search.substring(10);
 
