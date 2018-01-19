@@ -30,8 +30,9 @@ function draw(coffees) {
     var list = Object.keys(coffees);
     for (var i = 0; i < list.length; i++) {
         var coffee = coffees[list[i]];
+        coffee.idProdus = Object.keys(coffees)[i];
         str += `<td><img src="${coffee.img}" style="width: 40px; height: 40px"/></td>
-            <td style="width: 150px"><button onclick='change(${JSON.stringify(coffee)},${i})'>${coffee.name}</button></td>
+            <td style="width: 150px"><button onclick='change(${JSON.stringify(coffee)}, ${i})'>${coffee.name}</button></td>
             <td><p>${coffee.description}</p></td>
             <td><p>${coffee.price}</p></td>
             <td><p>${coffee.stock}</p></td>
@@ -59,33 +60,20 @@ function ClearFields() {
 /*////////////// stop buton cancel ce sterge totul scris in cele 5 inputuri de change/add//////////*/
 
 /* //////////////start buton care sterge din baza de date produsul initial dupa ce-l modifici//////////*/
-/*function deleteItem(i) {
+
+function deleteItem(idP, i) {
     document.querySelector(`#coffees table tbody tr:nth-of-type(${i + 1})`).style.display = "none";
     var idProdus = window.location.search.substring(10);
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-           var coffee = JSON.parse(xhttp.responseText);
-        }
-    };
-    xhttp.open("DELETE", "https://cotroccino.firebaseio.com/produse/" + i + ".json", true);
-    xhttp.send();
-}*/
-function deleteItem(id, i) {
-    document.querySelector(`#coffees table tbody tr:nth-of-type(${i + 1})`).style.display = "none";
-    var idProdus = window.location.search.substring(10);
-
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-           var coffee = JSON.parse(xhttp.responseText);
+            var coffee = JSON.parse(xhttp.responseText);
         }
     };
     xhttp.open("DELETE", "https://cotroccino.firebaseio.com/produse/" + id + ".json", true);
     xhttp.send();
 }
-
 /* //////////////stop buton care sterge din baza de date produsul initial dupa ce-l modifici//////////*/
 
 /*/////////////pentru a prelua datele din tabel///////////*/
@@ -133,10 +121,10 @@ function addNewItem() {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             window.coffees = JSON.parse(xhttp.responseText);
-        update();
-    }
-};
-xhttp.open("POST", "https://cotroccino.firebaseio.com/produse/" + coffee.idProdus + ".json", true);
-xhttp.send(JSON.stringify(coffee));
+            update();
+        }
+    };
+    xhttp.open("POST", "https://cotroccino.firebaseio.com/produse/" + coffee.idProdus + ".json", true);
+    xhttp.send(JSON.stringify(coffee));
 }
 //saveChangesInTable ()
