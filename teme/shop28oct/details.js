@@ -62,12 +62,24 @@ function addToCart() {
     
 }
 
-function updateFirebaseUser(cafea, userItem) {
+/*function updateFirebaseUser(cafea, userItem) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var userItem2 = JSON.parse(xhttp.responseText);
             addCart("https://cotroccino.firebaseio.com/cart/", updateCart());
+        }
+    };
+
+    xhttp.open("POST", "https://cotroccino.firebaseio.com/cart.json", true);
+    xhttp.send(JSON.stringify(userItem));
+}*/
+function updateFirebaseUser(cafea, userItem) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var userItem2 = JSON.parse(xhttp.responseText);
+            //addCart("https://cotroccino.firebaseio.com/cart/", updateCart());
         }
     };
 
