@@ -69,7 +69,7 @@ function deleteItem(i) {
            var coffee = JSON.parse(xhttp.responseText);
         }
     };
-    xhttp.open("DELETE", "https://cotroccino.firebaseio.com/produse/" + coffees.idProdus + ".json", true);
+    xhttp.open("DELETE", "https://cotroccino.firebaseio.com/produse/" + i + ".json", true);
     xhttp.send();
 }
 
