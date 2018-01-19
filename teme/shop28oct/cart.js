@@ -65,7 +65,6 @@ function showItemsInCart() {
     var quantityItem = document.getElementById("quantityItem").value;
     var subtotal = coffee.quantityItem * coffee.price;
     var idProdus = window.location.search.substring(10);
-    //coffee.idProdus = document.getElementById("idProdus").value; nu-mi dau seama daca trebuie si idProdus..
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -75,7 +74,7 @@ function showItemsInCart() {
             addCart()
         }
     };
-    xhttp.open("PUT", "https://cotroccino.firebaseio.com/cart.json", true);
+    xhttp.open("POST", "https://cotroccino.firebaseio.com/cart.json", true);
     xhttp.send(JSON.stringify(coffee));
 }
 addCart()
