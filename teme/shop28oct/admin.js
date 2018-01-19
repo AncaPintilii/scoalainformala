@@ -83,7 +83,7 @@ function change(coffee, idProdus) {
     document.getElementById("description").value = coffee.description;
     document.getElementById("price").value = coffee.price;
     document.getElementById("stock").value = coffee.stock;
-    document.getElementById("idProdus").value = idProdus;
+    document.getElementById("idProdus").value = coffee.idProdus;
 }
 /*/////////////pentru a salva modificarile in baza de date + a afisa in tabel///////////*/
 function saveChangesInTable() {
