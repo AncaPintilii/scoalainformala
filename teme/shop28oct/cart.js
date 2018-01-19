@@ -42,9 +42,9 @@ function draw_cart(table_cart) {
         str += `<td><p>${coffee.name}</p></td>
                 <td><p>${coffee.price}</p></td>
                 <td>  
-                    <a href="" onclick="substractQuantity()"> - </a>  
+                    <a href="#"> - </a>  
                     <p>${coffee.quantityItem}</p>  
-                    <a href="" onclick="addQuantity()"> + </a> 
+                    <a href="#"> + </a> 
                 </td> 
                 <td><button onclick='deleteItemInCart(${i});'>Delete</button></td>`
         if (i % 1 == 0) {
