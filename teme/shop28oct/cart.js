@@ -8,11 +8,14 @@
 7. calculeze totalul (subtotal + TVA)
 
 ///////////// start preluare json ///////////*/
+window.onload = function(){addCart();};
+
 function addCart() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             window.table_cart = JSON.parse(xhttp.responseText);
+            draw_cart(table_cart);
         }
     };
     xhttp.open("GET", "https://cotroccino.firebaseio.com/cart/.json", true);
