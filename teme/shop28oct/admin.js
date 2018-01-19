@@ -58,9 +58,23 @@ function ClearFields() {
 }
 /*////////////// stop buton cancel ce sterge totul scris in cele 5 inputuri de change/add//////////*/
 
+/* //////////////start buton care sterge din baza de date produsul initial dupa ce-l modifici//////////*/
 function deleteItem(i) {
     document.querySelector(`#coffees table tbody tr:nth-of-type(${i + 1})`).style.display = "none";
+    var idProdus = window.location.search.substring(10);
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+           var coffee = JSON.parse(xhttp.responseText);
+        }
+    };
+    xhttp.open("DELETE", "https://cotroccino.firebaseio.com/produse/" + i.idProdus + ".json", true);
+    xhttp.send();
 }
+
+/* //////////////stop buton care sterge din baza de date produsul initial dupa ce-l modifici//////////*/
+
 /*/////////////pentru a prelua datele din tabel///////////*/
 function change(coffee, idProdus) {
     document.getElementById("img").value = coffee.img;
@@ -112,4 +126,4 @@ function addNewItem() {
 xhttp.open("POST", "https://cotroccino.firebaseio.com/produse/" + coffee.idProdus + ".json", true);
 xhttp.send(JSON.stringify(coffee));
 }
-update()
+//saveChangesInTable ()
